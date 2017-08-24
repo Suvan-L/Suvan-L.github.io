@@ -1,0 +1,901 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Oracle," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="一.目录 监听程序无法分发客户机连接 如何删除–计算机管理里的服务 如何删除主外键关联的表 失误删除spfile 无法通过命令开启oracleServiceNAME服务 误删了Oracle数据库某个表空间的数据文件 协议适配器错误 远程访问数据库可能出现的错误 ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务 将excel表导入数据库 Oracel逻辑备份两个工具     如何修">
+<meta name="keywords" content="Oracle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle_错误记录">
+<meta property="og:url" content="http://suvan-l.github.io/2016/04/24/Oracle_错误记录/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="一.目录 监听程序无法分发客户机连接 如何删除–计算机管理里的服务 如何删除主外键关联的表 失误删除spfile 无法通过命令开启oracleServiceNAME服务 误删了Oracle数据库某个表空间的数据文件 协议适配器错误 远程访问数据库可能出现的错误 ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务 将excel表导入数据库 Oracel逻辑备份两个工具     如何修">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-18T05:23:04.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle_错误记录">
+<meta name="twitter:description" content="一.目录 监听程序无法分发客户机连接 如何删除–计算机管理里的服务 如何删除主外键关联的表 失误删除spfile 无法通过命令开启oracleServiceNAME服务 误删了Oracle数据库某个表空间的数据文件 协议适配器错误 远程访问数据库可能出现的错误 ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务 将excel表导入数据库 Oracel逻辑备份两个工具     如何修">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2016/04/24/Oracle_错误记录/"/>
+
+
+
+
+
+  <title>Oracle_错误记录 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Bolgs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/04/24/Oracle_错误记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oracle_错误记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-24T15:03:21+08:00">
+                2016-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,676
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><ol>
+<li>监听程序无法分发客户机连接</li>
+<li>如何删除–计算机管理里的服务</li>
+<li>如何删除主外键关联的表</li>
+<li>失误删除spfile</li>
+<li>无法通过命令开启oracleServiceNAME服务</li>
+<li>误删了Oracle数据库某个表空间的数据文件</li>
+<li>协议适配器错误</li>
+<li>远程访问数据库可能出现的错误</li>
+<li>ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务</li>
+<li>将excel表导入数据库</li>
+<li>Oracel逻辑备份两个工具    </li>
+<li>如何修改最大连接数</li>
+</ol>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-错误"><a href="#二-错误" class="headerlink" title="二.错误"></a>二.错误</h1><h2 id="1-监听程序无法分发客户机连接"><a href="#1-监听程序无法分发客户机连接" class="headerlink" title="1.监听程序无法分发客户机连接"></a>1.监听程序无法分发客户机连接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sqlplus/nolog</div><div class="line">conn system/liushuwei @10.3.62.27/name</div><div class="line">        -------&gt;出现错误监听程序无法分发客户机连接</div><div class="line">    （未解决）</div></pre></td></tr></table></figure>
+<p>尝试解决一：       ———失败<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">在E:\Java\Oracle\software\NETWORK\ADMIN路径下</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">修改：listener.ora</div><div class="line"></div><div class="line">首行添加：</div><div class="line">    DIRECT_HANDOFF_TTC_LISTENER = OFF </div><div class="line"></div><div class="line">添加</div><div class="line">(SID_DESC = </div><div class="line">  (GLOBAL_DBNAME = name) </div><div class="line">  (ORACLE_HOME = E:\Java\Oracle\software) </div><div class="line">  (SID_NAME = name.Suvan) </div><div class="line">   ) </div><div class="line"></div><div class="line">修改文件后</div><div class="line">行以下命令重启监听器和EM</div><div class="line"></div><div class="line">lsnrctl stop </div><div class="line">lsnrctl start</div><div class="line">下面这两个命令提示报错</div><div class="line">emctl stop dbconsole</div><div class="line">emctl start dbconsole</div><div class="line"></div><div class="line"></div><div class="line">(Evironment varibale ORACLE_UNQNAME not defined .</div><div class="line">Please set ORACLE_UNQNAME to database unique name</div><div class="line">    ----</div><div class="line">    ORACLE_UNQNAME环境变量没有定义。</div><div class="line">    请设置ORACLE_UNQNAME数据库唯一的名称)</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
+<h2 id="2-如何删除–计算机管理里的服务"><a href="#2-如何删除–计算机管理里的服务" class="headerlink" title="2.如何删除–计算机管理里的服务"></a>2.如何删除–计算机管理里的服务</h2><p>使用管理员身份，<br>登录命令提示符</p>
+<p>sc delete 服务名字<br>　　 例如：sc delete MySOL</p>
+<hr>
+<p><br><br></p>
+<h2 id="3-如何删除主外键关联的表"><a href="#3-如何删除主外键关联的表" class="headerlink" title="3.如何删除主外键关联的表"></a>3.如何删除主外键关联的表</h2><p>如果是单方向的外键关联的时候：先删子表，然后删父表就可实现了。<br>命令为：<br>　　    drop table tablename；</p>
+<ul>
+<li>1.如果两张表相互有主外键约束命令为<br>　　drop table tablename cascade constraints<br>　　　　　　　　只删除其中的一个即可完成两张表的同时删除。 </li>
+</ul>
+<p>2.先删除外键，再删除表<br>　　 alter table 表名 drop constraint 外键名;</p>
+<p>　　删除主键<br>　　 alter table XXX drop primary key cascade;</p>
+<hr>
+<p><br><br></p>
+<h2 id="4-失误删除spfile"><a href="#4-失误删除spfile" class="headerlink" title="4.失误删除spfile"></a>4.失误删除spfile</h2><p>　　        —-21:14 2016/3/6<br>失误删除Oracle 11g的SPFILENAME.ORA,导致无法启动Oracle<br>(E:\Java\Oracle\software\database下的<br>SPFILENAME.ORA不见了！！！！！)</p>
+<p>文件恢复方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">找到目录E:\Java\Oracle\admin\name\pfile下的</div><div class="line">int.ora.23201619496文件</div><div class="line"></div><div class="line">通过pfile 启动数据</div><div class="line">        startup pfile=&apos;&apos;,、</div><div class="line">然后再通过create spfile from pfile 重建spfile; </div><div class="line"></div><div class="line"></div><div class="line">回到C：&gt;命令行</div><div class="line"></div><div class="line">输入以下命令，通过原始存档重建spfile</div><div class="line">        sqlplus /nolog</div><div class="line">        conn / as sysdba;</div><div class="line">        create spfile=&apos;D:\oracle\product\10.2.0\db_1\dbs\SPFILETESTING.ORA&apos; </div><div class="line">        from pfile=&apos;D:\oracle\product\10.2.0\admin\testing\pfile\init.ora.913200824649&apos;; </div><div class="line"></div><div class="line">然后Oracle又可以启动啦</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="5-无法通过命令开启oracleServiceNAME服务"><a href="#5-无法通过命令开启oracleServiceNAME服务" class="headerlink" title="5.无法通过命令开启oracleServiceNAME服务"></a>5.无法通过命令开启oracleServiceNAME服务</h2><p>过dos命令启动oracle服务时遇到问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">　　net start oracleserviceORCL</div><div class="line"></div><div class="line">　    net start </div><div class="line">发生系统错误 5。</div><div class="line"></div><div class="line">拒绝访问。</div></pre></td></tr></table></figure></p>
+<p>解决</p>
+<p>系统是vista，默认用cmd打开的是没有管理员权限的，<br>附件–命令提示符 右键 以管理员身份运行 即可解决问题</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　以管理员身份登录DOS</div><div class="line">　  net start oracleserviceORCL</div><div class="line">neoracleserviceORCL 服务正在启动 .</div><div class="line">oracleserviceORCL 服务已经启动成功。</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="6-误删了Oracle数据库某个表空间的数据文件"><a href="#6-误删了Oracle数据库某个表空间的数据文件" class="headerlink" title="6.误删了Oracle数据库某个表空间的数据文件"></a>6.误删了Oracle数据库某个表空间的数据文件</h2><p>误删了某个表空间的数据文件，</p>
+<p>导致数据库conn system/liushuwei 无法连接，报错</p>
+<p>解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">sqlpLus/nolg</div><div class="line"></div><div class="line">    conn / as sysdba</div><div class="line"></div><div class="line">    startup,stutdown </div><div class="line"></div><div class="line">    alter database datafile &apos;删除文件目录/删除文件名.DBF&apos; offline drop</div><div class="line"></div><div class="line"></div><div class="line">    exit</div><div class="line"></div><div class="line">        net stop oracleServiceORCL</div><div class="line"></div><div class="line">        net start oracleServiceORCL</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>为什么system进去不去，但是sys可以进去？</p>
+</blockquote>
+<p>可以重新连接system用户后，<br>　　    select file_name from dba_data_files </p>
+<p>查询控制文件<br>　　但是仍然会显示出已经删除的控制文件的记录<br>　　但是文件夹中已经没有该文件了，</p>
+<p>原因:是数据字典v$database中任然保留这个记录，但是并不会占硬盘空间</p>
+<p>如果要彻底删除，则需要连表空间一起删除<br>删除表空间 同时删除控制文件：<br>　　drop tablespace tpname including contents and datafiles;</p>
+<hr>
+<p><br><br></p>
+<h2 id="7-协议适配器错误"><a href="#7-协议适配器错误" class="headerlink" title="7.协议适配器错误"></a>7.协议适配器错误</h2><p>右键我的电脑—&gt;管理—&gt;服务—&gt;找到oracleServierOCRL,重新启动</p>
+<p>通过管理员身份，登录dos界面<br>　　   net start oracleserviceNAME</p>
+<hr>
+<p><br><br></p>
+<h2 id="8-远程访问数据库可能出现的错误"><a href="#8-远程访问数据库可能出现的错误" class="headerlink" title="8.远程访问数据库可能出现的错误"></a>8.远程访问数据库可能出现的错误</h2><ul>
+<li><p>1.连接超时<br>　　对方防火墙没关闭</p>
+</li>
+<li><p>2.无监听程序<br>　　对方未重新配置监听程序</p>
+</li>
+<li><p>3.监听程序当前无法识别连接描述符中请求服务<br>　　对方需打开DOS界面，输入 set oracle_sid=orcl<br>　　     (对方数据库名字是orcl)</p>
+</li>
+<li>4.账户锁定<br>　　对方账户已被锁定了，配置成功但无法访问啦</li>
+</ul>
+<p>另一种小方法</p>
+<p>A开WIFI热点，BCD连A的WIFI<br>　　    其他网络配置，监听程序配置一样</p>
+<p>　　    A可以绕过BCD的防火墙访问他们的数据库了</p>
+<hr>
+<p><br><br></p>
+<h2 id="9-ORA-12514-TNS-监听程序无法识别连接描述符中请求的服务"><a href="#9-ORA-12514-TNS-监听程序无法识别连接描述符中请求的服务" class="headerlink" title="9.ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务"></a>9.ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务</h2><p>问题描述<br>&emsp;开启PLSQL时候，使用system用户，输入密码确认后，报错“ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务”</p>
+<p>解决思路</p>
+<ol>
+<li>重启OracleServiceORCL和OracleOraDb11g_home2TNSListener服务<br>2.PLSQL工具的配置问题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">...\PLSQL\instantclient_11_2目录下的tnsnamees.or文件【根据下面模版，需要添加tnsnames.ora的路径和监听器】</div><div class="line"></div><div class="line"># tnsnames.ora Network Configuration File: E:\Java\eclipse_YanYunDDS_Project\Workspace2_ImportData\PLSQL\instantclient_11_2\tnsnames.ora</div><div class="line"># Generated by Oracle configuration tools.</div><div class="line"></div><div class="line">LISTENER_ORCL =</div><div class="line">  (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))</div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVER = DEDICATED)</div><div class="line">      (SERVICE_NAME = orcl)</div><div class="line">    )</div><div class="line">  )</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p><br><br></p>
+<h2 id="10-将excel表导入数据库"><a href="#10-将excel表导入数据库" class="headerlink" title="10.将excel表导入数据库"></a>10.将excel表导入数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">1.文件转格式(xlsx -&gt;  (制表符分隔)*.txt)</div><div class="line">    顶部菜单栏 -&gt;    文件</div><div class="line">        另存为</div><div class="line">            保存类型选择[文本文件(制表符分隔)(*.txt)] -&gt;   保存</div><div class="line"></div><div class="line"></div><div class="line">2.建表</div><div class="line">    开启sqlplus：sqlplust/nolog</div><div class="line">        连接： conn 用户名/密码</div><div class="line">            CREATE TABLE student(</div><div class="line">                sid CHAR(12),</div><div class="line">                name VARCHAR2(20),</div><div class="line">                sex CHAR(1 char),</div><div class="line">                sclass  VARCHAR2(20)</div><div class="line">            );</div><div class="line"></div><div class="line"></div><div class="line">3.创建控制文件</div><div class="line">    创建txt文本【与重新保存的(制表符分隔)*.txt路径相同】</div><div class="line">        将后缀改为.ctl</div><div class="line">            添加内容</div><div class="line">                load data                   [控制文件标识]</div><div class="line">                infile &apos;student.txt&apos;        [要输入的数据文件名为test.txt] </div><div class="line">                append into table student   [向表test中追加记录]</div><div class="line">                fields terminated by X&apos;09&apos;  [字段终止于X’09&apos;，是一个制表符(TAB)]</div><div class="line">                (sid,name,sex,sclass)       [数据库表中对应的四个字段名] </div><div class="line"></div><div class="line"></div><div class="line">4.导入数据</div><div class="line">    DOS窗体里输入： sqlldr userid=用户名/密码@服务名 control=input.cpl</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="11-Oracel逻辑备份两个工具"><a href="#11-Oracel逻辑备份两个工具" class="headerlink" title="11.Oracel逻辑备份两个工具"></a>11.Oracel逻辑备份两个工具</h2><p>这两个命令是当前windows系统路径，不是在sqlplus<br>exp 导出工具 逻辑备份文件，dmp文件<br>imp 导入工具</p>
+<p>注意：</p>
+<ul>
+<li>dmb文件只用于导入导出的时候使用</li>
+<li>导入的时候，不忽略警告，因为有重复会自动终止的（如果没有这个用户，那么导入的时候要新建用户）</li>
+</ul>
+<hr>
+<p><br><br></p>
+<h2 id="12-如何修改最大连接数"><a href="#12-如何修改最大连接数" class="headerlink" title="12.如何修改最大连接数"></a>12.如何修改最大连接数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">登录sqlplus</div><div class="line">    查看最大连接数： select value from V$parameter where name=&apos;processes&apos;;</div><div class="line">    查看当前连接数： select count (*) from V$process;</div><div class="line">        修改最大连接数：alter system set processes=300 scope=spfile</div><div class="line">            重启数据库：</div><div class="line">                shutdown immediate;</div><div class="line">                startup;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/24/Oracle_练习题/" rel="next" title="Oracle_练习题">
+                <i class="fa fa-chevron-left"></i> Oracle_练习题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/03/PLSQL_知识体系/" rel="prev" title="PLSQL_知识体系">
+                PLSQL_知识体系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan.png"
+               alt="liushuwei" />
+          <p class="site-author-name" itemprop="name">liushuwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="526097449" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-目录"><span class="nav-number">1.</span> <span class="nav-text">一.目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-错误"><span class="nav-number">2.</span> <span class="nav-text">二.错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-监听程序无法分发客户机连接"><span class="nav-number">2.1.</span> <span class="nav-text">1.监听程序无法分发客户机连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何删除–计算机管理里的服务"><span class="nav-number">2.2.</span> <span class="nav-text">2.如何删除–计算机管理里的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何删除主外键关联的表"><span class="nav-number">2.3.</span> <span class="nav-text">3.如何删除主外键关联的表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-失误删除spfile"><span class="nav-number">2.4.</span> <span class="nav-text">4.失误删除spfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-无法通过命令开启oracleServiceNAME服务"><span class="nav-number">2.5.</span> <span class="nav-text">5.无法通过命令开启oracleServiceNAME服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-误删了Oracle数据库某个表空间的数据文件"><span class="nav-number">2.6.</span> <span class="nav-text">6.误删了Oracle数据库某个表空间的数据文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-协议适配器错误"><span class="nav-number">2.7.</span> <span class="nav-text">7.协议适配器错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-远程访问数据库可能出现的错误"><span class="nav-number">2.8.</span> <span class="nav-text">8.远程访问数据库可能出现的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-ORA-12514-TNS-监听程序无法识别连接描述符中请求的服务"><span class="nav-number">2.9.</span> <span class="nav-text">9.ORA-12514:TNS:监听程序无法识别连接描述符中请求的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-将excel表导入数据库"><span class="nav-number">2.10.</span> <span class="nav-text">10.将excel表导入数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Oracel逻辑备份两个工具"><span class="nav-number">2.11.</span> <span class="nav-text">11.Oracel逻辑备份两个工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-如何修改最大连接数"><span class="nav-number">2.12.</span> <span class="nav-text">12.如何修改最大连接数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	高调做事,低调做人
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Oracle," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1.在用户表中添加以学号为中心的前后共5个同学的信息；123456789101112131415CREATE SEQUENCE stu_num    START WITH 36    INCREMENT BY 1    MAXVALUE 41;    INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)    VALUE">
+<meta name="keywords" content="Oracle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle_练习题">
+<meta property="og:url" content="http://suvan-l.github.io/2016/04/24/Oracle_练习题/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="1.在用户表中添加以学号为中心的前后共5个同学的信息；123456789101112131415CREATE SEQUENCE stu_num    START WITH 36    INCREMENT BY 1    MAXVALUE 41;    INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)    VALUE">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-18T05:20:01.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle_练习题">
+<meta name="twitter:description" content="1.在用户表中添加以学号为中心的前后共5个同学的信息；123456789101112131415CREATE SEQUENCE stu_num    START WITH 36    INCREMENT BY 1    MAXVALUE 41;    INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)    VALUE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2016/04/24/Oracle_练习题/"/>
+
+
+
+
+
+  <title>Oracle_练习题 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Bolgs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/04/24/Oracle_练习题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oracle_练习题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-24T14:19:21+08:00">
+                2016-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,700
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-在用户表中添加以学号为中心的前后共5个同学的信息；"><a href="#1-在用户表中添加以学号为中心的前后共5个同学的信息；" class="headerlink" title="1.在用户表中添加以学号为中心的前后共5个同学的信息；"></a>1.在用户表中添加以学号为中心的前后共5个同学的信息；</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">CREATE SEQUENCE stu_num</div><div class="line">    START WITH 36</div><div class="line">    INCREMENT BY 1</div><div class="line">    MAXVALUE 41;</div><div class="line">    </div><div class="line">INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)</div><div class="line">    VALUES (stu_num.nextval,&apos;学生36&apos;,to_date(&apos;1996-07-28&apos;,&apos;yyyy-mm-dd&apos;),&apos;f&apos;,&apos;佛山&apos;,&apos;123456&apos;);</div><div class="line">INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)</div><div class="line">    VALUES (stu_num.nextval,&apos;学生37&apos;,to_date(&apos;1996-09-28&apos;,&apos;yyyy-mm-dd&apos;),&apos;f&apos;,&apos;深圳&apos;,&apos;123456&apos;);</div><div class="line">INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)</div><div class="line">    VALUES (stu_num.nextval,&apos;学生38&apos;,to_date(&apos;1998-07-28&apos;,&apos;yyyy-mm-dd&apos;),&apos;m&apos;,&apos;四川&apos;,&apos;123456&apos;);</div><div class="line">INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)</div><div class="line">    VALUES (stu_num.nextval,&apos;学生39&apos;,to_date(&apos;1999-07-28&apos;,&apos;yyyy-mm-dd&apos;),&apos;f&apos;,&apos;香港&apos;,&apos;123456&apos;);</div><div class="line">INSERT INTO t_user(uiid,uname,ubirthday,usex,uaddress,utelephone)</div><div class="line">    VALUES (stu_num.nextval,&apos;学生40&apos;,to_date(&apos;1995-07-28&apos;,&apos;yyyy-mm-dd&apos;),&apos;m&apos;,&apos;佛山&apos;,&apos;123456&apos;);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="2-用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号"><a href="#2-用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号" class="headerlink" title="2.用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号"></a>2.用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">CREATE SEQUENCE uiid_num</div><div class="line">    START WITH 1</div><div class="line">    INCREMENT BY 1;</div><div class="line">  </div><div class="line">INSERT INTO t_main_order (omid,uiid,odate,oamount,ostate)</div><div class="line">    SELECT uiid_num.nextval,uiid,sysdate,null,&apos;1&apos; FROM t_user;</div><div class="line">    </div><div class="line">DELETE   t_order_items;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="3-为每个用户的订单增加3个以上的商品明细记录"><a href="#3-为每个用户的订单增加3个以上的商品明细记录" class="headerlink" title="3.为每个用户的订单增加3个以上的商品明细记录"></a>3.为每个用户的订单增加3个以上的商品明细记录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">CREATE SEQUENCE ope_money</div><div class="line">  START WITH 20</div><div class="line">  INCREMENT BY 2;</div><div class="line"></div><div class="line">INSERT INTO t_order_items (omid,gid,oprice,onum,omemo)</div><div class="line">  SELECT OMID,gid,ope_money.nextval,null,null FROM t_main_order,t_goods;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="4-查询显示商品信息，要求显示商品编号、商品名称、商品单价。"><a href="#4-查询显示商品信息，要求显示商品编号、商品名称、商品单价。" class="headerlink" title="4.查询显示商品信息，要求显示商品编号、商品名称、商品单价。"></a>4.查询显示商品信息，要求显示商品编号、商品名称、商品单价。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DESC t_goods;</div><div class="line">SELECT gid AS 商品编号,gname AS 商品名称,gprice AS 商品单价 FROM t_goods;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="5-查询显示商品单价在10和100之间的商品信息。"><a href="#5-查询显示商品单价在10和100之间的商品信息。" class="headerlink" title="5.  查询显示商品单价在10和100之间的商品信息。"></a>5.  查询显示商品单价在10和100之间的商品信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DESC t_goods;</div><div class="line">SELECT gid,gname,gid,gprice,gdiscount,gstocks,gmaxstocks,gminstocks,gmemo</div><div class="line">    FROM t_goods WHERE gprice between 10 and 100;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="6-查询显示商品库存超过最高库存或低于最低库存的商品信息"><a href="#6-查询显示商品库存超过最高库存或低于最低库存的商品信息" class="headerlink" title="6.  查询显示商品库存超过最高库存或低于最低库存的商品信息"></a>6.  查询显示商品库存超过最高库存或低于最低库存的商品信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DESC t_goods</div><div class="line">SELECT gid,gname,gid,gprice,gdiscount,gstocks,gmaxstocks,gminstocks,gmemo</div><div class="line">    FROM t_goods WHERE gstocks &gt;gmaxstocks or gstocks &lt;gminstocks;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="7-查询没有电话号码的供应商信息。"><a href="#7-查询没有电话号码的供应商信息。" class="headerlink" title="7.  查询没有电话号码的供应商信息。"></a>7.  查询没有电话号码的供应商信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DESC t_supplier</div><div class="line">SELECT sid,sname,scontact,sphone,smemo</div><div class="line">  FROM t_supplier WHERE sphone is null;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="8-查询供应商中联系人姓李的信息。"><a href="#8-查询供应商中联系人姓李的信息。" class="headerlink" title="8.    查询供应商中联系人姓李的信息。"></a>8.    查询供应商中联系人姓李的信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DESC t_supplier</div><div class="line">SELECT sid,sname,scontact,sphone,smemo</div><div class="line">  FROM t_supplier WHERE scontact Like &apos;李%&apos;;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="9-查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。"><a href="#9-查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。" class="headerlink" title="9.查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。"></a>9.查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">DESC t_goods</div><div class="line">SELECT gid,gname,gid,ROUND(gprice),ROUND(gdiscount,1),TRUNC(gstocks)</div><div class="line">  FROM t_goods;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="10-查询当月过生日的用户信息"><a href="#10-查询当月过生日的用户信息" class="headerlink" title="10. 查询当月过生日的用户信息"></a>10. 查询当月过生日的用户信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DESC t_user;</div><div class="line">SELECT uiid,uname,ubirthday,usex,uaddress,utelephone</div><div class="line">    FROM t_user</div><div class="line">    WHERE to_char(ubirthday,&apos;mm&apos;)=to_char(sysdate,&apos;mm&apos;);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="11-查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。"><a href="#11-查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。" class="headerlink" title="11.  查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。"></a>11.  查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">DESC t_mian_order</div><div class="line">SELECT  omid,oamount</div><div class="line">    FROM t_main_order</div><div class="line">    WHERE to_char(odate,&apos;yyyy-mm&apos;)=&apos;2016-04&apos;</div><div class="line">        AND oamount &gt;=200;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="11-查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。"><a href="#11-查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。" class="headerlink" title="11.  查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。"></a>11.  查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">DESC t_goods       </div><div class="line">SELECT gname,gtname,gprice,gdiscount,gstocks</div><div class="line">  FROM t_goods a,t_gtype b</div><div class="line">  WHERE  a.gid=b.gtid AND</div><div class="line">    gdiscount IS NOT NULL;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="12-查询商品领带共采购了多少？"><a href="#12-查询商品领带共采购了多少？" class="headerlink" title="12.  查询商品领带共采购了多少？"></a>12.  查询商品领带共采购了多少？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DESC t_procure_items</div><div class="line">SELECT sum(pinum) AS 领带 FROM t_procure_items</div><div class="line">  WHERE gid =</div><div class="line">    (SELECT gid FROM t_goods WHERE gname=&apos;领带&apos;);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="13-查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。"><a href="#13-查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。" class="headerlink" title="13.查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。"></a>13.查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DESC t_main_procure</div><div class="line">SELECT  pmid,pdate,b.sid,pamount,pstate</div><div class="line">  FROM t_main_procure a,t_supplier b</div><div class="line">  WHERE a.sid =b.sid(+);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="14-查找年龄最小的用户信息。"><a href="#14-查找年龄最小的用户信息。" class="headerlink" title="14.  查找年龄最小的用户信息。"></a>14.  查找年龄最小的用户信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">DESC t_user;</div><div class="line">SELECT uiid,uname,ubirthday,usex,uaddress,utelephone</div><div class="line">  FROM t_user</div><div class="line">  WHERE ubirthday=</div><div class="line">  (SELECT max(ubirthday) from t_user);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="15-查询显示在当月有采购来往的供应商信息。"><a href="#15-查询显示在当月有采购来往的供应商信息。" class="headerlink" title="15.查询显示在当月有采购来往的供应商信息。"></a>15.查询显示在当月有采购来往的供应商信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">DESC t_supplier;</div><div class="line">SELECT a.sid,sname,scontact,scontact,sphone,smemo</div><div class="line">  FROM t_supplier a,t_main_procure b</div><div class="line">  WHERE  a.sid=b.sid(+)</div><div class="line">      AND to_char(b.pdate,&apos;mm&apos;)=to_char(sysdate,&apos;mm&apos;);</div><div class="line">```    </div><div class="line"></div><div class="line">--- </div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">16.查询显示在当月有采购来往的供应商信息。 </div><div class="line">--------------------------</div></pre></td></tr></table></figure>
+<p>DESC t_user;<br>SELECT a.uiid,uname,ubirthday,usex,uaddress,utelephone,oamount<br>  FROM t_user a,t_main_order b<br>  WHERE a.uiid =b.uiid(+);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">--- </div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">17.年底报表中需要将采购单主表和订单主表信息显示在一个报表中，显示：单号、客户名称（采购为供应商名称，订单为用户名称）、日期（yy-mm-dd）、总金额（四舍五入取整）、单据状态、类型（采购单显示‘采购’，订单显示‘订购’）。  </div><div class="line">-------------------</div><div class="line">``` </div><div class="line">DESC t_main_procure;</div><div class="line">DESC t_main_order;</div><div class="line">SELECT omid AS 订单单号,uname AS 用户名称,</div><div class="line">       to_char(odate,&apos;yy-mm-dd&apos;) AS 销售日期,round(oamount) AS 总金额,</div><div class="line">       decode(ostate,&apos;1&apos;,&apos;待审核&apos;,&apos;2&apos;,&apos;发货中&apos;,&apos;3&apos;,&apos;已完结&apos;,&apos;4&apos;,&apos;取消&apos;),&apos;订单&apos;</div><div class="line">       FROM t_main_order a ,t_user b</div><div class="line">       WHERE a.uiid =b.uiid(+)</div><div class="line">UNION      </div><div class="line">SELECT pmid AS 采购单号,sname AS 供应商名称，</div><div class="line">      to_char(pdate,&apos;yy-mm-dd&apos;) AS 采购日期,round(pamount) AS 总金额,</div><div class="line">      decode(pstate,&apos;1&apos;,&apos;待审核&apos;,&apos;2&apos;,&apos;已经审核&apos;),&apos;采购&apos;</div><div class="line">      FROM t_main_procure c,t_supplier d</div><div class="line">      WHERE c.sid =d.sid(+);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
+<h2 id="18-将17中的查询定义为一个视图，并针对该视图查询一下信息"><a href="#18-将17中的查询定义为一个视图，并针对该视图查询一下信息" class="headerlink" title="18.将17中的查询定义为一个视图，并针对该视图查询一下信息"></a>18.将17中的查询定义为一个视图，并针对该视图查询一下信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">CREATE VIEW one_view(单号,客户名称，销售日期,总金额，单据状态，类型) AS</div><div class="line">DESC t_main_order;</div><div class="line">SELECT omid AS 订单单号,uname AS 用户名称,</div><div class="line">       to_char(odate,&apos;yy-mm-dd&apos;) AS 销售日期,round(oamount) AS 总金额,</div><div class="line">       decode(ostate,&apos;1&apos;,&apos;待审核&apos;,&apos;2&apos;,&apos;发货中&apos;,&apos;3&apos;,&apos;已完结&apos;,&apos;4&apos;,&apos;取消&apos;),&apos;订单&apos;</div><div class="line">       FROM t_main_order a ,t_user b</div><div class="line">       WHERE a.uiid =b.uiid(+)</div><div class="line">UNION      </div><div class="line">SELECT pmid AS 采购单号,sname AS 供应商名称，</div><div class="line">      to_char(pdate,&apos;yy-mm-dd&apos;) AS 采购日期,round(pamount) AS 总金额,</div><div class="line">      decode(pstate,&apos;1&apos;,&apos;待审核&apos;,&apos;2&apos;,&apos;已经审核&apos;),&apos;采购&apos;</div><div class="line">      FROM t_main_procure c,t_supplier d</div><div class="line">      WHERE c.sid =d.sid(+);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="19-系统中有几个商品信息数据维护人员-是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图"><a href="#19-系统中有几个商品信息数据维护人员-是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图" class="headerlink" title="19. 系统中有几个商品信息数据维护人员 是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图  "></a>19. 系统中有几个商品信息数据维护人员 是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图  </h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CREATE OR REPLACE VIEW two_view_people AS</div><div class="line">  SELECT gid,gname,gtname,gprice,gdiscount,gstocks,gmaxstocks,gminstocks,gmemo</div><div class="line">    FROM t_goods a,t_gtype b</div><div class="line">    WHERE a.gtid =b.gtid(+);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="20-SQL脚本-删除-创建，插入"><a href="#20-SQL脚本-删除-创建，插入" class="headerlink" title="20.SQL脚本(删除,创建，插入)"></a>20.SQL脚本(删除,创建，插入)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div></pre></td><td class="code"><pre><div class="line">---删除表</div><div class="line">drop table t_user_evaluation;</div><div class="line">drop table t_procure_items;</div><div class="line">drop table t_order_items;</div><div class="line">drop table t_order;</div><div class="line">drop table t_main_procure;</div><div class="line">drop table t_goods;</div><div class="line">drop table t_supplier;</div><div class="line">drop table t_gtype;</div><div class="line">drop table t_user;</div><div class="line"></div><div class="line"></div><div class="line">---注册用户表：t_user</div><div class="line">        create table t_user(</div><div class="line">            uiid    char(6) primary key,    </div><div class="line">            uname   varchar2(20) not null,  </div><div class="line">            ubirthday date,         </div><div class="line">            Usex  char(1) check(usex in (&apos;f&apos;, &apos;m&apos;)),</div><div class="line">            uaddress varchar2(50),      </div><div class="line">            utelephone  varchar2(20)</div><div class="line">        );</div><div class="line"></div><div class="line">--商品类型表:t_gtype</div><div class="line">        create table t_gtype(</div><div class="line">            gtid char(6) primary key,</div><div class="line">                gtname varchar2(20) not null</div><div class="line">        );</div><div class="line"></div><div class="line">--商品信息表</div><div class="line">        create table t_goods(</div><div class="line">            gid char(6) primary key,</div><div class="line">            gname varchar2(20) not null,</div><div class="line">            gtid char(6) references t_gtype(gtid),</div><div class="line">            gprice number(12,3) check(gprice&gt;0),</div><div class="line">            gdiscount number(5,2),</div><div class="line">            gstocks number(7,2) check(gstocks&gt;=0),</div><div class="line">            gmaxstocks number(7,2) check(gmaxstocks&gt;=0),</div><div class="line">            gminstocks number(7,2) check(gminstocks&gt;=0),</div><div class="line">            gmemo varchar2(50)</div><div class="line">        );</div><div class="line"></div><div class="line">----供应商信息表(t_supplier)</div><div class="line">        create table t_supplier(</div><div class="line">            sid char(6) primary key,    </div><div class="line">            sname   varchar2(20) not null,  </div><div class="line">            scontact varchar2(20) ,     </div><div class="line">            sphone  varchar2(15) ,      </div><div class="line">            smemo   varchar2(50)</div><div class="line">        );  </div><div class="line">    </div><div class="line"></div><div class="line">--采购单主表(t_main_procure)</div><div class="line">        create table t_main_procure(</div><div class="line">            pmid char(12) primary key,</div><div class="line">            sid char(6)  references t_supplier(sid),</div><div class="line">            pdate date default sysdate,</div><div class="line">            pamount number(12,3),</div><div class="line">            pstate char(1) check(pstate in(&apos;1&apos;,&apos;2&apos;)),</div><div class="line">            pmemo   varchar2(50)</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line">--采购明细表(t_procure_items)</div><div class="line">        create table t_procure_items(</div><div class="line">            pmid char(12) references t_main_procure(pmid)  ,</div><div class="line">            gid char(6)  references t_goods(gid) ,</div><div class="line">            piprice number(8,2) check(piprice&gt;0),</div><div class="line">            pinum number(8,2) check(pinum&gt;0),</div><div class="line">            pimoney number(12,3),</div><div class="line">            pimemo  varchar2(50)</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line">--订单主表（t_main_order）</div><div class="line">        create table t_main_order(</div><div class="line">            omid char(12) primary key,</div><div class="line">            uiid char(6) not null references t_user(uiid),</div><div class="line">            odate date default sysdate,</div><div class="line">            oamount number(12,3),</div><div class="line">            ostate char(1) check(ostate in(&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;))</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line">--订单明细表(t_order_items)</div><div class="line"></div><div class="line">        create table t_order_items(</div><div class="line">            omid char(12) references t_main_order(omid) ,</div><div class="line">            gid char(6)  references t_goods(gid) ,</div><div class="line">            oprice number(8,2) check(oprice&gt;0),</div><div class="line">            onum number(8,2) check(onum&gt;0),</div><div class="line">            omemo   varchar2(50),</div><div class="line">            primary key(omid,gid)</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line">--评价表：t_user_evaluation</div><div class="line">        create table t_user_evaluation(</div><div class="line">            ueid char(10) primary key,</div><div class="line">            omid char(6)  ,</div><div class="line">            gid char(6) ,</div><div class="line">            foreign key(omid,gid) references t_order_items(omid,gid),</div><div class="line">            uedate date default sysdate,</div><div class="line">            uetype char(1) check(uetype=&apos;A&apos; or uetype=&apos;B&apos; or uetype=&apos;C&apos;),</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">insert into t_gtype</div><div class="line">values(&apos;t001&apos;,&apos;日常百货&apos;);</div><div class="line">insert into t_gtype </div><div class="line">values(&apos;t002&apos;,&apos;儿童用品&apos;);</div><div class="line">insert into t_gtype </div><div class="line">values(&apos;t003&apos;,&apos;女装精品&apos;);</div><div class="line">insert into t_gtype </div><div class="line">values(&apos;t004&apos;,&apos;男装精品&apos;);</div><div class="line">insert into t_gtype </div><div class="line">values(&apos;t005&apos;,&apos;电子精品&apos;);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">insert into t_goods values(&apos;g0001&apos;,&apos;computer&apos;,&apos;t005&apos;,7000,8,50,50,5,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0002&apos;,&apos;phone&apos;,&apos;t005&apos;,1780,8,100,100,5,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0003&apos;,&apos;tshir&apos;,&apos;t004&apos;,1000,8,1000,1000,5,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0004&apos;,&apos;西装&apos;,&apos;t004&apos;,6000,8,200,200,5,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0005&apos;,&apos;裙子&apos;,&apos;t003&apos;,200,8,100,100,3,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0006&apos;,&apos;coat&apos;,&apos;t003&apos;,4570,8,100,100,3,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0007&apos;,&apos;儿童鞋&apos;,&apos;t002&apos;,430,7,100,100,3,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0008&apos;,&apos;picture&apos;,&apos;t002&apos;,20,7,100,100,3,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0009&apos;,&apos;杯子&apos;,&apos;t001&apos;,45,100,6,100,5,&apos;无&apos;);</div><div class="line">insert into t_goods values(&apos;g0010&apos;,&apos;牙膏&apos;,&apos;t001&apos;,4,100,9,100,5,&apos;无&apos;);</div><div class="line"></div><div class="line"></div><div class="line">    </div><div class="line">insert into t_supplier</div><div class="line">values(&apos;p001&apos;,&apos;广州有线&apos;,null,&apos;87654567&apos;,null);</div><div class="line">insert into t_supplier</div><div class="line">values(&apos;p002&apos;,&apos;珠江数码&apos;,&apos;李生&apos;,&apos;13924567890&apos;,null);</div><div class="line">insert into t_supplier</div><div class="line">values(&apos;p003&apos;,&apos;广州电信&apos;,&apos;王小姐&apos;,&apos;13323456789&apos;,null);</div><div class="line">insert into t_supplier</div><div class="line">values(&apos;p004&apos;,&apos;广州百佳&apos;,&apos;万小姐&apos;,&apos;18987654321&apos;,null);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">insert into t_main_procure values(&apos;i001&apos;,&apos;p001&apos;,sysdate,null,&apos;1&apos;,null);</div><div class="line">insert into t_main_procure values(&apos;i002&apos;,&apos;p002&apos;,sysdate,null,&apos;1&apos;,null);</div><div class="line">insert into t_main_procure values(&apos;i003&apos;,&apos;p003&apos;,sysdate,null,&apos;1&apos;,null);</div><div class="line"></div><div class="line"></div><div class="line">insert into t_procure_items select &apos;i001&apos;,gid,gprice,gstocks ,null,null </div><div class="line">from t_goods where gtid in (&apos;t001&apos;,&apos;t002&apos;) ;</div><div class="line">insert into t_procure_items select &apos;i002&apos;,gid,gprice,gstocks ,null ,null</div><div class="line">from t_goods where gtid in (&apos;t003&apos;,&apos;t004&apos;);</div><div class="line">insert into t_procure_items select &apos;i003&apos;,gid,gprice,gstocks ,null ,null</div><div class="line">from t_goods where gtid =&apos;t005&apos;;</div><div class="line"></div><div class="line">commit;</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="21-根据需求建表"><a href="#21-根据需求建表" class="headerlink" title="21.根据需求建表"></a>21.根据需求建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE student(</div><div class="line">   stnum VARCHAR2(12) primary key,</div><div class="line">   stname VARCHAR2(10) not null,</div><div class="line">   stsex CHAR(2) check(stsex in(&apos;男&apos;,&apos;女&apos;)),</div><div class="line">   stclass VARCHAR2(20),</div><div class="line">   stphone VARCHAR2(20)</div><div class="line">);</div><div class="line"></div><div class="line">CREATE TABLE book(</div><div class="line">  boid VARCHAR2(10) primary key,</div><div class="line">  boisbn VARCHAR2(13) not null,</div><div class="line">  boname VARCHAR2(50),</div><div class="line">  boauthor VARCHAR2(50),</div><div class="line">  boprice NUMBER(6,2) check(boprice&gt;0),</div><div class="line">  boloan NUMBER(2),</div><div class="line">  boamount NUMBER(2)</div><div class="line">);</div><div class="line"></div><div class="line">CREATE TABLE sbook(</div><div class="line">  sbonum VARCHAR2(10) primary key,</div><div class="line">  sboid VARCHAR2(12) references book(boid),</div><div class="line">  sbonamenum VARCHAR2(12) references student(stnum),</div><div class="line">  sboloantime DATE default sysdate,</div><div class="line">  sborepaytime DATE default sysdate+30,</div><div class="line">  sbolasttime DATE,</div><div class="line">  sbomoney NUMBER(6,2)</div><div class="line">);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="22-在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师-可借图书为5本-、学生-可借图书为3本-、社会人员-可借图书为1本-。"><a href="#22-在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师-可借图书为5本-、学生-可借图书为3本-、社会人员-可借图书为1本-。" class="headerlink" title="22.在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师(可借图书为5本)、学生(可借图书为3本)、社会人员(可借图书为1本)。"></a>22.在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师(可借图书为5本)、学生(可借图书为3本)、社会人员(可借图书为1本)。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE student ADD A14210120238 CHAR(1) check(A14210120238 in(&apos;5&apos;,&apos;3&apos;,&apos;1&apos;));</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="23-请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。"><a href="#23-请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。" class="headerlink" title="23.请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。 "></a>23.请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。 </h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">INSERT INTO student VALUES (&apos;A241&apos;,&apos;江岳勋&apos;,&apos;男&apos;,&apos;计算机系软工2班&apos;,&apos;123456789&apos;,&apos;3&apos;);</div><div class="line">INSERT INTO student VALUES (&apos;A237&apos;,&apos;林靖儒&apos;,&apos;男&apos;,&apos;计算机系软工2班&apos;,&apos;123456789&apos;,&apos;3&apos;);</div><div class="line">INSERT INTO student VALUES (&apos;A238&apos;,&apos;刘淑玮&apos;,&apos;男&apos;,&apos;计算机系软工2班&apos;,&apos;123456789&apos;,&apos;3&apos;);</div><div class="line">INSERT INTO student VALUES (&apos;A239&apos;,&apos;叶瑞强&apos;,&apos;男&apos;,&apos;计算机系软工2班&apos;,&apos;123456789&apos;,&apos;3&apos;);</div><div class="line"></div><div class="line">INSERT INTO book VALUES(&apos;001&apos;,&apos;x88887777&apos;,&apos;大学英语&apos;,&apos;王明&apos;,23.5,20,0);</div><div class="line">INSERT INTO book VALUES(&apos;002&apos;,&apos;x88889999&apos;,&apos;沟通与演讲&apos;,&apos;陈零&apos;,23.5,20,0);</div><div class="line">INSERT INTO book VALUES(&apos;003&apos;,&apos;x88886666&apos;,&apos;计算机组成原理&apos;,&apos;叶方&apos;,23.5,20,0);</div><div class="line"></div><div class="line">INSERT INTO sbook(sbonum,sboid,sbonamenum) VALUES(&apos;sbo001&apos;,&apos;001&apos;,&apos;A241&apos;);</div><div class="line">INSERT INTO sbook(sbonum,sboid,sbonamenum) VALUES(&apos;sbo002&apos;,&apos;002&apos;,&apos;A237&apos;);</div><div class="line">INSERT INTO sbook(sbonum,sboid,sbonamenum) VALUES(&apos;sbo003&apos;,&apos;002&apos;,&apos;A238&apos;);</div><div class="line">INSERT INTO sbook(sbonum,sboid,sbonamenum) VALUES(&apos;sbo004&apos;,&apos;003&apos;,&apos;A239&apos;);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="24-创建一个视图（名字自拟），视图数据为借阅记录信息-借书记录号-借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）-借阅天数-超期天数"><a href="#24-创建一个视图（名字自拟），视图数据为借阅记录信息-借书记录号-借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）-借阅天数-超期天数" class="headerlink" title="24.创建一个视图（名字自拟），视图数据为借阅记录信息(借书记录号,借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）,借阅天数,超期天数)"></a>24.创建一个视图（名字自拟），视图数据为借阅记录信息(借书记录号,借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）,借阅天数,超期天数)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create view view_238_7 as</div><div class="line">(select a.sbonum as 借书记录号,a.sboid as 图书ID,b.boname as 图书名称,c.stname as 借阅读者姓名,to_char(a.sboloantime,&apos;yyyy-mm-dd&apos;)</div><div class="line">as 借书日期,to_char(a.sbolasttime,&apos;yyyy-mm-dd&apos;)as 应该归还日期</div><div class="line">from sbook a left join book b on a.sboid=b.boid left join student c on a.sbonamenum=c.stnum);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="25-创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）"><a href="#25-创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）" class="headerlink" title="25.创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）"></a>25.创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create view view_238_8 as</div><div class="line">(select a.boid as 图书编号,a.boname as 图书名称,a.boisbn as 出版社,a.boamount as 在馆数 from book a left join sbook b</div><div class="line">on a.boid=b.sboid where a.boid =(select sbonum from sbook where a.boid=sbonum)</div><div class="line">);</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/23/Linux_基础操作命令/" rel="next" title="Linux_基础操作命令">
+                <i class="fa fa-chevron-left"></i> Linux_基础操作命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/24/Oracle_错误记录/" rel="prev" title="Oracle_错误记录">
+                Oracle_错误记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan.png"
+               alt="liushuwei" />
+          <p class="site-author-name" itemprop="name">liushuwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="526097449" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在用户表中添加以学号为中心的前后共5个同学的信息；"><span class="nav-number">1.</span> <span class="nav-text">1.在用户表中添加以学号为中心的前后共5个同学的信息；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号"><span class="nav-number">2.</span> <span class="nav-text">2.用批量添加数据的方法为每一个用户创建一个订单，其中订单号采用序列的产生流水号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-为每个用户的订单增加3个以上的商品明细记录"><span class="nav-number">3.</span> <span class="nav-text">3.为每个用户的订单增加3个以上的商品明细记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-查询显示商品信息，要求显示商品编号、商品名称、商品单价。"><span class="nav-number">4.</span> <span class="nav-text">4.查询显示商品信息，要求显示商品编号、商品名称、商品单价。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-查询显示商品单价在10和100之间的商品信息。"><span class="nav-number">5.</span> <span class="nav-text">5.  查询显示商品单价在10和100之间的商品信息。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-查询显示商品库存超过最高库存或低于最低库存的商品信息"><span class="nav-number">6.</span> <span class="nav-text">6.  查询显示商品库存超过最高库存或低于最低库存的商品信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-查询没有电话号码的供应商信息。"><span class="nav-number">7.</span> <span class="nav-text">7.  查询没有电话号码的供应商信息。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-查询供应商中联系人姓李的信息。"><span class="nav-number">8.</span> <span class="nav-text">8.    查询供应商中联系人姓李的信息。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。"><span class="nav-number">9.</span> <span class="nav-text">9.查询显示商品信息，要求显示商品ID、商品名称、单价（取整），折扣（保留1位小数位），库存（取整）。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-查询当月过生日的用户信息"><span class="nav-number">10.</span> <span class="nav-text">10. 查询当月过生日的用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。"><span class="nav-number">11.</span> <span class="nav-text">11.  查询XXXX年XX月订单总金额在200块以上的用户的订单次数和订单总金额。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。"><span class="nav-number">12.</span> <span class="nav-text">11.  查询显示有折扣的商品信息，要求显示商品名称、商品类型名、商品单价、折扣、库存。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-查询商品领带共采购了多少？"><span class="nav-number">13.</span> <span class="nav-text">12.  查询商品领带共采购了多少？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。"><span class="nav-number">14.</span> <span class="nav-text">13.查询显示采购单信息，要求显示采购单号、采购日期、供应商名称、总金额、状态（1显示待审核，2显示已审核）。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-查找年龄最小的用户信息。"><span class="nav-number">15.</span> <span class="nav-text">14.  查找年龄最小的用户信息。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-查询显示在当月有采购来往的供应商信息。"><span class="nav-number">16.</span> <span class="nav-text">15.查询显示在当月有采购来往的供应商信息。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-将17中的查询定义为一个视图，并针对该视图查询一下信息"><span class="nav-number">17.</span> <span class="nav-text">18.将17中的查询定义为一个视图，并针对该视图查询一下信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-系统中有几个商品信息数据维护人员-是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图"><span class="nav-number">18.</span> <span class="nav-text">19. 系统中有几个商品信息数据维护人员 是根据商品类型分工的，其中一个维护人员Jane是维护童装精品的商品信息的，请为Jane创建一个视图  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-SQL脚本-删除-创建，插入"><span class="nav-number">19.</span> <span class="nav-text">20.SQL脚本(删除,创建，插入)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-根据需求建表"><span class="nav-number">20.</span> <span class="nav-text">21.根据需求建表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师-可借图书为5本-、学生-可借图书为3本-、社会人员-可借图书为1本-。"><span class="nav-number">21.</span> <span class="nav-text">22.在读者表中增加读者等级列，列名为使用查询的账户名，字符串长度为1，等级可选为：教师(可借图书为5本)、学生(可借图书为3本)、社会人员(可借图书为1本)。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。"><span class="nav-number">22.</span> <span class="nav-text">23.请在读者表中添加以你的账户名前后最近的至少3个以上不同的读者数据，图书表中添加3本以上你本学期使用的教材图书信息，在借书记录中为你的每个读者添加至少一条借书记录。 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-创建一个视图（名字自拟），视图数据为借阅记录信息-借书记录号-借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）-借阅天数-超期天数"><span class="nav-number">23.</span> <span class="nav-text">24.创建一个视图（名字自拟），视图数据为借阅记录信息(借书记录号,借阅读者姓名，图书名称，应该归还日期，实际归还日期（yyyy-mm-dd）,借阅天数,超期天数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）"><span class="nav-number">24.</span> <span class="nav-text">25.创建一个视图（名字自拟），视图为图书信息（图书编号，图书名称，出版社，在馆数（库存数减去已借出未归还的图书数）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	高调做事,低调做人
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

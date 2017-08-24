@@ -1,0 +1,816 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SQLServer," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1.SQL Server 2008登录错误:无法连接到(local)解决方法 又键单击“我的电脑（windows XP）”或“计算机（Windows 7或8或者10）”查看本机的计算机名。  打开“SQL Server 2008”， 服务器类型选择：数据库引擎。 服务器名称写上：计算机名\安装SQL Server时自己创建的实例名。 身份验证选择：SQL Server 身份验证。   举例:服务器">
+<meta name="keywords" content="SQLServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLServer_登录问题">
+<meta property="og:url" content="http://suvan-l.github.io/2016/06/02/SQLServer_错误记录/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="1.SQL Server 2008登录错误:无法连接到(local)解决方法 又键单击“我的电脑（windows XP）”或“计算机（Windows 7或8或者10）”查看本机的计算机名。  打开“SQL Server 2008”， 服务器类型选择：数据库引擎。 服务器名称写上：计算机名\安装SQL Server时自己创建的实例名。 身份验证选择：SQL Server 身份验证。   举例:服务器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-18T01:05:23.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQLServer_登录问题">
+<meta name="twitter:description" content="1.SQL Server 2008登录错误:无法连接到(local)解决方法 又键单击“我的电脑（windows XP）”或“计算机（Windows 7或8或者10）”查看本机的计算机名。  打开“SQL Server 2008”， 服务器类型选择：数据库引擎。 服务器名称写上：计算机名\安装SQL Server时自己创建的实例名。 身份验证选择：SQL Server 身份验证。   举例:服务器">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2016/06/02/SQLServer_错误记录/"/>
+
+
+
+
+
+  <title>SQLServer_登录问题 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Bolgs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/06/02/SQLServer_错误记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQLServer_登录问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T23:37:43+08:00">
+                2016-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQLServer/" itemprop="url" rel="index">
+                    <span itemprop="name">SQLServer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  446
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-SQL-Server-2008登录错误-无法连接到-local-解决方法"><a href="#1-SQL-Server-2008登录错误-无法连接到-local-解决方法" class="headerlink" title="1.SQL Server 2008登录错误:无法连接到(local)解决方法"></a>1.SQL Server 2008登录错误:无法连接到(local)解决方法</h2><ol>
+<li><p>又键单击“我的电脑（windows XP）”或“计算机（Windows 7或8或者10）”查看本机的计算机名。</p>
+</li>
+<li><p>打开“SQL Server 2008”，<br> 服务器类型选择：数据库引擎。<br> 服务器名称写上：计算机名\安装SQL Server时自己创建的实例名。<br> 身份验证选择：SQL Server 身份验证。</p>
+</li>
+</ol>
+<p>举例:<br><code>服务器名称写上:Liu\SQLEXPRESS</code></p>
+<hr>
+<h2 id="2-导入文件"><a href="#2-导入文件" class="headerlink" title="2.导入文件"></a>2.导入文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">1. 开启系统服务</div><div class="line">	SQL Server(MSSQLSERVER)是必须要开启的，这个是数据库引擎服务，就像汽车的发动机一样</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">2. 打开管理工具</div><div class="line">	SQL Server Management Studio</div><div class="line"></div><div class="line"></div><div class="line">3. 向SQL Server 2008中导入.bak的文件</div><div class="line">新建一个空数据库</div><div class="line">	右键 -&gt;	任务 -&gt; 还原 -&gt; 数据库</div><div class="line">		选择“源设备”  -&gt; 点击选择</div><div class="line">			选择“文件”，点击添加 -&gt; 找到你的bak，点击确定</div><div class="line">				回到前一个页面 -&gt; 点击选项，勾选“覆盖现有数据库”</div><div class="line">					ok</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">3-2 SQL server 2008导入2005的.bak文文件</div><div class="line">正常方法：</div><div class="line">	2005可以还原到2008；但2008不能还原到2005, 你只能装2008了</div><div class="line">	另外如果你的2008的数据库里面东西很少, 比如只有几张数据表并且里面没有数据, 可以考虑生成SQL脚本, 然后在2005上新建库重新跑一下脚本, 如果东西很多并且有数据就不行了</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">特殊导入方法【成功】：</div><div class="line">在数据库目录中</div><div class="line">	新建一个与.bat文件相同的数据库名，然后删除掉，</div><div class="line">		然后右键数据库	-&gt;	还原数据库</div><div class="line">			在目标数据库，中找到刚删除的数据库(如果没有，则手动输入)</div><div class="line">				然后点击源设备，文件 -&gt;	添加	-&gt;	数据库名.bat</div><div class="line">					点击确定	-&gt;	打勾，确定	-&gt;	成功</div></pre></td></tr></table></figure>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SQLServer/" rel="tag"># SQLServer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/02/Oracle_知识体系/" rel="next" title="Oracle_知识体系">
+                <i class="fa fa-chevron-left"></i> Oracle_知识体系
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/04/PLSQL_习题【过程,函数,触发器,程序包】/" rel="prev" title="PLSQL_习题【过程,函数,触发器,程序包】">
+                PLSQL_习题【过程,函数,触发器,程序包】 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan.png"
+               alt="liushuwei" />
+          <p class="site-author-name" itemprop="name">liushuwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="526097449" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SQL-Server-2008登录错误-无法连接到-local-解决方法"><span class="nav-number">1.</span> <span class="nav-text">1.SQL Server 2008登录错误:无法连接到(local)解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-导入文件"><span class="nav-number">2.</span> <span class="nav-text">2.导入文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	高调做事,低调做人
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

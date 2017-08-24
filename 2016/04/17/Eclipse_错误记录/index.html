@@ -1,0 +1,850 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Eclipse," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="一.目录 Eclipse报错：由于对必须的库具有一定限制无法访问类型 无法导入项目 编译器版本与JRE版本不一致 每次jdbc连接数据库都出现红色警告信息 启动eclise，进入主界面，马上弹窗界面就报错 启动eclipse,进入某工作站时报错    二.错误1.Eclipse报错：由于对必须的库具有一定限制无法访问类型1234567891011&amp;lt;1&amp;gt;原因：	对于必须的库org.ecl">
+<meta name="keywords" content="Eclipse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse_错误记录">
+<meta property="og:url" content="http://suvan-l.github.io/2016/04/17/Eclipse_错误记录/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="一.目录 Eclipse报错：由于对必须的库具有一定限制无法访问类型 无法导入项目 编译器版本与JRE版本不一致 每次jdbc连接数据库都出现红色警告信息 启动eclise，进入主界面，马上弹窗界面就报错 启动eclipse,进入某工作站时报错    二.错误1.Eclipse报错：由于对必须的库具有一定限制无法访问类型1234567891011&amp;lt;1&amp;gt;原因：	对于必须的库org.ecl">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-03-20T05:35:10.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eclipse_错误记录">
+<meta name="twitter:description" content="一.目录 Eclipse报错：由于对必须的库具有一定限制无法访问类型 无法导入项目 编译器版本与JRE版本不一致 每次jdbc连接数据库都出现红色警告信息 启动eclise，进入主界面，马上弹窗界面就报错 启动eclipse,进入某工作站时报错    二.错误1.Eclipse报错：由于对必须的库具有一定限制无法访问类型1234567891011&amp;lt;1&amp;gt;原因：	对于必须的库org.ecl">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2016/04/17/Eclipse_错误记录/"/>
+
+
+
+
+
+  <title>Eclipse_错误记录 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Bolgs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/04/17/Eclipse_错误记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Eclipse_错误记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-17T15:04:41+08:00">
+                2016-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Eclipse/" itemprop="url" rel="index">
+                    <span itemprop="name">Eclipse</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  943
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><ol>
+<li>Eclipse报错：由于对必须的库具有一定限制无法访问类型</li>
+<li>无法导入项目</li>
+<li>编译器版本与JRE版本不一致</li>
+<li>每次jdbc连接数据库都出现红色警告信息</li>
+<li>启动eclise，进入主界面，马上弹窗界面就报错</li>
+<li>启动eclipse,进入某工作站时报错</li>
+</ol>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-错误"><a href="#二-错误" class="headerlink" title="二.错误"></a>二.错误</h1><h2 id="1-Eclipse报错：由于对必须的库具有一定限制无法访问类型"><a href="#1-Eclipse报错：由于对必须的库具有一定限制无法访问类型" class="headerlink" title="1.Eclipse报错：由于对必须的库具有一定限制无法访问类型"></a>1.Eclipse报错：由于对必须的库具有一定限制无法访问类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;原因：</div><div class="line">	对于必须的库org.eclipse.swt.win32.win32.x86_3.7.0.v3735b.jar具有一定的限制。</div><div class="line"></div><div class="line"></div><div class="line">&lt;2&gt;解决办法</div><div class="line">eclipse中 -&gt;	右键项目</div><div class="line">	属性</div><div class="line">			构建路径</div><div class="line">				双击 JRE系统库[.....]</div><div class="line">					1.将Execution environment(执行环境)中更改为上一个版本兼容即可</div><div class="line">					2.直接改为工作空间缺省即可</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="2-无法导入项目"><a href="#2-无法导入项目" class="headerlink" title="2.无法导入项目"></a>2.无法导入项目</h2><p>　　有时候我们导入现有的工程时会出现错误，没有继续下一步的那个按钮，错误提示如下：<br><code>some projects were hidden because they exist in the workspace directory。</code><br>eclipse 导入项目是提示：某些项目因位于工作空间目录中而被隐藏。</p>
+<p>　　导致这个错误的原因是工程重名了！<br>并不是仅仅指文件夹重名，相信很多人也曾经修改过文件夹的名称，可惜没什么用处，关键是修改工程里面的一个文件！也就是.project这个文件！</p>
+<p>　　用记事本打开，修改一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;projectDescription&gt;</div><div class="line">	&lt;name&gt;projectname&lt;/name&gt;</div><div class="line">中的projectname就行了。</div></pre></td></tr></table></figure></p>
+<p>　　再次导入的话，就OK了。</p>
+<hr>
+<p><br><br></p>
+<h2 id="3-编译器版本与JRE版本不一致"><a href="#3-编译器版本与JRE版本不一致" class="headerlink" title="3.编译器版本与JRE版本不一致"></a>3.编译器版本与JRE版本不一致</h2><p>1.报错信息:</p>
+<ul>
+<li>弹窗报错<code>Could not find the main class:test.program will exit</code></li>
+<li>控制台报错<code>java.lang.UnsupportedClassVersionError: Test : Unsupported major.minor version 52.0</code></li>
+</ul>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>&emsp;查看编译器版本和JRE版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">右键点击项目-----&gt;Preference-----&gt;Java -----&gt;Compiler:Compiler compliance level 【编译器版本】</div><div class="line">右键点击项目-----&gt;Build Path-----&gt;Configure Build Path-----&gt;Libraries:JRE system library【JRE版本】</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
+<h2 id="4-每次jdbc连接数据库都出现红色警告信息"><a href="#4-每次jdbc连接数据库都出现红色警告信息" class="headerlink" title="4.每次jdbc连接数据库都出现红色警告信息"></a>4.每次jdbc连接数据库都出现红色警告信息</h2><p>能正常运行，但是eclipse控制台每次连接都会弹出红色提示<br><code>Sat Dec 03 15:21:36 CST 2016 WARN: Establishing SSL connection without server&#39;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&#39;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &#39;false&#39;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.</code></p>
+<p><br><br><br></p>
+<p>搜了下度娘，<br>原因：这警告不是错误,以后使用是不影响的。大概的意思就是说建立ssl连接，但是服务器没有身份认证，这种方式不推荐使用。</p>
+<p><br><br><br></p>
+<p>解决办法：【在连接后面加上&amp;useSSL=false】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//方法1: 连接database数据库</div><div class="line">        public void connDatabase(String database)  throws SQLException,ClassNotFoundException&#123; //参数：数据库名称</div><div class="line">             Class.forName(drive);</div><div class="line">             conn=DriverManager.getConnection(link+database+&quot;?characterEncoding=UTF-8&amp;useSSL=false&quot;,username,password); </div><div class="line">             st=conn.createStatement();</div><div class="line">//           System.out.println(&quot;数据库连接成功......&quot;);</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
+<h2 id="5-启动eclise，进入主界面，马上弹窗界面就报错"><a href="#5-启动eclise，进入主界面，马上弹窗界面就报错" class="headerlink" title="5.启动eclise，进入主界面，马上弹窗界面就报错"></a>5.启动eclise，进入主界面，马上弹窗界面就报错</h2><p>报错信息<br>&emsp;<code>An error has occurred.see error log for more details eclipse</code></p>
+<p>原因：<br>&emsp;某功能出现问题【可能是缓存或者日志文件那里】</p>
+<p>解决办法：<br>1.进入Ctrl+R,进入DOS界面，进入eclipse的安装目录【eclipse/eclipse.exe当前目录】，输入<code>eclipse -clean</code>,重启eclipse即可<br>2.删除configuration文件夹里除config.ini以外的所有文件，重启eclipse</p>
+<hr>
+<p><br><br></p>
+<h2 id="6-启动eclipse-进入某工作站时报错"><a href="#6-启动eclipse-进入某工作站时报错" class="headerlink" title="6..启动eclipse,进入某工作站时报错"></a>6..启动eclipse,进入某工作站时报错</h2><p>报错信息<br>&emsp;<code>Workspace in use or cannot be created, choose a different one</code></p>
+<p>出现原因：<br>&emsp;工作站中配置文件出现出现了.lock文件（workspace/.metadata/.lock），锁定了workspace。</p>
+<p>解决办法:<br>&emsp;把.lock文件删除即可【正常情况，如果已经打开某工作站，再重复启动eclipse进入该工作站时，会报此错】</p>
+<hr>
+<p><br><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Eclipse/" rel="tag"># Eclipse</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/17/Sublime Text 3_错误记录/" rel="next" title="Sublime Text 3_错误记录">
+                <i class="fa fa-chevron-left"></i> Sublime Text 3_错误记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/17/Windows_错误记录/" rel="prev" title="Windows_错误记录">
+                Windows_错误记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan.png"
+               alt="liushuwei" />
+          <p class="site-author-name" itemprop="name">liushuwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="526097449" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-目录"><span class="nav-number">1.</span> <span class="nav-text">一.目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-错误"><span class="nav-number">2.</span> <span class="nav-text">二.错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Eclipse报错：由于对必须的库具有一定限制无法访问类型"><span class="nav-number">2.1.</span> <span class="nav-text">1.Eclipse报错：由于对必须的库具有一定限制无法访问类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-无法导入项目"><span class="nav-number">2.2.</span> <span class="nav-text">2.无法导入项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-编译器版本与JRE版本不一致"><span class="nav-number">2.3.</span> <span class="nav-text">3.编译器版本与JRE版本不一致</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.3.1.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-每次jdbc连接数据库都出现红色警告信息"><span class="nav-number">2.4.</span> <span class="nav-text">4.每次jdbc连接数据库都出现红色警告信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-启动eclise，进入主界面，马上弹窗界面就报错"><span class="nav-number">2.5.</span> <span class="nav-text">5.启动eclise，进入主界面，马上弹窗界面就报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-启动eclipse-进入某工作站时报错"><span class="nav-number">2.6.</span> <span class="nav-text">6..启动eclipse,进入某工作站时报错</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	高调做事,低调做人
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

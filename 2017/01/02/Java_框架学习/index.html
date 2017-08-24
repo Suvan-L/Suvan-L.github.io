@@ -1,0 +1,831 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言&amp;emsp;SSM框架【Spring + SpringMVC + Mybatis】 资料：  SpringMVC学习笔记 手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis    目录：一.SpringMVC二.MyBatis三.Spring   一.SpringMVC次目录1.配置文件2.注解 1.配置文件 web.xml[web项目配置文件] spri">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java_框架框架学习">
+<meta property="og:url" content="http://suvan-l.github.io/2017/01/02/Java_框架学习/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="前言&amp;emsp;SSM框架【Spring + SpringMVC + Mybatis】 资料：  SpringMVC学习笔记 手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis    目录：一.SpringMVC二.MyBatis三.Spring   一.SpringMVC次目录1.配置文件2.注解 1.配置文件 web.xml[web项目配置文件] spri">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-23T11:41:07.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java_框架框架学习">
+<meta name="twitter:description" content="前言&amp;emsp;SSM框架【Spring + SpringMVC + Mybatis】 资料：  SpringMVC学习笔记 手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis    目录：一.SpringMVC二.MyBatis三.Spring   一.SpringMVC次目录1.配置文件2.注解 1.配置文件 web.xml[web项目配置文件] spri">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2017/01/02/Java_框架学习/"/>
+
+
+
+
+
+  <title>Java_框架框架学习 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Bolgs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2017/01/02/Java_框架学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java_框架框架学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-02T10:05:25+08:00">
+                2017-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  493
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;SSM框架【Spring + SpringMVC + Mybatis】</p>
+<p>资料：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/sunniest/p/4555801.html" target="_blank" rel="external">SpringMVC学习笔记</a></li>
+<li><a href="http://blog.csdn.net/qq598535550/article/details/51703190" target="_blank" rel="external">手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis </a></li>
+</ul>
+<p><br></p>
+<p>目录：<br>一.SpringMVC<br>二.MyBatis<br>三.Spring</p>
+<hr>
+<p><br><br><br></p>
+<h1 id="一-SpringMVC"><a href="#一-SpringMVC" class="headerlink" title="一.SpringMVC"></a>一.SpringMVC</h1><p>次目录<br>1.配置文件<br>2.注解<br><br></p>
+<h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h2><ol>
+<li>web.xml[web项目配置文件]</li>
+<li>spring-mvc.xml[SpringMVC项目MVC配置文件]</li>
+<li>pom.xml[Maven项目依赖包配置文件]</li>
+</ol>
+<hr>
+<p><br><br></p>
+<h2 id="2-注解"><a href="#2-注解" class="headerlink" title="2.注解"></a>2.注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">Controller</div><div class="line">	@Controller			[控制器]</div><div class="line"></div><div class="line">	@RequestMapping(	[请求映射]</div><div class="line">				value,		(路径【配置spring-mvc.xml配置的视图解析器的前后缀】)</div><div class="line">				method,		(请求方式)</div><div class="line">				consumes,   (仅处理哪些Content-Type的提交)</div><div class="line">				produces,	(指明返回的内容类型【类型必须在request中Accept头中包含】【使用@ResponseBody返回String时乱码，可以添加该属性produces=&quot;text/html;charset=UTF-8】)</div><div class="line">				params,		(指明request中必须包含某些参数值【还可加上值的value】)</div><div class="line">				headers,	(指定request中必须包含某些指定的hearder值)</div><div class="line">				Path</div><div class="line">				)</div><div class="line"></div><div class="line">	@RequestParam(	[request参数赋值【赋给方法形参】]</div><div class="line">			value,			(参数名)</div><div class="line">			defaultValue	(默认值)</div><div class="line">		)</div><div class="line"></div><div class="line">	@PathVariable(	[获取URL中的变量【用于RESTFul风格】【在@RequestMapping中的模版变量&#123;..&#125;绑定到同名参数】</div><div class="line">			value    		(参数名)</div><div class="line">			)</div><div class="line">	@RequestHeader	[获取HTTP头的信息]</div><div class="line">	@CookieValue	[获取请求的Cookie数据]</div><div class="line"></div><div class="line">	@SessionAttributes [将Model中的属性存放到HttpSession中【声明类】]</div><div class="line">	@ModelAttribute</div><div class="line">		 &lt;1&gt;ModelAttribute(value=&quot;&quot;)注释返回具体类</div><div class="line">		 &lt;2&gt;@ModelAttribute注释void返回值的方法</div><div class="line">		 &lt;3&gt;@ModelAttribute注释自定义类返回值的方法</div><div class="line"></div><div class="line"></div><div class="line">	@RequestBody 	 </div><div class="line">	@ResponseBody	 [返回对象]</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
+<h1 id="二-MyBatis"><a href="#二-MyBatis" class="headerlink" title="二.MyBatis"></a>二.MyBatis</h1><p>次目录：<br>1.映射语句<br><br></p>
+<h2 id="1-映射语句"><a href="#1-映射语句" class="headerlink" title="1.映射语句"></a>1.映射语句</h2><p>用于映射文件里[.xml]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">标签</div><div class="line">	insert</div><div class="line">	delete</div><div class="line">	select</div><div class="line">	update</div><div class="line"></div><div class="line">	sql			[可被其他语句引用的可重用语句块]</div><div class="line">	cache		[给定命名控件的缓存空间]</div><div class="line">	cache-ref	[其他命名控件缓存配置的引用]</div><div class="line">	resultMap	[描述如何从数据库结果集加载对象]</div><div class="line"></div><div class="line">动态SQL</div><div class="line">	if 			[加入判断语句]</div><div class="line">		&lt;if test=&quot;条件&quot;&gt;...&lt;/if&gt;</div><div class="line">	choose		[选择语句(选其一)]</div><div class="line">		&lt;choose&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">		&lt;/choose&gt;</div><div class="line">	where</div><div class="line">	set 		[用于update更新操作]</div><div class="line">		&lt;set&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">		&lt;/set&gt;</div><div class="line">	foreach</div><div class="line">	bind</div></pre></td></tr></table></figure></p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
+<h1 id="三-Spring"><a href="#三-Spring" class="headerlink" title="三.Spring"></a>三.Spring</h1><hr>
+<p><br><br><br><br><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/29/Life_2016年总结/" rel="next" title="2016年总结">
+                <i class="fa fa-chevron-left"></i> 2016年总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/09/MyProject_BatchCreate_file【自动生成】/" rel="prev" title="BatchCreate_file【自动生成】">
+                BatchCreate_file【自动生成】 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan.png"
+               alt="liushuwei" />
+          <p class="site-author-name" itemprop="name">liushuwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="526097449" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-SpringMVC"><span class="nav-number">2.</span> <span class="nav-text">一.SpringMVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">1.配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-注解"><span class="nav-number">2.2.</span> <span class="nav-text">2.注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-MyBatis"><span class="nav-number">3.</span> <span class="nav-text">二.MyBatis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-映射语句"><span class="nav-number">3.1.</span> <span class="nav-text">1.映射语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-Spring"><span class="nav-number">4.</span> <span class="nav-text">三.Spring</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	高调做事,低调做人
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
