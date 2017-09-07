@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Suvan">
 <meta property="og:description" content="目录:一.语法整理1.概述(基本语法与规范)2.变量3.运算符4.循环和判断5.数组6.函数(方法)7.异常处理8.面向对象【继承,多态,抽象,封装和接口】9.Java的数据结构【集合框架】10.泛型与对象序列化11.静态关键字static12.内部类13.多线程基础14.Java网络编程(Socket编程)15.IO体系构图16.解析Java注解17.JVM虚拟机【管理内存分区】18.了解Jav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T03:31:48.219Z">
+<meta property="og:updated_time" content="2017-09-07T04:34:20.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java_知识体系">
 <meta name="twitter:description" content="目录:一.语法整理1.概述(基本语法与规范)2.变量3.运算符4.循环和判断5.数组6.函数(方法)7.异常处理8.面向对象【继承,多态,抽象,封装和接口】9.Java的数据结构【集合框架】10.泛型与对象序列化11.静态关键字static12.内部类13.多线程基础14.Java网络编程(Socket编程)15.IO体系构图16.解析Java注解17.JVM虚拟机【管理内存分区】18.了解Jav">
@@ -332,7 +332,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  55,685
+                  55,824
                 </span>
               
 
@@ -1409,7 +1409,8 @@
 <ul>
 <li>【特点】栈可以是顺序存储,也可以是链式存储,与存储结构无关</li>
 <li>【深度 or 广度】深度优先遍历用“栈”,广度优先遍历用”队列”</li>
-<li>【栈】是数据结构,先进后出(常用于函数调用.例如main中调用各种方法,java虚拟机栈帧),栈是解决封闭对应问题的有效方法,<br><br></li>
+<li>【栈】是数据结构,先进后出(常用于函数调用.例如main中调用各种方法,java虚拟机栈帧),栈是解决封闭对应问题的有效方法,</li>
+<li>【遍历】”后序线索树”的遍历仍然需要栈的支持(因为在前序和中序遍历最后访问的都是左or右节点,后序遍历最后访问的是子树的根节点,子树根节点的两个指针域都指向子树了,所以不能空出来存放线索信息,只能借助栈存储)<br><br></li>
 </ul>
 <p>队列</p>
 <ul>
@@ -1702,7 +1703,7 @@
 <li>加载驱动程序</li>
 <li>数据库连接</li>
 <li>Statement对象</li>
-<li>PreparedStatement对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;加载驱动程序【须在项目中先Build指定数据库的驱动jar包】</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//MySQL</div><div class="line">	Class.forName(&quot;roacle.jdbc.driver.OracleDriver&quot;);//Oracle</div><div class="line"></div><div class="line">&lt;2&gt;数据库连接</div><div class="line">	Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/my_blog&quot;,&quot;root&quot;,&quot;123&quot;);   </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;Statement对象【直接执行】</div><div class="line">         Statement st=conn.createStatement();</div><div class="line">         ResultSet rs = st.executeUpdate(&quot;select * from user&quot;);</div><div class="line"></div><div class="line">         while(rs.next())&#123;</div><div class="line">         	String name = rs.getString(&quot;user_name&quot;);//用户名</div><div class="line">         &#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;PreparedStatement对象【预编译】</div><div class="line">		 String sql = &quot;insert into user(user_name,user_age) values(?,?)&quot;;</div><div class="line">         PreparedStatement pst = conn.prepareStatement(sql);</div><div class="line">         pst.setString(1,&quot;用户名&quot;);</div><div class="line">         pst.setString(2,&quot;22岁&quot;)</div><div class="line">         pst.execute();</div><div class="line">         //Result rs = pst.executeQuery(); //查询语句,有返回结果集</div></pre></td></tr></table></figure>
+<li>PreparedStatement对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;加载驱动程序【须在项目中先Build指定数据库的驱动jar包】</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//MySQL</div><div class="line">	Class.forName(&quot;roacle.jdbc.driver.OracleDriver&quot;);//Oracle</div><div class="line"></div><div class="line">&lt;2&gt;数据库连接</div><div class="line">	Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/my_blog&quot;,&quot;root&quot;,&quot;123&quot;);   </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;Statement对象【直接执行】</div><div class="line">         Statement st=conn.createStatement();</div><div class="line">         ResultSet rs = st.executeUpdate(&quot;select * from user&quot;);</div><div class="line"></div><div class="line">         while(rs.next())&#123;</div><div class="line">         	String name = rs.getString(&quot;user_name&quot;);//用户名</div><div class="line">         &#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;PreparedStatement对象【预编译】</div><div class="line">		 String sql = &quot;insert into user(user_name,user_age) values(?,?)&quot;;</div><div class="line">         PreparedStatement pst = conn.prepareStatement(sql);</div><div class="line">         pst.setString(1,&quot;用户名&quot;);</div><div class="line">         pst.setString(2,&quot;22岁&quot;)</div><div class="line">         pst.execute();</div><div class="line">         //Result rs = pst.executeQuery(); //查询语句,有返回结果集</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">扩展：</div><div class="line">    drop table book   删除整个book表</div><div class="line">    truncate table book 删除表中的数据(删除速度比delete更快,无法撤回)</div><div class="line">    delete from book 删除表中数据(可以回退)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><br></p>
@@ -2857,8 +2858,8 @@ fn:trim()                  //首尾去空格
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/11/Redis_入门/" rel="prev" title="Redis_入门">
-                Redis_入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/11/OCR技术_Tesseract的基本运用/" rel="prev" title="OCR技术_tesseract图片文字识别">
+                OCR技术_tesseract图片文字识别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -2953,7 +2954,7 @@ fn:trim()                  //首尾去空格
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

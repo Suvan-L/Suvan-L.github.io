@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://suvan-l.github.io/"/>
-  <updated>2017-09-05T05:42:47.047Z</updated>
+  <updated>2017-09-07T05:58:22.857Z</updated>
   <id>http://suvan-l.github.io/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>liushuwei</title>
+    <link href="http://suvan-l.github.io/2017/09/07/Life_%E7%AE%80%E5%8E%86/"/>
+    <id>http://suvan-l.github.io/2017/09/07/Life_简历/</id>
+    <published>2017-09-07T05:32:28.000Z</published>
+    <updated>2017-09-07T05:58:22.857Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="个人基本信息"><a href="#个人基本信息" class="headerlink" title="个人基本信息"></a>个人基本信息</h6><ul>
+<li>姓名：刘淑玮</li>
+<li>性别： 男</li>
+<li>学历：本科(2018应届毕业生)</li>
+<li>专业：软件工程</li>
+<li>院校：广东东软学院</li>
+<li>邮箱:   13202405189</li>
+<li>Github: <a href="https://github.com/Suvan-L" target="_blank" rel="external">https://github.com/Suvan-L</a></li>
+<li>个人博客:www.suvan.net.cn</li>
+</ul>
+<hr>
+<p><br><br></p>
+<p>######相关能力</p>
+<ol>
+<li>掌握Java语言,熟悉集合框架,网络socket,多线程编程</li>
+<li>熟悉基本数据结构与算法设计</li>
+<li>熟练使用servlet/jsp/Spring/Mybatis</li>
+<li>熟悉MySQL数据库,Linux基本操作</li>
+<li>了解Web前端知识html/css/js/ajax,jQuery,BootStrap</li>
+</ol>
+<hr>
+<p><br><br></p>
+<p>######工作经历</p>
+<ul>
+<li>广州博纳信息技术有限公司<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">软件工程师</div><div class="line">    2016.06-2016.08(公司)</div><div class="line">    2016.09- 2017.03(在校远程)</div><div class="line"></div><div class="line">    参与燕云DaaS项目,负责完成对指定地区数据目标的信息爬取;参与数据接口模版的设计与优化;根据业务需求，对数据进行筛选,持久化处理,并编写相应接口文档，线上测试,定期维护;,负责3人技术团队每日数据审查,项目进度汇总</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p><br><br></p>
+<p>######项目经验</p>
+<ul>
+<li>多媒体博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(2016.09大二小学期)</div><div class="line"></div><div class="line">负责博客的后台开发与数据库设计，基于Servlet+jsp+ajax+MySQL,无框架开发,实现博文增删查改，收藏,点赞,刷新,好友通讯,管理员模块可视化界面管理用户,用户相册, 用户注册邮箱验证,音乐与视频的上传与实时播放</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>个人博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(2017.05-至今)</div><div class="line"></div><div class="line">参考最初使用Github+Hexo搭建博客的理念,尝试自主建设个人博客，从前端界面设计,至后台功能完善,期望将至今所学以及新的技术引入其中,并不断重构与优化！</div><div class="line">        前端Bootstrap+Layui+jquery,</div><div class="line">        后台:Spring+SpringMVC+MyBatis,</div><div class="line">        项目管理Maven+Github.</div><div class="line">        数据库MySQL,</div><div class="line">        服务器Tomcat-8.0.41</div><div class="line">        云服务器    Centos 6 x86  与 Windows Server 2012 R2 数据中心版 64位中文版</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p><br><br></p>
+<p>######自我评价</p>
+<ul>
+<li>爱好足球,跑步,阅读,热爱编程</li>
+<li>对技术有热情,有良好的编程思维与编程习惯</li>
+<li>抗压能力强，不畏挑战,</li>
+<li>拥有良好的团队协作能力与快速学习能力<br>+个人理念”高调做事,低调做人”<br><br></li>
+</ul>
+<hr>
+<p><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h6 id=&quot;个人基本信息&quot;&gt;&lt;a href=&quot;#个人基本信息&quot; class=&quot;headerlink&quot; title=&quot;个人基本信息&quot;&gt;&lt;/a&gt;个人基本信息&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;姓名：刘淑玮&lt;/li&gt;
+&lt;li&gt;性别： 男&lt;/li&gt;
+&lt;li&gt;学历：本科(2018应届毕业生)&lt;
+    
+    </summary>
+    
+      <category term="Life" scheme="http://suvan-l.github.io/categories/Life/"/>
+    
+    
+      <category term="Life" scheme="http://suvan-l.github.io/tags/Life/"/>
+    
+  </entry>
   
   <entry>
     <title>Life_电影记录</title>
@@ -174,43 +249,6 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
-    <title>OCR技术_tesseract图片文字识别</title>
-    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
-    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
-    <published>2017-07-11T10:04:59.000Z</published>
-    <updated>2017-07-11T10:04:51.212Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
-<hr>
-<p><br><br><br></p>
-<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
-<ul>
-<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
-<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
-<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Redis_入门</title>
     <link href="http://suvan-l.github.io/2017/07/11/Redis_%E5%85%A5%E9%97%A8/"/>
     <id>http://suvan-l.github.io/2017/07/11/Redis_入门/</id>
@@ -345,11 +383,48 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
+    <title>OCR技术_tesseract图片文字识别</title>
+    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
+    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
+    <published>2017-07-11T10:04:59.000Z</published>
+    <updated>2017-07-11T10:04:51.212Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
+<ul>
+<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
+<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java_知识体系</title>
     <link href="http://suvan-l.github.io/2017/07/01/Java_%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
     <id>http://suvan-l.github.io/2017/07/01/Java_知识体系/</id>
     <published>2017-07-01T09:43:18.000Z</published>
-    <updated>2017-09-06T03:31:48.219Z</updated>
+    <updated>2017-09-07T04:34:20.425Z</updated>
     
     <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录:"></a>目录:</h1><p>一.语法整理<br>1.概述(基本语法与规范)<br>2.变量<br>3.运算符<br>4.循环和判断<br>5.数组<br>6.函数(方法)<br>7.异常处理<br>8.面向对象【继承,多态,抽象,封装和接口】<br>9.Java的数据结构【集合框架】<br>10.泛型与对象序列化<br>11.静态关键字static<br>12.内部类<br>13.多线程基础<br>14.Java网络编程(Socket编程)<br>15.IO体系构图<br>16.解析Java注解<br>17.JVM虚拟机【管理内存分区】<br>18.了解Java中的内存泄漏的<br>19.专业术语<br>20.程序设计<br>21.项目管理<br>22.数据结构基础<br><br></p>
 <p>二.操作整理<br>1.操作日期和时间<br>2.自定义异常<br>3.反射操作<br>4.正则表达式<br>5.操作I/O输入输出流和文件<br>6.编写定时任务<br>7.获取控制台键盘输入<br>8.文档注释【JavaDoc】<br>9.编码问题<br>10.Applet的简单介绍<br>11.发送邮件【JavaMail】<br>12.GUI开发<br>13.自动化操作【模拟键盘和鼠标】<br>14.JDBC连接数据库<br>15.遍历与控制台打印输出<br>16.XML文件读取与生成<br>17_1.Java加密与解密机制介绍<br>17_2.运用Base64算法<br>17_3.运用消息摘要算法<br>17_4.运用对称加密算法<br>17_5.运用非对称加密算法<br>17_6.运用数字签名算法<br>18_1.JSP开发<br>18_2.Servlet基础<br>18_3.过滤器<br>18_4.监听器<br>18_5.JSTL标签<br>18_6.JSP自定义标签<br>19.JSON数据处理<br>20.DWR实现服务器向客户端推送<br><br></p>
@@ -1394,7 +1469,8 @@ Category generator plugin for Hexo.
 <ul>
 <li>【特点】栈可以是顺序存储,也可以是链式存储,与存储结构无关</li>
 <li>【深度 or 广度】深度优先遍历用“栈”,广度优先遍历用”队列”</li>
-<li>【栈】是数据结构,先进后出(常用于函数调用.例如main中调用各种方法,java虚拟机栈帧),栈是解决封闭对应问题的有效方法,<br><br></li>
+<li>【栈】是数据结构,先进后出(常用于函数调用.例如main中调用各种方法,java虚拟机栈帧),栈是解决封闭对应问题的有效方法,</li>
+<li>【遍历】”后序线索树”的遍历仍然需要栈的支持(因为在前序和中序遍历最后访问的都是左or右节点,后序遍历最后访问的是子树的根节点,子树根节点的两个指针域都指向子树了,所以不能空出来存放线索信息,只能借助栈存储)<br><br></li>
 </ul>
 <p>队列</p>
 <ul>
@@ -1687,7 +1763,7 @@ Category generator plugin for Hexo.
 <li>加载驱动程序</li>
 <li>数据库连接</li>
 <li>Statement对象</li>
-<li>PreparedStatement对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;加载驱动程序【须在项目中先Build指定数据库的驱动jar包】</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//MySQL</div><div class="line">	Class.forName(&quot;roacle.jdbc.driver.OracleDriver&quot;);//Oracle</div><div class="line"></div><div class="line">&lt;2&gt;数据库连接</div><div class="line">	Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/my_blog&quot;,&quot;root&quot;,&quot;123&quot;);   </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;Statement对象【直接执行】</div><div class="line">         Statement st=conn.createStatement();</div><div class="line">         ResultSet rs = st.executeUpdate(&quot;select * from user&quot;);</div><div class="line"></div><div class="line">         while(rs.next())&#123;</div><div class="line">         	String name = rs.getString(&quot;user_name&quot;);//用户名</div><div class="line">         &#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;PreparedStatement对象【预编译】</div><div class="line">		 String sql = &quot;insert into user(user_name,user_age) values(?,?)&quot;;</div><div class="line">         PreparedStatement pst = conn.prepareStatement(sql);</div><div class="line">         pst.setString(1,&quot;用户名&quot;);</div><div class="line">         pst.setString(2,&quot;22岁&quot;)</div><div class="line">         pst.execute();</div><div class="line">         //Result rs = pst.executeQuery(); //查询语句,有返回结果集</div></pre></td></tr></table></figure>
+<li>PreparedStatement对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;加载驱动程序【须在项目中先Build指定数据库的驱动jar包】</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</div><div class="line">	Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//MySQL</div><div class="line">	Class.forName(&quot;roacle.jdbc.driver.OracleDriver&quot;);//Oracle</div><div class="line"></div><div class="line">&lt;2&gt;数据库连接</div><div class="line">	Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/my_blog&quot;,&quot;root&quot;,&quot;123&quot;);   </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;Statement对象【直接执行】</div><div class="line">         Statement st=conn.createStatement();</div><div class="line">         ResultSet rs = st.executeUpdate(&quot;select * from user&quot;);</div><div class="line"></div><div class="line">         while(rs.next())&#123;</div><div class="line">         	String name = rs.getString(&quot;user_name&quot;);//用户名</div><div class="line">         &#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;PreparedStatement对象【预编译】</div><div class="line">		 String sql = &quot;insert into user(user_name,user_age) values(?,?)&quot;;</div><div class="line">         PreparedStatement pst = conn.prepareStatement(sql);</div><div class="line">         pst.setString(1,&quot;用户名&quot;);</div><div class="line">         pst.setString(2,&quot;22岁&quot;)</div><div class="line">         pst.execute();</div><div class="line">         //Result rs = pst.executeQuery(); //查询语句,有返回结果集</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">扩展：</div><div class="line">    drop table book   删除整个book表</div><div class="line">    truncate table book 删除表中的数据(删除速度比delete更快,无法撤回)</div><div class="line">    delete from book 删除表中数据(可以回退)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><br></p>
@@ -3144,7 +3220,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/05/02/MyProject_%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://suvan-l.github.io/2017/05/02/MyProject_个人博客/</id>
     <published>2017-05-02T00:07:43.000Z</published>
-    <updated>2017-09-06T09:10:17.138Z</updated>
+    <updated>2017-09-06T09:19:06.945Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-前言："><a href="#一-前言：" class="headerlink" title="一.前言："></a>一.前言：</h1><p>&emsp;完整搭建个人博客<br><br></p>
 <p>开发环境</p>
@@ -3189,7 +3265,6 @@ fn:trim()                  //首尾去空格
 <li>【2017.5.9】熟悉BookStrap的栅格系统,导航栏样式,开发index.html(首页)导航栏</li>
 <li>【5.10】 响应式导航栏</li>
 <li>【5.11】 首页背景图</li>
-<li>【5.12】 咸鱼</li>
 <li>【5.13】 首页登录框,复习JavaScript</li>
 <li>【5.14】 复习jQuery,注册页面的HTML+CSS</li>
 <li>【5.15】 注册页面优化 + JavaScript验证[jQuery进行事件绑定]</li>
@@ -3202,44 +3277,27 @@ fn:trim()                  //首尾去空格
 <li>【5.22】idea安装JRebel插件[激活破解,实现java代码热更新],规划spring-mvc.xml文件,学习编写的controller[控制器]和interceptor[拦截器],尝试RESTFul风格的URL访问请求</li>
 <li>【5.23】SpringMVC的注解,文件上传与下载,拦截器</li>
 <li>【5.24】web.xml,spring和mybatis配置文件整理</li>
-<li>【5.25】咸鱼</li>
-<li>【5.26】咸鱼</li>
 <li>【5.27】html/index.html,页面优化，文章展示</li>
 <li>【5.28】前后端JSON数据进行交互【jQuery的ajax接收JSON数据与生成DOM元素 + SpringMVC的@Response传递JSON数据(单篇or多篇文章[查询单条 or 多条记录])】</li>
 <li>【5.29】优化register.html[注册页面]的jQuery代码的JS验证,使用JavaMail完成发送邮件验证码功能【可利用163,qq,gmail邮箱发送】</li>
 <li>【5.30】尝试使用开源的hMailServer,搭建邮箱服务器【失败,偶尔能发邮件,无法接收】</li>
 <li>【5.31】局域网和腾讯云服务器搭建hMailserver,购买域名liushuwei.cn,配置DNS，指向云服务器,设置个人邮箱suvan@liushuwei.cn,注册页面的发送邮箱验证码使用改邮箱进行发送</li>
 <li>【6.1】半个咸鱼,更新域名,博客www.liushuwei.cn,邮箱suvan@liushuwei.cn,邮件客户端使用foxmail,可实现局域网内互传(他人连我Wifi)【校园局域网无法连接到我的服务器IP,未解决】</li>
-<li>【6.2】巩固java基础,控制台键盘输出与循环打印判断</li>
-<li>【6.3】巩固基础,正则匹配,自定义异常,Vigenere密码的加密算法</li>
-<li>【6.4】巩固基础,线程,线程间的通讯【管道】，哲学家就餐问题，定时器，简单的线程池</li>
-<li>【6.5】巩固基础,io流,处理文件,读写文件</li>
 <li>【6.6】设计博客首页,规划与重写html/index.html的html和CSS</li>
 <li>【6.7】博客首页(html/index.html)的动画效果</li>
 <li>【6.8】博客文章页面的基本HTML+CSS+jQuery(标题,返回按钮,小球动画,内容区,评论区,小球动画),异步请求获取文章评论信息</li>
 <li>【6.9】文章页面的点赞反对(带有动画)阅读计数,评论功能,markdonw解析器[js的marked(未自己定义css样式)]</li>
 <li>【6.10】归档页面,index.html转为index.jsp,学习Filte过滤器拦截请求</li>
 <li>【6.11】学习JSP,熟悉EL表达式,JSTL标签,article.html转为article.jsp[重点改JS文件]研究Spring代理过滤器【失败】</li>
-<li>【6.12】咸鱼</li>
 <li>【6.13】归档页设计archiving.jsp,CSS布局,浮动,块元素理解</li>
-<li>【6.14】咸鱼</li>
 <li>【6.15】Bootstrap栅格系统重写归档页,jsp分页</li>
-<li>【6.16~6.19】咸鱼</li>
 <li>【6.20】 分类页年份列表</li>
-<li>【6.21~6.22】 咸鱼</li>
 <li>【6.23】研究爬虫webMagic,爬取金蝶行动流(<a href="https://www.xingdongliu.com/)的数据,页面JS动态生成,数据经过woff加密,使用selenium浏览器渲染爬取,仍然失败,设计ClassMastesUser[同学会统计功能],在云服务器配置JDK+MySQL+Tomcat+sftp" target="_blank" rel="external">https://www.xingdongliu.com/)的数据,页面JS动态生成,数据经过woff加密,使用selenium浏览器渲染爬取,仍然失败,设计ClassMastesUser[同学会统计功能],在云服务器配置JDK+MySQL+Tomcat+sftp</a></li>
 <li>【6.24】尝试发布到腾讯云服务器,数据表单,js验证,数据库持久化操作,邮件发送,页面无法手机浏览器兼容,不是响应式页面</li>
 <li>【6.25】尝试在本地进行路由器配置,动态域名服务 DDNS【花生壳】,端口映射</li>
 <li>【6.26】尝试frp进行内网穿透(依旧很卡)</li>
 <li>【6.27】同学会统计表单页面完成【自动播放音频,js控制暂停】,功能实现,明日尝试发布到服务器,初步了解Linux,</li>
 <li>【6.28】加入stock[股票页面],学习jsoup访问新浪提供的股票接口[应用在项目里报错,未解决]</li>
-<li>【6.29】刷面试题</li>
-<li>【6.30】去广州面试</li>
-<li>【7.1】咸鱼</li>
-<li>【7.2】咸鱼,慕课网学习二进制</li>
-<li>【7.3】咸鱼</li>
-<li>【7.4】咸鱼,慕课网IO流</li>
-<li>【7.5】咸鱼,慕课网反射</li>
 <li>【7.6】同学会统计功能,本地服务器,frp内网穿透[公网Linux服务器],createExcel,自动生成excel表工具</li>
 <li>【7.7】createExcel生成工具,实现Excel表去重(倒叙最新),总结慕课网Socket通信知识</li>
 </ul>
@@ -3315,7 +3373,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/04/27/intellijIDEA_%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/04/27/intellijIDEA_错误记录/</id>
     <published>2017-04-27T00:50:41.000Z</published>
-    <updated>2017-09-05T15:36:25.240Z</updated>
+    <updated>2017-09-07T02:34:55.140Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>参考资料：</p>
 <ul>
@@ -3329,7 +3387,7 @@ fn:trim()                  //首尾去空格
 <li>idea的代码生成器[Live Templates]</li>
 <li>自动提示方法参数[鼠标移动到方法名]</li>
 <li>配置SFTP[远程服务器用于上传文件]</li>
-<li>idea每次运行Java文件,提示Warning:java:资源值1.5已过时</li>
+<li>idea每次运行Java文件,提示Warning:java:资源值1.5已过时<br>8.idea常用快捷键</li>
 </ol>
 <hr>
 <p><br><br><br></p>
@@ -3369,8 +3427,16 @@ fn:trim()                  //首尾去空格
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;br&gt;</div><div class="line">---</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">7. idea每次运行Java文件,提示Warning:java:资源值1.5已过时</div><div class="line">-----------------------------</div></pre></td></tr></table></figure>
 <p>提示报错<br>    Warning:java:源值1.5已过时,将在未来所有发行版中删除<br>    Warning:java:目标值1.5已过时,将在未来所有发行版中删除<br>    Warning:java:要隐藏有关已过时选项的警告,请使用-Xlint:-options</p>
 <p>解决办法<br>    快捷键”Ctrl+Alt+S”打开设置，<br>       -&gt;搜索”Java Compiler”<br>       -&gt;将默认jdk和当前modual的jdk版本切换为1.8即可</p>
-<p>```</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">---</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">8.idea常用快捷键</div><div class="line">-----------------------------------------</div></pre></td></tr></table></figure>
+<p>ESC  关闭弹窗</p>
+<p>Alt + INS  新疆类or方法<br>Alt + NUM (数字键)  切换窗口</p>
+<p>shrit + F6  文件重命名<br>shift + shift 搜索框(任意文件)<br>shift + ESC 关闭窗体模块</p>
+<p>ctrl + D 复制行<br>Ctrl + E 打开最近编辑过的文件<br>Ctrl + F 文本搜索框(当前页)<br>Ctrl + H 查看类的层次<br>Ctrl + j  查看模版<br>Ctrl + N 搜索类<br>Ctrl + W 层级选中<br>Ctrl + Y 删除行</p>
+<p>Ctrl + Tab 切换标签</p>
+<p>Ctrl + F4 关闭当前页面<br>ctrl + F12 查看类的所有方法</p>
+<p>Ctrl + shift + 空格  智能补全<br>Ctrl + shift + F10  运行类</p>
+<p>ctrl+shift+A 查找所有Intellij命令</p>
+<h2 id=""><a href="#" class="headerlink" title="```"></a>```</h2><p><br><br></p>
 ]]></content>
     
     <summary type="html">
@@ -3881,63 +3947,6 @@ E:\Java\NetBeans\PM\WebApplication1\nbproject\build-impl.xml:1045: 尚未部署�
     
     
       <category term="Java" scheme="http://suvan-l.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016年总结</title>
-    <link href="http://suvan-l.github.io/2016/12/29/Life_2016%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
-    <id>http://suvan-l.github.io/2016/12/29/Life_2016年总结/</id>
-    <published>2016-12-29T10:47:16.000Z</published>
-    <updated>2016-12-29T10:47:44.034Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-学习"><a href="#1-学习" class="headerlink" title="1.学习"></a>1.学习</h2><p>&emsp;今年都了解了啥，一张图</p>
-<ol>
-<li>搭建个人博客,不定时更新博文 <a href="http://www.suvan.net.cn/" target="_blank" rel="external">http://www.suvan.net.cn/</a></li>
-<li>用java写爬虫,爬取有趣的资源</li>
-<li>自动化操作【批量生成，解析，修改文件 和 拟人操作】</li>
-<li>尝试写个人博客和论坛【前端后端实现】</li>
-</ol>
-<hr>
-<h2 id="2-生活"><a href="#2-生活" class="headerlink" title="2.生活"></a>2.生活</h2><ul>
-<li>驾照到手</li>
-<li>暑期实习47天，用代码赚到第一桶金</li>
-<li>好多小伙伴毕业了</li>
-</ul>
-<hr>
-<h2 id="3-变化"><a href="#3-变化" class="headerlink" title="3.变化"></a>3.变化</h2><ul>
-<li>眼界提高</li>
-<li>阅读理解力提高</li>
-<li>编程思维的改变</li>
-<li>解决问题的能力</li>
-<li>更加善于利用搜索引擎</li>
-<li>打字速度变快了</li>
-</ul>
-<hr>
-<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h2><p>&emsp;今天下定决心写一篇年度总结，可是一总结发现自己懂的东西还是太少，没什么拿的出手的，还有很大进步空间，越写约慌，强忍心中的眼泪….果然人会自己感动自己,以为自己很努力…….<br>&emsp;说一说今年主要的关键词吧，自学,解决问题,不拖延</p>
-<hr>
-<h2 id="5-明年展望"><a href="#5-明年展望" class="headerlink" title="5.明年展望"></a>5.明年展望</h2><ol>
-<li>完成一个大型JavaWeb项目【框架集成,研究技术深度】</li>
-<li>在LintCode网上刷170+道题</li>
-<li>读书，提高眼界</li>
-<li>注意身体，有空记得做俯卧撑​</li>
-<li>认真考虑是否去当兵</li>
-</ol>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-学习&quot;&gt;&lt;a href=&quot;#1-学习&quot; class=&quot;headerlink&quot; title=&quot;1.学习&quot;&gt;&lt;/a&gt;1.学习&lt;/h2&gt;&lt;p&gt;&amp;emsp;今年都了解了啥，一张图&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;搭建个人博客,不定时更新博文 &lt;a href=&quot;http://
-    
-    </summary>
-    
-      <category term="Life" scheme="http://suvan-l.github.io/categories/Life/"/>
-    
-    
-      <category term="Life" scheme="http://suvan-l.github.io/tags/Life/"/>
     
   </entry>
   
