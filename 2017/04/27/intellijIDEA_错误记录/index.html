@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Suvan">
 <meta property="og:description" content="一.目录参考资料：  IntelliJ IDEA 简体中文专题教程  目录：  将项目远程提交到Github 设置Tomcat热更新[静态动态网页文件] 安装JRebel插件,实现热部署[java文件] idea的代码生成器[Live Templates] 自动提示方法参数[鼠标移动到方法名] 配置SFTP[远程服务器用于上传文件] idea每次运行Java文件,提示Warning:java:资源">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-12T06:32:34.377Z">
+<meta property="og:updated_time" content="2017-09-18T03:00:46.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="intellijIDEA_错误记录">
 <meta name="twitter:description" content="一.目录参考资料：  IntelliJ IDEA 简体中文专题教程  目录：  将项目远程提交到Github 设置Tomcat热更新[静态动态网页文件] 安装JRebel插件,实现热部署[java文件] idea的代码生成器[Live Templates] 自动提示方法参数[鼠标移动到方法名] 配置SFTP[远程服务器用于上传文件] idea每次运行Java文件,提示Warning:java:资源">
@@ -332,7 +332,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,149
+                  1,459
                 </span>
               
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -378,7 +378,10 @@
 <li>idea的代码生成器[Live Templates]</li>
 <li>自动提示方法参数[鼠标移动到方法名]</li>
 <li>配置SFTP[远程服务器用于上传文件]</li>
-<li>idea每次运行Java文件,提示Warning:java:资源值1.5已过时<br>8.idea常用快捷键</li>
+<li>idea每次运行Java文件,提示Warning:java:资源值1.5已过时</li>
+<li>idea常用快捷键</li>
+<li>ideaVim插件</li>
+<li>emacsIDEAs插件</li>
 </ol>
 <hr>
 <p><br><br><br></p>
@@ -400,34 +403,47 @@
 <h2 id="4-idea的代码生成器-Live-Templates"><a href="#4-idea的代码生成器-Live-Templates" class="headerlink" title="4.idea的代码生成器[Live Templates]"></a>4.idea的代码生成器[Live Templates]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">顶部菜单 -&gt; File -&gt; Settings【快捷键打开：ctrl + ald + s】</div><div class="line">						-&gt; Editor</div><div class="line">							-&gt; Live Templates  </div><div class="line"></div><div class="line"></div><div class="line">java</div><div class="line">	sout	-&gt; 	(System.out.printl)</div><div class="line">	psvm	-&gt;  (main()-主函数)</div></pre></td></tr></table></figure>
 <hr>
 <p><br><br></p>
-<h2 id="5-自动提示方法参数-鼠标移动到方法名"><a href="#5-自动提示方法参数-鼠标移动到方法名" class="headerlink" title="5. 自动提示方法参数[鼠标移动到方法名]"></a>5. 自动提示方法参数[鼠标移动到方法名]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">ctrl + alt + s  </div><div class="line">	-&gt;Editor -&gt; General </div><div class="line"></div><div class="line">		-&gt; 右边窗:Show quick documentation on mouse move Delay</div><div class="line"></div><div class="line">``</div><div class="line"></div><div class="line"></div><div class="line">---</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">6. 配置SFTP[远程服务器用于上传文件]</div><div class="line">-----------------------</div><div class="line"></div><div class="line">流程：</div><div class="line">1. 在远程服务器(windows Server)上安装FreeSSHhd软件[FreeHd官网](http://www.freesshd.com/)</div><div class="line">2. 在idea配置sftp服务器</div><div class="line">3. 上传文件</div><div class="line">&lt;br&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>  a.根据提示一步步安装-&gt;安装完成后会弹框2个[中译:是否安装密钥 + 是否安装成系统服务]<br> b.安装后 Servert status -&gt; 开启SSH server is running[如果报错则吧系统服务关闭后，关闭软件,以系统管理员身份启动]<br> c.Authentication <pre><code>-&gt;Password authentication设置成Allow(或者 Required)
--&gt;Public key authentication 设置成 Disbled
-</code></pre> d.SSH<pre><code>-&gt;Listen address设置成 &lt;服务器ip&gt;
-</code></pre> e.SFTP<pre><code>-&gt;SFTP home path(上传根目录)
-</code></pre> f.Users<pre><code>-&gt;Add(添加用户)
-    -&gt;Login [登录名]
-     -&gt;Authroization [验证方式]
-     -&gt;User can use [权限，打勾SFTP]
-</code></pre></li>
-</ol>
+<h2 id="5-自动提示方法参数-鼠标移动到方法名"><a href="#5-自动提示方法参数-鼠标移动到方法名" class="headerlink" title="5. 自动提示方法参数[鼠标移动到方法名]"></a>5. 自动提示方法参数[鼠标移动到方法名]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctrl + alt + s  </div><div class="line">	-&gt;Editor -&gt; General </div><div class="line"></div><div class="line">		-&gt; 右边窗:Show quick documentation on mouse move Delay</div></pre></td></tr></table></figure>
 <hr>
-<p>2.idea操作<br>    Settings[快捷键:ctrl + alt + s]<br>        -&gt; Build,Execution,Deployment<br>            -&gt;Deployment<br>                -&gt;’+’号<br>                    Name [昵称(随意填写)]<br>                    Connection<br>                        <1>Type        [sftp类型]<br>                        <2>SFTP host    [服务器ip]【Test SFTP..测试是否能连接服务器】<br>                        <3>Port            [SSH端口]<br>                        <4>Root path    [根据FreeSSHhd的设置路径后的继续路径]<br>                    Mappings<br>                        <1>Deployment path on server[根路径后的部署路径]</1></4></3></2></1></p>
-<p>3.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;br&gt;</div><div class="line">---</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">7. idea每次运行Java文件,提示Warning:java:资源值1.5已过时</div><div class="line">-----------------------------</div></pre></td></tr></table></figure>
-<p>提示报错<br>    Warning:java:源值1.5已过时,将在未来所有发行版中删除<br>    Warning:java:目标值1.5已过时,将在未来所有发行版中删除<br>    Warning:java:要隐藏有关已过时选项的警告,请使用-Xlint:-options</p>
-<p>解决办法<br>    快捷键”Ctrl+Alt+S”打开设置，<br>       -&gt;搜索”Java Compiler”<br>       -&gt;将默认jdk和当前modual的jdk版本切换为1.8即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">---</div><div class="line">&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line"></div><div class="line">8.idea常用快捷键</div><div class="line">-----------------------------------------</div></pre></td></tr></table></figure>
-<p>ESC  关闭弹窗</p>
-<p>Alt + INS  新疆类or方法<br>Alt + NUM (数字键)  切换窗口</p>
-<p>shrit + F6  文件重命名<br>shift + shift 搜索框(任意文件)<br>shift + ESC 关闭窗体模块</p>
-<p>ctrl + D 复制行<br>Ctrl + E 打开最近编辑过的文件<br>Ctrl + F 文本搜索框(当前页)<br>Ctrl + H 查看类的层次<br>Ctrl + j  查看模版<br>Ctrl + N 搜索类<br>Ctrl + W 层级选中<br>Ctrl + Y 删除行</p>
-<p>Ctrl + Tab 切换标签</p>
-<p>Ctrl + F4 关闭当前页面<br>ctrl + F12 查看类的所有方法</p>
-<p>Ctrl + shift + 空格  智能补全<br>Ctrl + shift + F10  运行类</p>
-<p>ctrl+shift+A 查找所有Intellij命令</p>
-<h2 id=""><a href="#" class="headerlink" title="```"></a>```</h2><p><br><br></p>
+<p><br><br></p>
+<h2 id="6-配置SFTP-远程服务器用于上传文件"><a href="#6-配置SFTP-远程服务器用于上传文件" class="headerlink" title="6. 配置SFTP[远程服务器用于上传文件]"></a>6. 配置SFTP[远程服务器用于上传文件]</h2><p>流程：</p>
+<ol>
+<li>在远程服务器(windows Server)上安装FreeSSHhd软件<a href="http://www.freesshd.com/" target="_blank" rel="external">FreeHd官网</a></li>
+<li>在idea配置sftp服务器</li>
+<li>上传文件<br><br></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">1. </div><div class="line"> 	a.根据提示一步步安装-&gt;安装完成后会弹框2个[中译:是否安装密钥 + 是否安装成系统服务]</div><div class="line">    b.安装后 Servert status -&gt; 开启SSH server is running[如果报错则吧系统服务关闭后，关闭软件,以系统管理员身份启动]</div><div class="line">    c.Authentication </div><div class="line">    		-&gt;Password authentication设置成Allow(或者 Required)</div><div class="line">    		-&gt;Public key authentication 设置成 Disbled</div><div class="line">    d.SSH</div><div class="line">    	-&gt;Listen address设置成 &lt;服务器ip&gt;</div><div class="line">    e.SFTP</div><div class="line">    	-&gt;SFTP home path(上传根目录)</div><div class="line">    f.Users</div><div class="line">    	-&gt;Add(添加用户)</div><div class="line">    		-&gt;Login [登录名]</div><div class="line"> 			-&gt;Authroization [验证方式]</div><div class="line"> 			-&gt;User can use [权限，打勾SFTP]</div><div class="line"></div><div class="line"></div><div class="line">****************************************************</div><div class="line"></div><div class="line">2.idea操作</div><div class="line">	Settings[快捷键:ctrl + alt + s]</div><div class="line">		-&gt; Build,Execution,Deployment</div><div class="line">			-&gt;Deployment</div><div class="line">				-&gt;&apos;+&apos;号</div><div class="line">					Name [昵称(随意填写)]</div><div class="line">					Connection</div><div class="line">						&lt;1&gt;Type		[sftp类型]</div><div class="line">						&lt;2&gt;SFTP host	[服务器ip]【Test SFTP..测试是否能连接服务器】</div><div class="line">						&lt;3&gt;Port			[SSH端口]</div><div class="line">						&lt;4&gt;Root path	[根据FreeSSHhd的设置路径后的继续路径]</div><div class="line">					Mappings</div><div class="line">						&lt;1&gt;Deployment path on server[根路径后的部署路径]</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="7-idea每次运行Java文件-提示Warning-java-资源值1-5已过时"><a href="#7-idea每次运行Java文件-提示Warning-java-资源值1-5已过时" class="headerlink" title="7. idea每次运行Java文件,提示Warning:java:资源值1.5已过时"></a>7. idea每次运行Java文件,提示Warning:java:资源值1.5已过时</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">提示报错</div><div class="line">	Warning:java:源值1.5已过时,将在未来所有发行版中删除</div><div class="line">	Warning:java:目标值1.5已过时,将在未来所有发行版中删除</div><div class="line">	Warning:java:要隐藏有关已过时选项的警告,请使用-Xlint:-options</div><div class="line"></div><div class="line"></div><div class="line">解决办法</div><div class="line">	快捷键”Ctrl+Alt+S”打开设置，</div><div class="line">	   -&gt;搜索”Java Compiler”</div><div class="line">	   -&gt;将默认jdk和当前modual的jdk版本切换为1.8即可</div></pre></td></tr></table></figure>
+<p><br></p>
+<hr>
+<p><br><br></p>
+<h2 id="8-idea常用快捷键"><a href="#8-idea常用快捷键" class="headerlink" title="8.idea常用快捷键"></a>8.idea常用快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ESC  关闭弹窗</div><div class="line"></div><div class="line">Alt + INS  新疆类or方法</div><div class="line">Alt + NUM (数字键)  切换窗口</div><div class="line"></div><div class="line">shrit + F6  文件重命名</div><div class="line">shift + shift 搜索框(任意文件)</div><div class="line">shift + ESC 关闭窗体模块</div><div class="line"></div><div class="line">ctrl + D 复制行</div><div class="line">Ctrl + E 打开最近编辑过的文件</div><div class="line">Ctrl + F 文本搜索框(当前页)</div><div class="line">Ctrl + H 查看类的层次</div><div class="line">Ctrl + j  查看模版</div><div class="line">Ctrl + N 搜索类</div><div class="line">Ctrl + W 层级选中</div><div class="line">Ctrl + Y 删除行</div><div class="line"></div><div class="line"></div><div class="line">Ctrl + Tab 切换标签</div><div class="line"></div><div class="line">Ctrl + F4 关闭当前页面</div><div class="line">ctrl + F12 查看类的所有方法</div><div class="line"></div><div class="line">Ctrl + shift + A 查找所有命令 or 快捷键</div><div class="line">Ctrl + shift + 空格  智能补全</div><div class="line">Ctrl + shift + F10  运行类</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="9-ideaVim插件"><a href="#9-ideaVim插件" class="headerlink" title="9. ideaVim插件"></a>9. ideaVim插件</h2><p>参考资料</p>
+<ul>
+<li><a href="https://plugins.jetbrains.com/plugin/164-ideavim" target="_blank" rel="external">IdeaVim:JetBrains Plugin Respository</a></li>
+<li><a href="https://www.zhihu.com/question/20783392" target="_blank" rel="external">如何成为 IntelliJ IDEA 键盘流 – 知乎</a><br><br></li>
+</ul>
+<p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.Ctrl + Alt + s 打开Seetings</div><div class="line">b.Plugins</div><div class="line">c.Install plugin from dis....</div><div class="line">d.选择下载好的压缩包IdeaVim-0.48.zip</div><div class="line">e.确认,插件前方打勾,Applet或者ok</div><div class="line">f.重启IntelliJ IDEA</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<hr>
+<p>常用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">Ctrl + Alt + v 开启工具【自己修改成alt + v】</div><div class="line"></div><div class="line"></div><div class="line">i 插入模式</div><div class="line">v 选中模式</div><div class="line">c 上下移动模式</div><div class="line">Esc(或者Ctrl + [) 退回默认模式,光标移动</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/  搜索(可输入,输入完回车)</div><div class="line">n  下一个</div><div class="line">N 上一个</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">h j k l   左,下,上,右</div><div class="line">H J K  L 页面顶部,合并两行,帮助,页面尾部</div><div class="line"></div><div class="line">10j 向下移动10行</div><div class="line">5k 向上移动5行</div><div class="line"></div><div class="line">: 12 移动到12行</div><div class="line"></div><div class="line">&lt; &gt;前缩进 ,后缩进</div><div class="line"></div><div class="line">0 $  跳到行首,跳到行尾</div><div class="line"></div><div class="line"></div><div class="line">w(W)词组&quot;正向&quot;跳转</div><div class="line">b(B)词组&quot;反向&quot;跳转</div><div class="line"></div><div class="line">x 按住,后删除</div><div class="line">X 后删除(包括自己)</div><div class="line"></div><div class="line">d 删除“选中行”</div><div class="line">dd 删除当前行</div><div class="line">y 复制&quot;选中行&quot;</div><div class="line">yy 复制当前行</div><div class="line"></div><div class="line">p  粘贴</div><div class="line">5p 粘贴5次</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">u 撤销</div><div class="line"></div><div class="line">. 重复命令</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
+<h2 id="10-emacsIDEAs插件"><a href="#10-emacsIDEAs插件" class="headerlink" title="10. emacsIDEAs插件"></a>10. emacsIDEAs插件</h2><p>参考资料：</p>
+<ul>
+<li><a href="https://plugins.jetbrains.com/plugin/7163-emacsideas" target="_blank" rel="external">emacsIDEAs::JeBrains Plugin Response</a></li>
+<li><ul>
+<li>下载安装emacsIDEAs.jar插件,重启IntellijIDEA<br><br></li>
+</ul>
+</li>
+</ul>
+<p>常用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在Setings ——Keymap —— AcejumpChar【查找字符功能】,修改快键为alt + e</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<hr>
+<p><br><br></p>
 
       
     </div>
@@ -669,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-目录"><span class="nav-number">1.</span> <span class="nav-text">一.目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-错误"><span class="nav-number">2.</span> <span class="nav-text">二.错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-将项目远程提交到Github"><span class="nav-number">2.1.</span> <span class="nav-text">1.将项目远程提交到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-设置Tomcat热更新-静态动态网页文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.设置Tomcat热更新[静态动态网页文件]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装JRebel插件-实现热部署-java文件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装JRebel插件,实现热部署[java文件]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-idea的代码生成器-Live-Templates"><span class="nav-number">2.4.</span> <span class="nav-text">4.idea的代码生成器[Live Templates]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-自动提示方法参数-鼠标移动到方法名"><span class="nav-number">2.5.</span> <span class="nav-text">5. 自动提示方法参数[鼠标移动到方法名]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.6.</span> <span class="nav-text">```</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-目录"><span class="nav-number">1.</span> <span class="nav-text">一.目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-错误"><span class="nav-number">2.</span> <span class="nav-text">二.错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-将项目远程提交到Github"><span class="nav-number">2.1.</span> <span class="nav-text">1.将项目远程提交到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-设置Tomcat热更新-静态动态网页文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.设置Tomcat热更新[静态动态网页文件]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装JRebel插件-实现热部署-java文件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 安装JRebel插件,实现热部署[java文件]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-idea的代码生成器-Live-Templates"><span class="nav-number">2.4.</span> <span class="nav-text">4.idea的代码生成器[Live Templates]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-自动提示方法参数-鼠标移动到方法名"><span class="nav-number">2.5.</span> <span class="nav-text">5. 自动提示方法参数[鼠标移动到方法名]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-配置SFTP-远程服务器用于上传文件"><span class="nav-number">2.6.</span> <span class="nav-text">6. 配置SFTP[远程服务器用于上传文件]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-idea每次运行Java文件-提示Warning-java-资源值1-5已过时"><span class="nav-number">2.8.</span> <span class="nav-text">7. idea每次运行Java文件,提示Warning:java:资源值1.5已过时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-idea常用快捷键"><span class="nav-number">2.9.</span> <span class="nav-text">8.idea常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-ideaVim插件"><span class="nav-number">2.10.</span> <span class="nav-text">9. ideaVim插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-emacsIDEAs插件"><span class="nav-number">2.11.</span> <span class="nav-text">10. emacsIDEAs插件</span></a></li></ol></li></ol></div>
             
 
           </div>
