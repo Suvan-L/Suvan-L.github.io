@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://suvan-l.github.io/"/>
-  <updated>2017-09-22T08:15:59.562Z</updated>
+  <updated>2017-10-09T04:12:54.067Z</updated>
   <id>http://suvan-l.github.io/</id>
   
   <author>
@@ -16,26 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MyProject_neubbs论坛</title>
+    <title>MyProject_neubbs校内论坛</title>
     <link href="http://suvan-l.github.io/2017/09/21/MyProject_neubbs%E8%AE%BA%E5%9D%9B/"/>
     <id>http://suvan-l.github.io/2017/09/21/MyProject_neubbs论坛/</id>
     <published>2017-09-21T10:11:26.000Z</published>
-    <updated>2017-09-22T08:15:59.562Z</updated>
+    <updated>2017-10-09T04:12:54.067Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;东软校内BBS,Github地址<a href="https://github.com/nuitcoder/neubbs" target="_blank" rel="external">https://github.com/nuitcoder/neubbs</a></p>
-<p>目录</p>
-<ol>
-<li>数据库设计<br><br></li>
-</ol>
-<hr>
-<p><br><br><br></p>
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="1-数据库设计"><a href="#1-数据库设计" class="headerlink" title="1. 数据库设计"></a>1. 数据库设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">CREATE DATABASE `neubbs`</div><div class="line">    DEFAULT CHARACTER SET utf8</div><div class="line">    COLLATE utf8_general_ci;</div><div class="line"></div><div class="line">-- 删除原有表</div><div class="line">DROP TABLE IF EXISTS `forum_user`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic_content`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic_reply`;</div><div class="line"></div><div class="line"></div><div class="line">-- 新建表</div><div class="line">CREATE TABLE forum_user(</div><div class="line">     fu_id INT  AUTO_INCREMENT PRIMARY KEY,</div><div class="line">     fu_name VARCHAR(15) UNIQUE KEY,</div><div class="line">     fu_password VARCHAR(15) NOT NULL,</div><div class="line">     fu_sex  VARCHAR(2),</div><div class="line">     fu_birthday VARCHAR(20),</div><div class="line">     fu_phone VARCHAR(15),</div><div class="line">     fu_email  VARCHAR(50)  NOT NULL,</div><div class="line">     fu_address VARCHAR(50),</div><div class="line">     fu_createtime DATETIME DEFAULT NOW()</div><div class="line"> )ENGINE = innoDB;</div><div class="line"></div><div class="line"></div><div class="line">CREATE TABLE forum_topic(             </div><div class="line">    ft_id INT  AUTO_INCREMENT PRIMARY KEY,       </div><div class="line">    fu_id INT NOT NULL ,</div><div class="line">    ft_category VARCHAR(20) NOT NULL,   </div><div class="line">    ft_title VARCHAR(50) NOT NULL,                      </div><div class="line">    ft_comment VARCHAR(10) default &apos;0&apos;,         </div><div class="line">    ft_lastreplytime DATETIME,</div><div class="line">    ft_createtime  DATETIME DEFAULT NOW()   </div><div class="line">)ENGINE = innoDB;</div><div class="line"></div><div class="line"></div><div class="line">CREATE TABLE forum_topic_content(             </div><div class="line">    ftc_id INT  AUTO_INCREMENT  PRIMARY KEY,     </div><div class="line">    ft_id INT,</div><div class="line">    ftc_content LongText NOT NULL,  </div><div class="line">    ftc_read VARCHAR(10) default &apos;0&apos;         </div><div class="line">)ENGINE = innoDB;</div><div class="line"></div><div class="line">CREATE TABLE forum_topic_reply(             </div><div class="line">    ftr_id INT  AUTO_INCREMENT  PRIMARY KEY,     </div><div class="line">    fu_id INT,</div><div class="line">    ft_id INT,</div><div class="line">    ftr_content VARCHAR(150) NOT NULL,</div><div class="line">    ftr_agree VARCHAR(10) default &apos;0&apos;,</div><div class="line">    ftr_oppose VARCHAR(10) default &apos;0&apos;,</div><div class="line">    ftr_createtime  DATETIME DEFAULT NOW()</div><div class="line">)ENGINE = innoDB;</div></pre></td></tr></table></figure>
-<p><br></p>
+    <content type="html"><![CDATA[<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>&emsp;东软校内BBS,Github地址<a href="https://github.com/nuitcoder/neubbs" target="_blank" rel="external">https://github.com/nuitcoder/neubbs</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&amp;emsp;东软校内BBS,Github地址&lt;a href=&quot;https://github.com/nuitcoder/neubbs&quot; ta
+      &lt;h3 id=&quot;项目地址&quot;&gt;&lt;a href=&quot;#项目地址&quot; class=&quot;headerlink&quot; title=&quot;项目地址&quot;&gt;&lt;/a&gt;项目地址&lt;/h3&gt;&lt;p&gt;&amp;emsp;东软校内BBS,Github地址&lt;a href=&quot;https://github.com/nuitcoder/ne
     
     </summary>
     
