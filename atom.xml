@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://suvan-l.github.io/"/>
-  <updated>2017-09-07T06:05:01.604Z</updated>
+  <updated>2017-09-22T08:15:59.562Z</updated>
   <id>http://suvan-l.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyProject_neubbs论坛</title>
+    <link href="http://suvan-l.github.io/2017/09/21/MyProject_neubbs%E8%AE%BA%E5%9D%9B/"/>
+    <id>http://suvan-l.github.io/2017/09/21/MyProject_neubbs论坛/</id>
+    <published>2017-09-21T10:11:26.000Z</published>
+    <updated>2017-09-22T08:15:59.562Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;东软校内BBS,Github地址<a href="https://github.com/nuitcoder/neubbs" target="_blank" rel="external">https://github.com/nuitcoder/neubbs</a></p>
+<p>目录</p>
+<ol>
+<li>数据库设计<br><br></li>
+</ol>
+<hr>
+<p><br><br><br></p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="1-数据库设计"><a href="#1-数据库设计" class="headerlink" title="1. 数据库设计"></a>1. 数据库设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">CREATE DATABASE `neubbs`</div><div class="line">    DEFAULT CHARACTER SET utf8</div><div class="line">    COLLATE utf8_general_ci;</div><div class="line"></div><div class="line">-- 删除原有表</div><div class="line">DROP TABLE IF EXISTS `forum_user`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic_content`;</div><div class="line">DROP TABLE IF EXISTS `forum_topic_reply`;</div><div class="line"></div><div class="line"></div><div class="line">-- 新建表</div><div class="line">CREATE TABLE forum_user(</div><div class="line">     fu_id INT  AUTO_INCREMENT PRIMARY KEY,</div><div class="line">     fu_name VARCHAR(15) UNIQUE KEY,</div><div class="line">     fu_password VARCHAR(15) NOT NULL,</div><div class="line">     fu_sex  VARCHAR(2),</div><div class="line">     fu_birthday VARCHAR(20),</div><div class="line">     fu_phone VARCHAR(15),</div><div class="line">     fu_email  VARCHAR(50)  NOT NULL,</div><div class="line">     fu_address VARCHAR(50),</div><div class="line">     fu_createtime DATETIME DEFAULT NOW()</div><div class="line"> )ENGINE = innoDB;</div><div class="line"></div><div class="line"></div><div class="line">CREATE TABLE forum_topic(             </div><div class="line">    ft_id INT  AUTO_INCREMENT PRIMARY KEY,       </div><div class="line">    fu_id INT NOT NULL ,</div><div class="line">    ft_category VARCHAR(20) NOT NULL,   </div><div class="line">    ft_title VARCHAR(50) NOT NULL,                      </div><div class="line">    ft_comment VARCHAR(10) default &apos;0&apos;,         </div><div class="line">    ft_lastreplytime DATETIME,</div><div class="line">    ft_createtime  DATETIME DEFAULT NOW()   </div><div class="line">)ENGINE = innoDB;</div><div class="line"></div><div class="line"></div><div class="line">CREATE TABLE forum_topic_content(             </div><div class="line">    ftc_id INT  AUTO_INCREMENT  PRIMARY KEY,     </div><div class="line">    ft_id INT,</div><div class="line">    ftc_content LongText NOT NULL,  </div><div class="line">    ftc_read VARCHAR(10) default &apos;0&apos;         </div><div class="line">)ENGINE = innoDB;</div><div class="line"></div><div class="line">CREATE TABLE forum_topic_reply(             </div><div class="line">    ftr_id INT  AUTO_INCREMENT  PRIMARY KEY,     </div><div class="line">    fu_id INT,</div><div class="line">    ft_id INT,</div><div class="line">    ftr_content VARCHAR(150) NOT NULL,</div><div class="line">    ftr_agree VARCHAR(10) default &apos;0&apos;,</div><div class="line">    ftr_oppose VARCHAR(10) default &apos;0&apos;,</div><div class="line">    ftr_createtime  DATETIME DEFAULT NOW()</div><div class="line">)ENGINE = innoDB;</div></pre></td></tr></table></figure>
+<p><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&amp;emsp;东软校内BBS,Github地址&lt;a href=&quot;https://github.com/nuitcoder/neubbs&quot; ta
+    
+    </summary>
+    
+      <category term="MyProject" scheme="http://suvan-l.github.io/categories/MyProject/"/>
+    
+    
+      <category term="MyProject" scheme="http://suvan-l.github.io/tags/MyProject/"/>
+    
+  </entry>
   
   <entry>
     <title>个人简历</title>
@@ -247,43 +278,6 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
-    <title>OCR技术_tesseract图片文字识别</title>
-    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
-    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
-    <published>2017-07-11T10:04:59.000Z</published>
-    <updated>2017-07-11T10:04:51.212Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
-<hr>
-<p><br><br><br></p>
-<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
-<ul>
-<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
-<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
-<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Redis_入门</title>
     <link href="http://suvan-l.github.io/2017/07/11/Redis_%E5%85%A5%E9%97%A8/"/>
     <id>http://suvan-l.github.io/2017/07/11/Redis_入门/</id>
@@ -418,11 +412,48 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
+    <title>OCR技术_tesseract图片文字识别</title>
+    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
+    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
+    <published>2017-07-11T10:04:59.000Z</published>
+    <updated>2017-07-11T10:04:51.212Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
+<ul>
+<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
+<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java_知识体系</title>
     <link href="http://suvan-l.github.io/2017/07/01/Java_%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
     <id>http://suvan-l.github.io/2017/07/01/Java_知识体系/</id>
     <published>2017-07-01T09:43:18.000Z</published>
-    <updated>2017-09-11T02:34:35.600Z</updated>
+    <updated>2017-09-23T13:35:20.590Z</updated>
     
     <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录:"></a>目录:</h1><p>一.语法整理<br>1.概述(基本语法与规范)<br>2.变量<br>3.运算符<br>4.循环和判断<br>5.数组<br>6.函数(方法)<br>7.异常处理<br>8.面向对象【继承,多态,封装,抽象和接口】<br>9.Java的数据结构【集合框架】<br>10.泛型与对象序列化<br>11.静态关键字static<br>12.内部类<br>13.多线程基础<br>14.Java网络编程(Socket编程)<br>15.IO体系构图<br>16.解析Java注解<br>17.JVM虚拟机【管理内存分区】<br>18.了解Java中的内存泄漏的<br>19.专业术语<br>20.程序设计<br>21.项目管理<br>22.数据结构基础<br><br></p>
 <p>二.操作整理<br>1.操作日期和时间<br>2.自定义异常<br>3.反射操作<br>4.正则表达式<br>5.操作I/O输入输出流和文件<br>6.编写定时任务<br>7.获取控制台键盘输入<br>8.文档注释【JavaDoc】<br>9.编码问题<br>10.Applet的简单介绍<br>11.发送邮件【JavaMail】<br>12.GUI开发<br>13.自动化操作【模拟键盘和鼠标】<br>14.JDBC连接数据库<br>15.遍历与控制台打印输出<br>16.XML文件读取与生成<br>17_1.Java加密与解密机制介绍<br>17_2.运用Base64算法<br>17_3.运用消息摘要算法<br>17_4.运用对称加密算法<br>17_5.运用非对称加密算法<br>17_6.运用数字签名算法<br>18_1.JSP开发<br>18_2.Servlet基础<br>18_3.过滤器<br>18_4.监听器<br>18_5.JSTL标签<br>18_6.JSP自定义标签<br>19.JSON数据处理<br>20.DWR实现服务器向客户端推送<br><br></p>
@@ -550,8 +581,9 @@ Category generator plugin for Hexo.
 <p><br></p>
 <hr>
 <p><br><br></p>
-<h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h2><p>java中两种有效的数据类型<br>+【 原始数据类型】存放在栈中</p>
+<h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h2><p>java中两种有效的数据类型</p>
 <ul>
+<li>【 原始数据类型】存放在栈中</li>
 <li>【引用数据类型】JVM中虚拟栈存放“对象的地址”,堆中存放“对象的实质”,通过地址来找到堆中对象的过程<br><br></li>
 </ul>
 <p>Java编译器在基本数据类型和对应的包装类型进行转换</p>
@@ -635,7 +667,7 @@ Category generator plugin for Hexo.
 <ul>
 <li>判断”左边的对象”是否为”右边类(接口,抽象类,父类)”的实例<br><br></li>
 </ul>
-<p>位运算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;左移动运算符【&lt;&lt;】  </div><div class="line">	丢弃最高位,0补最低位  [左移n位相当于 乘以2的n次方]</div><div class="line">&lt;2&gt;右移运算符</div><div class="line">	符号位不变，左边补上符号位(正补0,负补1) [右移n位相当于 除以2的n次方]</div><div class="line">&lt;3&gt;无符号右移运算符 【&gt;&gt;&gt;】</div><div class="line">	丢弃最低位，0补最高位 【只是对32位和64位有意义】</div><div class="line"></div><div class="line">***********************************************************</div><div class="line"></div><div class="line">&lt;4&gt;按位与运算符【&amp;】</div><div class="line">	两位同时为“1”，结果才为“1”，否则为0 </div><div class="line">		a.清零[与一个二进制各位都为0的数相与]</div><div class="line">		b.取一个数中指定位[与一个数,需取的指定位为1,其余位置为0]</div><div class="line"></div><div class="line">&lt;5&gt;按位或运算符 【|】</div><div class="line">	两位有一个1,即为1</div><div class="line">		a.指定某些位置为1[与一个数指定位为1,其余位置为0]</div><div class="line"></div><div class="line">&lt;6&gt;异或运算符</div><div class="line">	同假异真</div><div class="line">		a.使特定为反转[需要翻转的位置为1,其余位为0]</div><div class="line">		b.保留原值[与0进行异或]</div><div class="line">		c.两个变量值交换[A=A^B;B=A^B;A=A^B]</div><div class="line">			【原理:利用一个数异或本身等于0和异或运算符合交换率】</div><div class="line"></div><div class="line">&lt;7&gt;取反运算符【~】</div><div class="line">	相反</div></pre></td></tr></table></figure></p>
+<p>位运算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;左移动运算符【&lt;&lt;】  </div><div class="line">	丢弃最高位,0补最低位  [左移n位相当于 乘以2的n次方]</div><div class="line">&lt;2&gt;右移运算符</div><div class="line">	符号位不变，左边补上符号位(正补0,负补1) [右移n位相当于 除以2的n次方]</div><div class="line">&lt;3&gt;无符号右移运算符 【&gt;&gt;&gt;】</div><div class="line">	丢弃最低位，0补最高位 【只是对32位和64位有意义】</div><div class="line"></div><div class="line">***********************************************************</div><div class="line"></div><div class="line">&lt;4&gt;按位与运算符【&amp;】</div><div class="line">	两位同时为“1”，结果才为“1”，否则为0 </div><div class="line">		a.清零[与一个二进制各位都为0的数相与]</div><div class="line">		b.取一个数中指定位[与一个数,需取的指定位为1,其余位置为0]，进入&amp;1</div><div class="line"></div><div class="line">&lt;5&gt;按位或运算符 【|】</div><div class="line">	两位有一个1,即为1</div><div class="line">		a.指定某些位置为1[与一个数指定位为1,其余位置为0]</div><div class="line"></div><div class="line"></div><div class="line">&lt;6&gt;异或运算符</div><div class="line">	同假异真</div><div class="line">		a.使特定为反转[需要翻转的位置为1,其余位为0]</div><div class="line">		b.保留原值[与0进行异或]</div><div class="line">		c.两个变量值交换[A=A^B;B=A^B;A=A^B]</div><div class="line">			【原理:利用一个数异或本身等于0和异或运算符合交换率】</div><div class="line"></div><div class="line">&lt;7&gt;取反运算符【~】</div><div class="line">	相反</div></pre></td></tr></table></figure></p>
 <p><br></p>
 <p>二进制</p>
 <ul>
@@ -929,7 +961,7 @@ Category generator plugin for Hexo.
 <li>使用contains()或者containsValue()【键值对】</li>
 <li>遍历List中每一个元素，然后调用每一个元素的equals()，去跟contains()中方法参数进行比较,如果有一个元素的equals()返回true,则结果最终返回true(如果是自定义Object对象,需要根据需求重写equals方法),时间复杂度是O(n)<br><br></li>
 </ul>
-<p>集合排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;默认升序【注意:进行sort排序时,列表中的所有元素都必须实现Comparable接口否则编译器会提错】</div><div class="line">		Collections.sort(List&lt;T&gt; list); //默认从小到大</div><div class="line"></div><div class="line"></div><div class="line">&lt;1-2&gt;将元素反转【顺序调换】</div><div class="line">		Collections.reverse(List&lt;T&gt; list);</div><div class="line"></div><div class="line">&lt;2&gt;自定义排序 [可改为升序 or 降序]</div><div class="line">		Collections.sort(list, new Comparator&lt;Integer&gt;() &#123;  </div><div class="line">				    @Override  </div><div class="line">				    public int compare(Integer a, Integer b) &#123;  </div><div class="line">				        return a&gt;b ?  1: ( a==b ? 0 : -1);    //a &gt;b(1) a==b(0) a&lt;b(-1)</div><div class="line">				    &#125;  </div><div class="line">				&#125;);  </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;对象排序[继承Comparator接口,内部定义排序]</div><div class="line">			/*Bean对象*/</div><div class="line">			public class Person implements Comparable&lt;Person&gt;&#123;  </div><div class="line">			    private String name;  </div><div class="line">			    private int age;  </div><div class="line"></div><div class="line">			    public Person(String name, int age) &#123;  </div><div class="line">			        this.name = name;  </div><div class="line">			        this.age = age;  </div><div class="line">			    &#125;  </div><div class="line">			    </div><div class="line">			    //实现compareTo()函数</div><div class="line">			    @Override  </div><div class="line">			    public int compareTo(Person o) &#123;  </div><div class="line">			        return (o.age &lt; age) ? -1 : ((o.age==age)?0 : 1);     //这里定义根据年龄，降序 </div><div class="line">			    &#125;  </div><div class="line">			      </div><div class="line">			    //getter</div><div class="line">			    public String getName()&#123;		</div><div class="line">			    	return name; </div><div class="line">			    &#125;</div><div class="line">			    public int getAge()&#123;			</div><div class="line">			    	return age;  	</div><div class="line">			    &#125;</div><div class="line">			&#125;  </div><div class="line"></div><div class="line">			/*测试类*/</div><div class="line">			public class test&#123;</div><div class="line">				public static void main(String[] args) &#123;	</div><div class="line">					Person a = new Person(&quot;皮皮翔&quot;,5);  </div><div class="line">					Person b = new Person(&quot;皮皮勋&quot;,62);  </div><div class="line">					Person c = new Person(&quot;皮皮强&quot;,12);  </div><div class="line">					List&lt;Person&gt; plist = new ArrayList&lt;Person&gt;();  </div><div class="line">					plist.add(a);  </div><div class="line">					plist.add(b);  </div><div class="line">					plist.add(c);  </div><div class="line">					Collections.sort(plist);  </div><div class="line">					for(Person info : plist)&#123;  </div><div class="line">					    System.out.println(&quot;Name:&quot;+info.getName()+&quot;	-&gt;	Age:&quot;+info.getAge());  </div><div class="line">					&#125;  </div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">				*************输出结果**************</div><div class="line">				Name:皮皮勋	-&gt;	Age:62</div><div class="line">				Name:皮皮强	-&gt;	Age:12</div><div class="line">				Name:皮皮翔	-&gt;	Age:5</div></pre></td></tr></table></figure></p>
+<p>集合排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;默认升序【注意:进行sort排序时,列表中的所有元素都必须实现Comparable接口否则编译器会提错】</div><div class="line">		Collections.sort(List&lt;T&gt; list); //默认从小到大</div><div class="line"></div><div class="line"></div><div class="line">&lt;1-2&gt;将元素反转【顺序调换】</div><div class="line">		Collections.reverse(List&lt;T&gt; list);</div><div class="line"></div><div class="line">&lt;2&gt;自定义排序 [对象外部,可改为升序 or 降序]</div><div class="line">		Collections.sort(list, new Comparator&lt;Integer&gt;() &#123;  </div><div class="line">				    @Override  </div><div class="line">				    public int compare(Integer a, Integer b) &#123;  </div><div class="line">				        return a&gt;b ?  1: ( a==b ? 0 : -1);    //a &gt;b(1) a==b(0) a&lt;b(-1)</div><div class="line">				    &#125;  </div><div class="line">				&#125;);  </div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;对象排序[实现Comparable接口,对象内部定义排序]</div><div class="line">			/*Bean对象*/</div><div class="line">			public class Person implements Comparable&lt;Person&gt;&#123;  </div><div class="line">			    private String name;  </div><div class="line">			    private int age;  </div><div class="line"></div><div class="line">			    public Person(String name, int age) &#123;  </div><div class="line">			        this.name = name;  </div><div class="line">			        this.age = age;  </div><div class="line">			    &#125;  </div><div class="line">			    </div><div class="line">			    //实现compareTo()函数</div><div class="line">			    @Override  </div><div class="line">			    public int compareTo(Person o) &#123;  </div><div class="line">			        return (o.age &lt; age) ? -1 : ((o.age==age)?0 : 1);     //这里定义根据年龄，降序 </div><div class="line">			    &#125;  </div><div class="line">			      </div><div class="line">			    //getter</div><div class="line">			    public String getName()&#123;		</div><div class="line">			    	return name; </div><div class="line">			    &#125;</div><div class="line">			    public int getAge()&#123;			</div><div class="line">			    	return age;  	</div><div class="line">			    &#125;</div><div class="line">			&#125;  </div><div class="line"></div><div class="line">			/*测试类*/</div><div class="line">			public class test&#123;</div><div class="line">				public static void main(String[] args) &#123;	</div><div class="line">					Person a = new Person(&quot;皮皮翔&quot;,5);  </div><div class="line">					Person b = new Person(&quot;皮皮勋&quot;,62);  </div><div class="line">					Person c = new Person(&quot;皮皮强&quot;,12);  </div><div class="line">					List&lt;Person&gt; plist = new ArrayList&lt;Person&gt;();  </div><div class="line">					plist.add(a);  </div><div class="line">					plist.add(b);  </div><div class="line">					plist.add(c);  </div><div class="line">					Collections.sort(plist);  </div><div class="line">					for(Person info : plist)&#123;  </div><div class="line">					    System.out.println(&quot;Name:&quot;+info.getName()+&quot;	-&gt;	Age:&quot;+info.getAge());  </div><div class="line">					&#125;  </div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">				*************输出结果**************</div><div class="line">				Name:皮皮勋	-&gt;	Age:62</div><div class="line">				Name:皮皮强	-&gt;	Age:12</div><div class="line">				Name:皮皮翔	-&gt;	Age:5</div></pre></td></tr></table></figure></p>
 <p><br></p>
 <p>集合去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;ArrayList有序去重【自定义对象】</div><div class="line">	     //a.将集合中元素倒叙</div><div class="line">	        Collections.reverse(clist);  //反转排序</div><div class="line">	  	    //Collections.sort(clist);    //自定义对象倒叙，内部需实现Comparable接口[里面的public int compareTo(Object obj) ]</div><div class="line">	       </div><div class="line">        </div><div class="line">	    //b.将集合元素去重</div><div class="line">	        LinkedHashSet&lt;ClassMastesUser&gt;  linkSet=new LinkedHashSet&lt;ClassMastesUser&gt;(clist); [需根据需求重写hashCode()和equals(),Set集合先比较hasCode值,如果相等,再比较equals]</div><div class="line">	        clist.clear();</div><div class="line">	        clist.addAll(linkSet);</div><div class="line">	        Collections.reverse(clist);</div></pre></td></tr></table></figure></p>
 <p><br></p>
@@ -1097,7 +1129,7 @@ Category generator plugin for Hexo.
 <ul>
 <li>【新建New】</li>
 <li>【可运行Runnable】调用线程的start(),此时线程只是进入线程队列,等待获取CPU服务</li>
-<li>【运行 Running】处于就绪的线程,获取了PCU资源,进入运行状态,指向run()内逻辑</li>
+<li>【运行 Running】处于就绪的线程,获取了PCU资源,进入运行状态,指向run()内程序代码</li>
 <li>【阻塞 Blocked】由于某些原因而暂时让出CPU资源,暂停自己的执行(例如:调用sleep())</li>
 <li>【死亡 Dead】 线程的run()执行完毕 or 线程调用了stop()<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> &lt;1&gt; 新建( new )：新创建了一个线程对象。</div><div class="line">&lt;2.&gt;可运行( runnable )：线程对象创建后，其他线程(比如 main 线程）调用了该对象 的 start ()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获 取 cpu 的使用权 。</div><div class="line">&lt;3&gt;运行( running )：可运行状态( runnable )的线程获得了 cpu 时间片（ timeslice ） ，执行程序代码。</div><div class="line">&lt;4&gt; 阻塞( block )：阻塞状态是指线程因为某种原因放弃了 cpu 使用权，也即让出了 cpu timeslice ，暂时停止运行。直到线程进入可运行( runnable )状态，才有 机会再次获得 cpu timeslice 转到运行( running )状态。阻塞的情况分三种：</div><div class="line">          (一). 等待阻塞：运行( running )的线程执行 o . wait ()方法， JVM 会把该线程放 入等待队列( waitting queue )中。</div><div class="line">          (二). 同步阻塞：运行( running )的线程在获取对象的同步锁时，若该同步锁 被别的线程占用，则 JVM 会把该线程放入锁池( lock pool )中。</div><div class="line">          (三). 其他阻塞: 运行( running )的线程执行 Thread . sleep ( long ms )或 t . join ()方法，或者发出了 I / O 请求时， JVM 会把该线程置为阻塞状态。            当 sleep ()状态超时、 join ()等待线程终止或者超时、或者 I / O 处理完毕时，线程重新转入可运行( runnable )状态。</div><div class="line">&lt;5&gt; 死亡( dead )：线程 run ()、 main () 方法执行结束，或者因异常退出了 run ()方法，则该线程结束生命周期。死亡的线程不可再次复生。</div></pre></td></tr></table></figure>
 </li>
@@ -1517,8 +1549,11 @@ Category generator plugin for Hexo.
 <p>队列</p>
 <ul>
 <li>【队列】当队列中只有一个元素时，出队后需要清空对头和队尾指针</li>
-<li>【循环队列】可以顺序存储,也可以链式存储<br><br></li>
+<li>【循环队列】可以顺序存储,也可以链式存储</li>
+<li>【STL优先级队列】用堆来实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">循环队列的计算问题</div><div class="line">1.队空条件：rear==front   </div><div class="line">2.队满条件：(rear+1) %QueueSIze==front   </div><div class="line">3.计算队列长度(队内元素)：（rear-front+QueueSize）%QueueSize   </div><div class="line">4.入队：（rear+1）%QueueSize   </div><div class="line">5.出队：（front+1）%QueueSize</div><div class="line">发</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p><br></p>
 <p>广义表<br>+【三个特性】1.层次性(广义表元素可以是子表,子表的元素仍然可以是子表);2.共享性(广义表可被其他广义表共享);3.递归性(广义表可以是其自身的一个子表)</p>
 <ul>
 <li>【求长度】广义表(((a,b,c),d,e,f))的长度是1【有三对括号】</li>
@@ -2928,11 +2963,12 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/06/28/Java_%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/"/>
     <id>http://suvan-l.github.io/2017/06/28/Java_面试经历/</id>
     <published>2017-06-28T03:14:25.000Z</published>
-    <updated>2017-09-06T03:33:52.691Z</updated>
+    <updated>2017-09-25T02:31:42.470Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><ol>
 <li>小草互联面试总结</li>
 <li>武汉唯特讯数据科技有限公司(广州研发中心)面试总结</li>
+<li>腾讯2018校招面试</li>
 </ol>
 <hr>
 <p><br><br><br></p>
@@ -2978,6 +3014,9 @@ fn:trim()                  //首尾去空格
 </ul>
 <p>过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">进公司，先做一套笔试</div><div class="line">	难度挺高,内容包含</div><div class="line">		1.知识点选择题(涉及java语法基础 + javaEE + javascript + 框架简单的理解)</div><div class="line">		2.简答题</div><div class="line">			&lt;1&gt;arrayList和linkedList的存储特性,有何区别?</div><div class="line">			&lt;2&gt;描述Servlet的生命周期？Servlet和CGI有什么区别?</div><div class="line">			&lt;3&gt;static全局变量和普通的全局变量有什么不同?</div><div class="line">			   static局部变量和普通的局部变量有什么不同?</div><div class="line">			   static函数和普通的函数有什么不同?</div><div class="line">	    3.逻辑题 + 算法题</div><div class="line">	    	&lt;1&gt;有7克、2克砝码各一个，天平一只，如何只用这些物品三次将140克的盐分成50、90克各一份</div><div class="line">	    	&lt;2&gt;有口井 20米深 有个蜗牛从井底往上爬 白天爬3米 晚上往下坠2米 问蜗牛几天能从井里爬出来？</div><div class="line">	    	&lt;3&gt;小明的统计调查[内容太长,自行百度,Google]</div><div class="line">	    3.编程题</div><div class="line">	    	&lt;1&gt; 模拟银行叫号系统</div><div class="line">	    			银行有3个窗口,用户排队叫号,三个窗口可以同时处理业务,银行经理能够调度用户牌号的顺序 【对线程的理解和使用不透彻】</div><div class="line">	    	&lt;2&gt;设计数据库表的流程图[画出三个表的ETL图,主外键用方向键表示]</div><div class="line">	    			指条件查询</div><div class="line">	    			指定条件更新列值</div><div class="line">	    			指定查询price的值在1000到3000之间的商品数据</div><div class="line">	    			指定查询的pname包含&quot;发表&quot;的商品数据</div><div class="line">	    	&lt;3&gt;实现javascript的登录验证</div><div class="line">	    4.附加题</div><div class="line">	    	&lt;1&gt;京东商城的商品搜索功能是整个网站架构中非常重要的一个模块。当用户在搜索栏中写入他们想要搜索的关键字时，往往会有一些热门的关键词出现在提示框中。对于这一功能的实现，你认为需要注意什么</div><div class="line">	    	&lt;2&gt;【还有一踢忘了,时间太晚,个人效率不高,没清晰理解题目,所以没做】</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">面问</div><div class="line">	你做的燕云daaS是你自己一个人做的吗?如何实现信息爬取?大概的原理?使用了什么框架?</div><div class="line">	你的自动化工具是什么,介绍一下用途?</div><div class="line">	你的个人博客项目?有二维码验证吗?邮箱验证有加密吗?</div><div class="line">	两个Servlet,用户唯一性和登录验证，它们最后一步的区别?</div><div class="line">	JavaEE偏底层的开发是否熟悉?</div><div class="line">	讲下你对Java多线程开发的了解?</div><div class="line">	是否了解Socket编程?讲下你对他的了解</div><div class="line">	详细讲述下请求进入Servlet的过程与思路?</div><div class="line">	讲述下Spring MVC的原理?</div><div class="line"></div><div class="line"></div><div class="line">你所期望的待遇</div><div class="line"></div><div class="line">HR介绍公司的制度,福利,待遇(在你说出期待值后,他能接收就继续谈),公司的职业规划,签订协议(长期,最少1年),公司对我们的期望</div></pre></td></tr></table></figure></p>
 <p><br><br></p>
+<h2 id="3-腾讯2018校招面试"><a href="#3-腾讯2018校招面试" class="headerlink" title="3. 腾讯2018校招面试"></a>3. 腾讯2018校招面试</h2><p>腾讯面试（一面，初试）【运营开发 】:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">简历投的是软件开发(web方向),接到面试邀请时的是&quot;运营开发&quot;</div><div class="line">面试时间：2017-09-24</div><div class="line">地点：广州市天河区东圃汇彩路菁映路1号东圃福朋喜来登酒店</div><div class="line">面试模式： 技术岗 单面 酒店房间1对1</div><div class="line"></div><div class="line"></div><div class="line"> 无法算法笔试体,无自我介绍,直接开始问</div><div class="line"></div><div class="line">1.从佛山过来?期望在哪个城市工作?</div><div class="line">2.有没考虑过考研?</div><div class="line">3.为什么选择java，java的优势在哪里?</div><div class="line">4.你有两个项目，哪个是团队的（之后主要问该项目,项目问）?</div><div class="line">5.两个项目都是关于博客，你是很喜欢做博客系统吗?</div><div class="line">6.你的项目实现了哪些功能？</div><div class="line">7.博客的相册管理，是否有权限管理，若被获取到静态资源外部链接(例如图片)，能否直接从外部访问到静态资源，该如何进行权限验证?</div><div class="line">9.有了解过Cookie吗?</div><div class="line">8.服务器以什么方式传递Cookie到客户端?</div><div class="line">10Cookie工作原理?实现原理?</div><div class="line">11.有了解过Session吗?</div><div class="line">12.Session工作原理?Cookie实现原理</div><div class="line">13.Session如果是分布式环境下，多个服务器，如何考虑储存，有考虑到这种情况吗?</div><div class="line">14.有了解过HTTPS协议?</div><div class="line">10.MySQL数据库的行级锁,列级锁,有了解过码,试着阐述一下?</div><div class="line">11.为什么选择gmail?</div><div class="line">12.腾讯使用java的地方比较少,web方向主要是php，phython，c，只有Android的方向是java，你是想选Web方向，还是android，是否需要帮忙转投别的方向?</div><div class="line">13.你有什么想问的？</div><div class="line"></div><div class="line"></div><div class="line">个人问了三个问题</div><div class="line">1.腾讯内使用java进行开发岗位的很少吗?</div><div class="line">2.面试结果最快什么时候能知道?</div><div class="line">3.在这次面试中我有什么不足的地方？</div><div class="line"></div><div class="line"></div><div class="line">个人总结：</div><div class="line">a.无问java,可能是方向不对口</div><div class="line">b.网络基础问的比较多,自己在这方面基础不够牢固</div><div class="line">c.简历的一些坑,给自己埋下了</div><div class="line">d.心态不够放松,还需要提升临场应变能力与表述嫩了个i</div></pre></td></tr></table></figure></p>
+<hr>
+<p><br><br></p>
 <hr>
 <p><br><br><br></p>
 ]]></content>
@@ -2987,8 +3026,7 @@ fn:trim()                  //首尾去空格
       &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;小草互联面试总结&lt;/li&gt;
 &lt;li&gt;武汉唯特讯数据科技有限公司(广州研发中心)面试总结&lt;/li&gt;
-&lt;/ol&gt;
-&lt;
+&lt;li&gt;腾讯2
     
     </summary>
     
@@ -3262,7 +3300,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/05/02/MyProject_%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://suvan-l.github.io/2017/05/02/MyProject_个人博客/</id>
     <published>2017-05-02T00:07:43.000Z</published>
-    <updated>2017-09-16T14:14:35.208Z</updated>
+    <updated>2017-09-26T15:00:02.549Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-前言："><a href="#一-前言：" class="headerlink" title="一.前言："></a>一.前言：</h1><p>&emsp;完整搭建个人博客<br><br></p>
 <p>开发环境</p>
@@ -3298,8 +3336,7 @@ fn:trim()                  //首尾去空格
 <li>【5.2】构思项目体系,复习HTML,学习<a href="https://www.layui.com/" target="_blank" rel="external">Layui</a>,</li>
 <li>【5.3】复习CSS，学习<a href="http://v3.bootcss.com/" target="_blank" rel="external">BookStrap</a></li>
 <li>【5.4】在<a href="http://www.w3school.com.cn/复习HTML" target="_blank" rel="external">W3C</a>,熟悉BookStrap的CSS样式</li>
-<li>【5.5 ~ 5.8)】咸鱼</li>
-<li>【2017.5.9】熟悉BookStrap的栅格系统,导航栏样式,开发index.html(首页)导航栏</li>
+<li>【5.9】熟悉BookStrap的栅格系统,导航栏样式,开发index.html(首页)导航栏</li>
 <li>【5.10】 响应式导航栏</li>
 <li>【5.11】 首页背景图</li>
 <li>【5.13】 首页登录框,复习JavaScript</li>
@@ -3339,6 +3376,9 @@ fn:trim()                  //首尾去空格
 <li>【7.7】createExcel生成工具,实现Excel表去重(倒叙最新),总结慕课网Socket通信知识</li>
 <li>【9.8】2017.09.08 第15次提交 参考nexT主题,重新设计index页面,重写HTML与CSS,加入jQuery动画【未解决:查询数据库最新生成的5篇文章失败】</li>
 <li>【9.9】解决9.8问题(mapping中的SQL语句改为以publictime排序),重写登录界面,未实现功能<br>+【9.11】SpringMVC的Cookie+Interceptor实现自动登录<br>+【9.12】代码优化,细节整理<br>+【9.15~9.16】重写注册页面HTML+CSS+js(jQuery),实现JS验证,用户唯一性ajax验证,发送邮箱验证码验证,注册用户功能<br>+【9.16晚】归档页面优化与整理</li>
+<li>【9.17~9.18】Article的Mapper,DAO,Service,重新设计,IDEA加入ideavim和emacsIDEAS插件,尝试键盘流,分类页面重新设计</li>
+<li>【9.21】重新设计文章页面HTML+CSS</li>
+<li>【9.22】文章评论模块的样式调整</li>
 </ul>
 ]]></content>
     
@@ -3363,40 +3403,38 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/04/29/Maven_%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/04/29/Maven_错误记录/</id>
     <published>2017-04-29T02:43:40.000Z</published>
-    <updated>2017-09-05T14:28:18.832Z</updated>
+    <updated>2017-09-21T08:11:21.333Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>参考资料：</p>
-<ul>
-<li><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="external">构建工具-Maven-相关知识-整理专题</a></li>
-<li><a href="http://www.cnblogs.com/wql025/p/5215570.html#autoid-0-0-0" target="_blank" rel="external">IntelliJ IDEA 15 创建maven项目【图文教程】</a></li>
-<li><a href="https://my.oschina.net/boltwu/blog/713523" target="_blank" rel="external">解决intellij idea新建maven项目，加载archetype模型很慢 </a></li>
-</ul>
-<p>目录：<br>1.本地安装Maven</p>
+    <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>目录：</p>
 <ol>
+<li>本地安装Maven</li>
+<li>我的settings配置文件</li>
 <li>创建maven项目【无模版-基本环境搭建】</li>
-<li>创建maven项目【使用模版】</li>
 <li>idea的java项目添加Maven支持</li>
 </ol>
 <hr>
 <p><br><br><br></p>
-<h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><h2 id="1-本地安装Maven"><a href="#1-本地安装Maven" class="headerlink" title="1.本地安装Maven"></a>1.本地安装Maven</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">官网：http://maven.apache.org/download.cgi</div><div class="line">    下载apache-maven-3.3.9-bin.zip</div><div class="line"></div><div class="line">配置环境变量:</div><div class="line">    MAVEN_HOME:E:\Java\Maven\apache-maven-3.3.9\bin</div><div class="line">    Path: ......%MAVEN_HOME%;e</div><div class="line"></div><div class="line">验证</div><div class="line">    打开cmd 输入 mvn -v 【验证是否配置成功】</div><div class="line"></div><div class="line"></div><div class="line">更换中央仓库：【修改maven根目录下的conf文件中的setting.xml文件】</div><div class="line">  &lt;mirrors&gt;</div><div class="line">    &lt;mirror&gt;</div><div class="line">      &lt;id&gt;alimaven&lt;/id&gt;</div><div class="line">      &lt;name&gt;aliyun maven&lt;/name&gt;</div><div class="line">      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</div><div class="line">      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;        </div><div class="line">    &lt;/mirror&gt;</div><div class="line">  &lt;/mirrors&gt;</div></pre></td></tr></table></figure>
+<h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><h2 id="1-本地安装Maven"><a href="#1-本地安装Maven" class="headerlink" title="1.本地安装Maven"></a>1.本地安装Maven</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;网：http://maven.apache.org/download.cgi</div><div class="line">    下载apache-maven-3.3.9-bin.zip</div><div class="line"></div><div class="line">&lt;2&gt;配置环境变量:</div><div class="line">    MAVEN_HOME:E:\Java\Maven\apache-maven-3.3.9\bin</div><div class="line">    Path: ......%MAVEN_HOME%;e</div><div class="line"></div><div class="line">&lt;3&gt;验证</div><div class="line">    打开cmd 输入 mvn -v 【验证是否配置成功】</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;更换中央仓库：【修改maven根目录下的conf文件中的setting.xml文件】</div><div class="line">  &lt;mirrors&gt;</div><div class="line">    &lt;mirror&gt;</div><div class="line">      &lt;id&gt;alimaven&lt;/id&gt;</div><div class="line">      &lt;name&gt;aliyun maven&lt;/name&gt;</div><div class="line">      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</div><div class="line">      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;        </div><div class="line">    &lt;/mirror&gt;</div><div class="line">  &lt;/mirrors&gt;</div></pre></td></tr></table></figure>
 <hr>
 <p><br><br></p>
-<h2 id="2-创建maven项目【无模版-基本环境搭建】"><a href="#2-创建maven项目【无模版-基本环境搭建】" class="headerlink" title="2. 创建maven项目【无模版-基本环境搭建】"></a>2. 创建maven项目【无模版-基本环境搭建】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">1. 创建Maven项目【不使用模版】,自定义GroupId和Arifactld</div><div class="line">2. 部署项目[Porject Structure]</div><div class="line">	A.添加Modules【选web模版】</div><div class="line">		(a1)修改资源目录[Web Resource Directories]</div><div class="line">			E:\Java\Intellij IDEA\项目\My_Blog\src\main\webapp</div><div class="line">			 ~~~【这里指定src\main文件，并输入webapp】</div><div class="line">		(a2)修改描述文件[Deployment Descriptor]</div><div class="line">			E:\Java\Intellij IDEA\项目\My_Blog\src\main\webapp\WEB-INF\web.xml</div><div class="line">			~~~【这里同样将目录指定到webapp】</div><div class="line">	B.添加Artifacts【描述了当前项目的发布信息】</div><div class="line">		&apos;+&apos; 号 </div><div class="line">			-&gt; Web Application Exploded</div><div class="line">			-&gt; From Modules...</div><div class="line">			-&gt; 选择当前项目</div><div class="line">			【左列表出现已有的发布项目，右列表的output root目录描述了当前项目的编译目录及适配服务】</div><div class="line">3.在webapp\WEB-INF\目录下 -&gt; 新建lib目录</div><div class="line">4.部署服务器</div><div class="line">	菜单栏Run</div><div class="line">		(A)</div><div class="line">		-&gt;Edit Configurations</div><div class="line">		-&gt; &apos;+&apos; 号</div><div class="line">		-&gt; Tomcat Server ==&gt; Local</div><div class="line">		-&gt;右界面Deployment【第二列菜单栏】</div><div class="line">		-&gt;&apos;+&apos; 号 ==&gt;  Artifact...</div><div class="line"></div><div class="line">		(B)</div><div class="line">		-&gt;回到Server【第二列菜单栏】</div><div class="line">			在[On &apos;Update&apos; action]</div><div class="line">			  [On frame deactivation]</div><div class="line">			  		==&gt; 都选择Update classes and resources</div><div class="line"></div><div class="line">		(C)</div><div class="line">		-&gt;回到Server【第二列菜单栏】</div><div class="line">			选择默认浏览器</div><div class="line"></div><div class="line">5.添加Tomcat依赖</div><div class="line">	部署项目[Project Structure] </div><div class="line">		-&gt; Modules </div><div class="line">		-&gt; 右界面选择项目 ==&gt; Dependencies[依赖]</div><div class="line">	    -&gt; &apos;+&apos;号  ==&gt;  Library...</div><div class="line">	    -&gt; Application Server Libraries ==&gt; 选择相应Tomcat版本</div><div class="line"></div><div class="line"></div><div class="line">6.项目结构</div><div class="line">	My_Blog</div><div class="line">		out  【编译文件目录】</div><div class="line">		src  </div><div class="line">			main  【主要源码目录】</div><div class="line">			 	java</div><div class="line">			 	resources</div><div class="line">			 	webapp</div><div class="line">			 		_lib         【存放扩展jar包】</div><div class="line">			 		_WEB-INF</div><div class="line">			 			web.xml  【web项目配置文件】</div><div class="line">			test   【测试目录】</div><div class="line">				java</div><div class="line">		target</div><div class="line">		My_Blog.iml</div><div class="line">		pom.xml    【Maven配置文件】</div><div class="line">	External Libraries  【库】</div><div class="line"></div><div class="line"></div><div class="line">**********************************************</div><div class="line">	若需要用模版创建则在New Project时</div><div class="line">		[打勾][Create from archetype]</div><div class="line">		然后选择</div><div class="line">			org.appache.maven.archetypes:maven-archetype-webapp</div></pre></td></tr></table></figure>
-<hr>
-<p><br><br></p>
-<h2 id="3-创建maven项目【使用模版】"><a href="#3-创建maven项目【使用模版】" class="headerlink" title="3. 创建maven项目【使用模版】"></a>3. 创建maven项目【使用模版】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">File -&gt; Close Project -&gt; Create New Projcet</div><div class="line"> 选择Maven</div><div class="line"> 	找到org.apache.maven.archetype:maven-archtype-webapp【可以手动输入关键字模糊匹配】</div></pre></td></tr></table></figure>
-<h2 id="4-idea的java项目添加Maven支持"><a href="#4-idea的java项目添加Maven支持" class="headerlink" title="4. idea的java项目添加Maven支持"></a>4. idea的java项目添加Maven支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">先新建项目</div><div class="line">	-&gt;在左侧边栏右键项目 -&gt; Add Framwork Support... </div><div class="line">	-&gt; 找到Maven</div></pre></td></tr></table></figure>
+<h2 id="2-我的settings配置文件"><a href="#2-我的settings配置文件" class="headerlink" title="2. 我的settings配置文件"></a>2. 我的settings配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;</div><div class="line">          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">          xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;</div><div class="line"> </div><div class="line">  &lt;!--</div><div class="line">    1.全局配置：$&#123;M2_HOME&#125;/conf/settings.xml 【对操作系统的所有使用者生效】</div><div class="line">    2.用户配置：$&#123;user.home&#125;/.m2/settings.xml</div><div class="line">    【对当前操作用户的使用者生效】</div><div class="line">            两者都存在，内容合并，用户的settings会覆盖全局的settings</div><div class="line"></div><div class="line">  --&gt;</div><div class="line">  &lt;!-- 本地仓库位置 --&gt;</div><div class="line">  &lt;localRepository&gt;E:\Java\Maven\repository&lt;/localRepository&gt;</div><div class="line"></div><div class="line">  &lt;!--搜索插件组织ID的列表 --&gt;</div><div class="line">   &lt;pluginGroups&gt;</div><div class="line">  &lt;/pluginGroups&gt;</div><div class="line"></div><div class="line">  &lt;!-- 用于来配置不同的代理[简单的设置profile id可以很容易的更换整个代理配置] --&gt;</div><div class="line">  &lt;proxies&gt;</div><div class="line">  &lt;/proxies&gt;</div><div class="line"></div><div class="line"> 　&lt;!-- 配置服务端的设置 --&gt;</div><div class="line">  &lt;servers&gt;</div><div class="line">  &lt;/servers&gt;</div><div class="line"></div><div class="line">  &lt;!-- 为仓库列表配置下载的镜像列表【只要本地仓库没有，就到指定公共仓库下载】--&gt;</div><div class="line">  &lt;mirrors&gt;</div><div class="line">    &lt;!-- 阿里云仓库 --&gt;</div><div class="line">    &lt;mirror&gt;</div><div class="line">      &lt;id&gt;alimaven&lt;/id&gt;</div><div class="line">      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;</div><div class="line">      &lt;name&gt;aliyun maven&lt;/name&gt;</div><div class="line">      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</div><div class="line">    &lt;/mirror&gt;</div><div class="line">    &lt;!--Maven仓库1--&gt;</div><div class="line">    &lt;mirror&gt;</div><div class="line">        &lt;id&gt;UK&lt;/id&gt;</div><div class="line">        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</div><div class="line">        &lt;url&gt;http://uk.maven.org/maven2&lt;/url&gt;</div><div class="line">    &lt;/mirror&gt;  </div><div class="line">  &lt;/mirrors&gt;</div><div class="line"></div><div class="line">  &lt;!-- 根据环境参数来调整构造配置的列表 --&gt;</div><div class="line">  &lt;profiles&gt;</div><div class="line">  &lt;/profiles&gt;</div><div class="line"></div><div class="line">  &lt;!-- activeProfiles</div><div class="line">   | List of profiles that are active for all builds.</div><div class="line">   |</div><div class="line">  &lt;activeProfiles&gt;</div><div class="line">    &lt;activeProfile&gt;alwaysActiveProfile&lt;/activeProfile&gt;</div><div class="line">    &lt;activeProfile&gt;anotherAlwaysActiveProfile&lt;/activeProfile&gt;</div><div class="line">  &lt;/activeProfiles&gt;</div><div class="line">  --&gt;</div><div class="line">&lt;/settings&gt;</div></pre></td></tr></table></figure>
 <h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="3-创建maven项目【无模版-基本环境搭建】"><a href="#3-创建maven项目【无模版-基本环境搭建】" class="headerlink" title="3. 创建maven项目【无模版-基本环境搭建】"></a>3. 创建maven项目【无模版-基本环境搭建】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">1. 创建Maven项目【不使用模版】,自定义GroupId和Arifactld</div><div class="line">2. 部署项目[Porject Structure]</div><div class="line">	A.添加Modules【选web模版】</div><div class="line">		(a1)修改资源目录[Web Resource Directories]</div><div class="line">			E:\Java\Intellij IDEA\项目\My_Blog\src\main\webapp</div><div class="line">			 ~~~【这里指定src\main文件，并输入webapp】</div><div class="line">		(a2)修改描述文件[Deployment Descriptor]</div><div class="line">			E:\Java\Intellij IDEA\项目\My_Blog\src\main\webapp\WEB-INF\web.xml</div><div class="line">			~~~【这里同样将目录指定到webapp】</div><div class="line">	B.添加Artifacts【描述了当前项目的发布信息】</div><div class="line">		&apos;+&apos; 号 </div><div class="line">			-&gt; Web Application Exploded</div><div class="line">			-&gt; From Modules...</div><div class="line">			-&gt; 选择当前项目</div><div class="line">			【左列表出现已有的发布项目，右列表的output root目录描述了当前项目的编译目录及适配服务】</div><div class="line">3.在webapp\WEB-INF\目录下 -&gt; 新建lib目录</div><div class="line">4.部署服务器</div><div class="line">	菜单栏Run</div><div class="line">		(A)</div><div class="line">		-&gt;Edit Configurations</div><div class="line">		-&gt; &apos;+&apos; 号</div><div class="line">		-&gt; Tomcat Server ==&gt; Local</div><div class="line">		-&gt;右界面Deployment【第二列菜单栏】</div><div class="line">		-&gt;&apos;+&apos; 号 ==&gt;  Artifact...</div><div class="line"></div><div class="line">		(B)</div><div class="line">		-&gt;回到Server【第二列菜单栏】</div><div class="line">			在[On &apos;Update&apos; action]</div><div class="line">			  [On frame deactivation]</div><div class="line">			  		==&gt; 都选择Update classes and resources</div><div class="line"></div><div class="line">		(C)</div><div class="line">		-&gt;回到Server【第二列菜单栏】</div><div class="line">			选择默认浏览器</div><div class="line"></div><div class="line">5.添加Tomcat依赖</div><div class="line">	部署项目[Project Structure] </div><div class="line">		-&gt; Modules </div><div class="line">		-&gt; 右界面选择项目 ==&gt; Dependencies[依赖]</div><div class="line">	    -&gt; &apos;+&apos;号  ==&gt;  Library...</div><div class="line">	    -&gt; Application Server Libraries ==&gt; 选择相应Tomcat版本</div><div class="line"></div><div class="line"></div><div class="line">6.项目结构</div><div class="line">	My_Blog</div><div class="line">		out  【编译文件目录】</div><div class="line">		src  </div><div class="line">			main  【主要源码目录】</div><div class="line">			 	java</div><div class="line">			 	resources</div><div class="line">			 	webapp</div><div class="line">			 		_lib         【存放扩展jar包】</div><div class="line">			 		_WEB-INF</div><div class="line">			 			web.xml  【web项目配置文件】</div><div class="line">			test   【测试目录】</div><div class="line">				java</div><div class="line">		target</div><div class="line">		My_Blog.iml</div><div class="line">		pom.xml    【Maven配置文件】</div><div class="line">	External Libraries  【库】</div><div class="line"></div><div class="line"></div><div class="line">**********************************************</div><div class="line">	若需要用模版创建则在New Project时</div><div class="line">		[打勾][Create from archetype]</div><div class="line">		然后选择</div><div class="line">			org.appache.maven.archetypes:maven-archetype-webapp</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="4-idea的java项目添加Maven支持"><a href="#4-idea的java项目添加Maven支持" class="headerlink" title="4. idea的java项目添加Maven支持"></a>4. idea的java项目添加Maven支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">先新建项目</div><div class="line">	-&gt;在左侧边栏右键项目 -&gt; Add Framwork Support... </div><div class="line">	-&gt; 找到Maven</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
 <hr>
 <p><br><br><br></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/judasn/IntelliJ-IDEA-Tu
+      &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;p&gt;目录：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本地安装Maven&lt;/li&gt;
+&lt;li&gt;我的settings配置文件&lt;/li&gt;
+&lt;li&gt;创建maven项目【
     
     </summary>
     
@@ -3412,7 +3450,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/04/27/intellijIDEA_%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/04/27/intellijIDEA_错误记录/</id>
     <published>2017-04-27T00:50:41.000Z</published>
-    <updated>2017-09-18T03:00:46.874Z</updated>
+    <updated>2017-09-26T10:18:40.722Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>参考资料：</p>
 <ul>
@@ -3426,10 +3464,14 @@ fn:trim()                  //首尾去空格
 <li>idea的代码生成器[Live Templates]</li>
 <li>自动提示方法参数[鼠标移动到方法名]</li>
 <li>配置SFTP[远程服务器用于上传文件]</li>
-<li>idea每次运行Java文件,提示Warning:java:资源值1.5已过时</li>
+<li>idea每次运行Java文件,提示Warning(:java:)资源值1.5已过时</li>
 <li>idea常用快捷键</li>
 <li>ideaVim插件</li>
 <li>emacsIDEAs插件</li>
+<li>IDEA创建Maven项目</li>
+<li>IDEA从Github上面Clone项目,本地配置Maven</li>
+<li>将clone的项目更改后,pull到Github</li>
+<li>安装waketime【记录coding时间】</li>
 </ol>
 <hr>
 <p><br><br><br></p>
@@ -3466,7 +3508,7 @@ fn:trim()                  //首尾去空格
 <p><br></p>
 <hr>
 <p><br><br></p>
-<h2 id="8-idea常用快捷键"><a href="#8-idea常用快捷键" class="headerlink" title="8.idea常用快捷键"></a>8.idea常用快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ESC  关闭弹窗</div><div class="line"></div><div class="line">Alt + INS  新疆类or方法</div><div class="line">Alt + NUM (数字键)  切换窗口</div><div class="line"></div><div class="line">shrit + F6  文件重命名</div><div class="line">shift + shift 搜索框(任意文件)</div><div class="line">shift + ESC 关闭窗体模块</div><div class="line"></div><div class="line">ctrl + D 复制行</div><div class="line">Ctrl + E 打开最近编辑过的文件</div><div class="line">Ctrl + F 文本搜索框(当前页)</div><div class="line">Ctrl + H 查看类的层次</div><div class="line">Ctrl + j  查看模版</div><div class="line">Ctrl + N 搜索类</div><div class="line">Ctrl + W 层级选中</div><div class="line">Ctrl + Y 删除行</div><div class="line"></div><div class="line"></div><div class="line">Ctrl + Tab 切换标签</div><div class="line"></div><div class="line">Ctrl + F4 关闭当前页面</div><div class="line">ctrl + F12 查看类的所有方法</div><div class="line"></div><div class="line">Ctrl + shift + A 查找所有命令 or 快捷键</div><div class="line">Ctrl + shift + 空格  智能补全</div><div class="line">Ctrl + shift + F10  运行类</div></pre></td></tr></table></figure>
+<h2 id="8-idea常用快捷键"><a href="#8-idea常用快捷键" class="headerlink" title="8.idea常用快捷键"></a>8.idea常用快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ESC  关闭弹窗</div><div class="line"></div><div class="line">Alt + INS  新疆类or方法</div><div class="line">Alt + NUM (数字键)  切换窗口</div><div class="line"></div><div class="line">shrit + F6  文件重命名</div><div class="line">shift + shift 搜索框(任意文件)</div><div class="line">shift + ESC 关闭窗体模块</div><div class="line"></div><div class="line">ctrl + D 复制行</div><div class="line">Ctrl + E 打开最近编辑过的文件</div><div class="line">Ctrl + F 文本搜索框(当前页)</div><div class="line">Ctrl + H 查看类的层次</div><div class="line">Ctrl + j  查看模版</div><div class="line">Ctrl + N 搜索类</div><div class="line">Ctrl + W 层级选中</div><div class="line">Ctrl + Y 删除行</div><div class="line"></div><div class="line"></div><div class="line">Ctrl + K 本地提交【添加版本控制后】</div><div class="line">Ctrl + shfit + K  远程提交(Github)</div><div class="line">Ctrl + Tab 切换标签</div><div class="line"></div><div class="line">Ctrl + F4 关闭当前页面</div><div class="line">ctrl + F12 查看类的所有方法</div><div class="line"></div><div class="line">Ctrl + shift + A 查找所有命令 or 快捷键</div><div class="line">Ctrl + shift + 空格  智能补全</div><div class="line">Ctrl + shift + F10  运行类</div><div class="line"></div><div class="line"></div><div class="line">方法上一行输入/** 然后直接回车,会自动生成javadoc</div></pre></td></tr></table></figure>
 <hr>
 <p><br><br></p>
 <h2 id="9-ideaVim插件"><a href="#9-ideaVim插件" class="headerlink" title="9. ideaVim插件"></a>9. ideaVim插件</h2><p>参考资料</p>
@@ -3477,7 +3519,7 @@ fn:trim()                  //首尾去空格
 <p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.Ctrl + Alt + s 打开Seetings</div><div class="line">b.Plugins</div><div class="line">c.Install plugin from dis....</div><div class="line">d.选择下载好的压缩包IdeaVim-0.48.zip</div><div class="line">e.确认,插件前方打勾,Applet或者ok</div><div class="line">f.重启IntelliJ IDEA</div></pre></td></tr></table></figure></p>
 <p><br></p>
 <hr>
-<p>常用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">Ctrl + Alt + v 开启工具【自己修改成alt + v】</div><div class="line"></div><div class="line"></div><div class="line">i 插入模式</div><div class="line">v 选中模式</div><div class="line">c 上下移动模式</div><div class="line">Esc(或者Ctrl + [) 退回默认模式,光标移动</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/  搜索(可输入,输入完回车)</div><div class="line">n  下一个</div><div class="line">N 上一个</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">h j k l   左,下,上,右</div><div class="line">H J K  L 页面顶部,合并两行,帮助,页面尾部</div><div class="line"></div><div class="line">10j 向下移动10行</div><div class="line">5k 向上移动5行</div><div class="line"></div><div class="line">: 12 移动到12行</div><div class="line"></div><div class="line">&lt; &gt;前缩进 ,后缩进</div><div class="line"></div><div class="line">0 $  跳到行首,跳到行尾</div><div class="line"></div><div class="line"></div><div class="line">w(W)词组&quot;正向&quot;跳转</div><div class="line">b(B)词组&quot;反向&quot;跳转</div><div class="line"></div><div class="line">x 按住,后删除</div><div class="line">X 后删除(包括自己)</div><div class="line"></div><div class="line">d 删除“选中行”</div><div class="line">dd 删除当前行</div><div class="line">y 复制&quot;选中行&quot;</div><div class="line">yy 复制当前行</div><div class="line"></div><div class="line">p  粘贴</div><div class="line">5p 粘贴5次</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">u 撤销</div><div class="line"></div><div class="line">. 重复命令</div></pre></td></tr></table></figure></p>
+<p>常用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">Alt + v开启工具(原默认是ctrl + alt +v)</div><div class="line"></div><div class="line">Alt + a 左右视图光标跳转(keymap ~ select next windows)</div><div class="line">Alt + i 关闭插入模式</div><div class="line"></div><div class="line"></div><div class="line">i 插入模式【自定alt + i 退出插入模式】</div><div class="line">v 选中模式</div><div class="line">R 进入 覆盖模式</div><div class="line">c 上下移动模式</div><div class="line">Esc(或者Ctrl + [) 退回默认模式,光标移动</div><div class="line"></div><div class="line"></div><div class="line">插入模式</div><div class="line">     i 当前词左边光标插入</div><div class="line">     a当前词右边光标插入</div><div class="line">     A 行首光标插入</div><div class="line">     I 行尾光标插入</div><div class="line">     o 下行光标</div><div class="line">     O 上行光标</div><div class="line"></div><div class="line">    c0 删除到行首,插入光标</div><div class="line">    c$ 删除到行尾,插入光标</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/  搜索(可输入,输入完回车)</div><div class="line">n  下一个</div><div class="line">N 上一个</div><div class="line"></div><div class="line">h j k l   左,下,上,右</div><div class="line">H J K  L 页面顶部,合并两行,帮助,页面尾部</div><div class="line"></div><div class="line">10j 向下移动10行</div><div class="line">5k 向上移动5行</div><div class="line"></div><div class="line">: 12  移动到12行</div><div class="line"></div><div class="line">&lt; &gt;前缩进 ,后缩进</div><div class="line"></div><div class="line">0 $  跳到行首,跳到行尾</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">w(W)词组&quot;正向&quot;跳转</div><div class="line">b(B)词组&quot;反向&quot;跳转</div><div class="line"></div><div class="line">x  删除自己+后面</div><div class="line">X 不删除自己+删前面</div><div class="line"></div><div class="line">d 删除“选中行”</div><div class="line">dd 删除当前行</div><div class="line">y 复制&quot;选中行&quot;</div><div class="line">yy 复制当前行</div><div class="line"></div><div class="line">p  粘贴</div><div class="line">5p 粘贴5次</div><div class="line"></div><div class="line">u 撤销</div><div class="line"></div><div class="line">r 更改当前词</div><div class="line"></div><div class="line">. 重复命令</div></pre></td></tr></table></figure></p>
 <hr>
 <p><br><br></p>
 <h2 id="10-emacsIDEAs插件"><a href="#10-emacsIDEAs插件" class="headerlink" title="10. emacsIDEAs插件"></a>10. emacsIDEAs插件</h2><p>参考资料：</p>
@@ -3492,7 +3534,29 @@ fn:trim()                  //首尾去空格
 <p><br></p>
 <hr>
 <p><br><br></p>
-]]></content>
+<h2 id="11-IDEA创建Maven项目"><a href="#11-IDEA创建Maven项目" class="headerlink" title="11. IDEA创建Maven项目"></a>11. IDEA创建Maven项目</h2><p>参考资料</p>
+<ul>
+<li><a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="external">构建工具-Maven-相关知识-整理专题</a></li>
+<li><a href="http://www.cnblogs.com/wql025/p/5215570.html#autoid-0-0-0" target="_blank" rel="external">IntelliJ IDEA 15 创建maven项目【图文教程】</a></li>
+<li><a href="https://my.oschina.net/boltwu/blog/713523" target="_blank" rel="external">解决intellij idea新建maven项目，加载archetype模型很慢 </a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;打开IDEA，关闭当前项目Close project</div><div class="line">            a.创建 Create New Project   </div><div class="line">            b.左侧 Maven,右侧 打勾Create from archetype</div><div class="line">            c. 选择org.apache.maven.archetypes:maven-archetype-webapp模版,Next </div><div class="line">            d.输入Groupld(项目分组id,建议org + 组织名字)     org.neusoft  (org非盈利,com商业)</div><div class="line">                    Artifactld (项目id,输入项目名)                         neubbs</div><div class="line"></div><div class="line">            e. Maven home Directory(选择Maven版本)</div><div class="line">                User settings file (指定本地Maven根目录,conf目录下的settings.xml)</div><div class="line">                Local respository(指定本地repository的目录】</div><div class="line">                添加：</div><div class="line">                    archetypeCatalog: internal (标识仅使用内部元数据)</div><div class="line"></div><div class="line">&lt;2&gt;创建完毕</div><div class="line">         a.进入Project Structure【快捷键ctrl+shift+alt+s】</div><div class="line">         b.左侧 </div><div class="line">                Project     设置JDK</div><div class="line">               Models      指定源代码目录(蓝色),测试代码目录(test)</div><div class="line">                                    在scr下新建test目录,</div><div class="line">                                        src-&gt;main下新建java目录</div><div class="line"></div><div class="line">                                    找到Dependencies,点击 + 添加Library</div><div class="line">                                            Applciation Server Server Libraries </div><div class="line">                                            添加Tomcat 8.0.41的库</div><div class="line"></div><div class="line">                Libries      根据需求添加jar包</div><div class="line">                Artifacts 设置war包【用模版的则默认已经添加好】</div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;设置Tomcat</div><div class="line">        a.找到导航栏,&apos;向下三角形&apos; ，点击Edit configurations...</div><div class="line">        b.左边找到Tomcat Server, 点击local</div><div class="line">        c.右边界面</div><div class="line">                Server </div><div class="line">                        Name  显示昵称(任意命名)</div><div class="line">                        Applciation server   选择服务器</div><div class="line">                        Open..的URL地址栏</div><div class="line">                                据爱如项目名,变成http://localhost:8080/neubbs</div><div class="line"></div><div class="line">                 Deplyment</div><div class="line">                        右边 &apos;+&apos;,选择Artifact</div><div class="line">                            选择neubbs: war exploded【将WEB工程以当前文件夹的位置上传到服务器】</div><div class="line">                                    【另外的neubbs: war 将web工程以包的形式上传到服务器】</div><div class="line"></div><div class="line">                    回到Server</div><div class="line">                        On Update action (更新按钮)</div><div class="line">                      On frame deactivation (失去焦点时自动编译)</div><div class="line">                                 都修改成Update classes and resoureces 【热更新】</div></pre></td></tr></table></figure>
+<p><br></p>
+<hr>
+<p><br><br></p>
+<h2 id="12-IDEA从Github上面Clone项目-本地配置Maven"><a href="#12-IDEA从Github上面Clone项目-本地配置Maven" class="headerlink" title="12. IDEA从Github上面Clone项目,本地配置Maven"></a>12. IDEA从Github上面Clone项目,本地配置Maven</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;解压Maven包,打开conf -&gt; settings.xml</div><div class="line">        定位到localRepository，取消注释,并指定本地仓库</div><div class="line">          &lt;localRepository&gt;本地repository的目录&lt;/localRepository&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;2&gt;进入到Welcome to IntelliJ IDEA界面(若之前打开了项目,则File -&gt; Close Project)</div><div class="line">                a.右下角下拉列表Configure,点击Settings,进入到Default Settings界面</div><div class="line">                b.搜索Git,目录选择Git目录下的cmd的git.exe,点击Test测试</div><div class="line">                c.搜索Maven</div><div class="line">                            Maven home directory：  选择Bundled(Maven 3)</div><div class="line">                            User settings file: 选择Maven根目录的conf目录里的settgins.xml文件</div><div class="line">                            Local repositoyr: 选择本地respository仓库</div><div class="line">                d.搜索Github</div><div class="line">                            Host: github.com                           Auth Type:Password</div><div class="line">                            Login: Github账户</div><div class="line">                            Password: Githu密码</div><div class="line">                                点击,Test进行测试</div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;回到Welcome界面</div><div class="line">                a.点击Check out from Version Control下拉列表</div><div class="line">                b.  选择Github</div><div class="line">                                需要登录</div><div class="line">                                        Git Repository URL:  填写项目的URL(比如:https://github.com/nuitcoder/neubbs.git)</div><div class="line">                                        Parent Diertory:  填写父目录(项目目录放在哪个目录下)</div><div class="line">                                        Directory Name: 项目目录名(不用改变) </div><div class="line">                        选择Githut</div><div class="line">                               不用登录</div><div class="line">                                        同上填写三个(URL可以进行Test)测试</div><div class="line">                c.clone,然后打开项目</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="13-将clone的项目更改后-pull到Github"><a href="#13-将clone的项目更改后-pull到Github" class="headerlink" title="13. 将clone的项目更改后,pull到Github"></a>13. 将clone的项目更改后,pull到Github</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 修改代码</div><div class="line">2.本地提交(Ctrl + k) ,需要输入commit message</div><div class="line">3.远程提交(Ctrl + shift + k),需要选定分支</div></pre></td></tr></table></figure>
+<hr>
+<p><br><br></p>
+<h2 id="14-安装waketime【记录coding时间】"><a href="#14-安装waketime【记录coding时间】" class="headerlink" title="14. 安装waketime【记录coding时间】"></a>14. 安装waketime【记录coding时间】</h2><p>&emsp;记录代码时间</p>
+<ul>
+<li><a href="https://plugins.jetbrains.com/plugin/7425-wakatime" target="_blank" rel="external">WakaTime :: JetBrains Plugin Repository</a></li>
+<li><a href="https://github.com/wakatime/jetbrains-wakatime" target="_blank" rel="external">wakatime/jetbrains-wakatime</a></li>
+<li><a href="https://wakatime.com/dashboard" target="_blank" rel="external">官网(注册,然后获取API key)</a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -3617,15 +3681,24 @@ E:\Java\NetBeans\PM\WebApplication1\nbproject\build-impl.xml:1045: 尚未部署�
   </entry>
   
   <entry>
-    <title>Windows_DOS常用命令</title>
-    <link href="http://suvan-l.github.io/2017/03/14/Windows_DOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://suvan-l.github.io/2017/03/14/Windows_DOS常用命令/</id>
+    <title>Windows_快捷键操作</title>
+    <link href="http://suvan-l.github.io/2017/03/14/Windows_%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%93%8D%E4%BD%9C/"/>
+    <id>http://suvan-l.github.io/2017/03/14/Windows_快捷键操作/</id>
     <published>2017-03-14T15:49:44.000Z</published>
-    <updated>2017-08-23T07:48:09.005Z</updated>
+    <updated>2017-09-19T03:11:52.306Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一-系统工具"><a href="#一-系统工具" class="headerlink" title="一.系统工具"></a>一.系统工具</h1><p>资料</p>
+    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><ol>
+<li>系统工具</li>
+<li>DOS常用命令</li>
+<li>windows全局快捷键</li>
+<li>系统”运行”，快速启动程序(文件 or 目录)</li>
+<li>window常用软件汇总</li>
+</ol>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-系统工具"><a href="#1-系统工具" class="headerlink" title="1. 系统工具"></a>1. 系统工具</h2><p>资料</p>
 <ul>
-<li><a href="http://msdn.itellyou.cn/?jdfwkey=0mnyt2" target="_blank" rel="external">I tell you[可下各种操作系统镜像]</a></li>
+<li><a href="http://msdn.itellyou.cn/?jdfwkey=0mnyt2" target="_blank" rel="external">I tell you[可下各种操作系统镜像]</a><br><br></li>
 </ul>
 <ol>
 <li>WinSAT【系统自带评估工具】</li>
@@ -3639,41 +3712,65 @@ E:\Java\NetBeans\PM\WebApplication1\nbproject\build-impl.xml:1045: 尚未部署�
 <li>ping    【网络诊断工具】</li>
 </ol>
 <hr>
-<p><br><br><br></p>
-<h1 id="二-DOS常用命令"><a href="#二-DOS常用命令" class="headerlink" title="二.DOS常用命令"></a>二.DOS常用命令</h1><p>appwiz.cpl 【程序和功能(控制面板-卸载)】</p>
-<p>calc         【计算器】<br>cd XXX      【进入目录】<br>cd..         【后退】<br>cls         【清空屏幕】<br>color         【界面调色】<br>control     【控制面本】</p>
-<p>dir     【查看目录文件】<br>dxdiag  【DirectX诊断工具】<br>dfrgui  【磁盘碎片整理】<br>devmgmt 【设备管理器】</p>
-<p>explorer    【资源管理器(我的电脑)】</p>
-<p>getmac     【查看网卡信息(物理IP)】</p>
-<p>ipconfig/flushdns 【情况本地DNS缓存】<br>ipconfig/all       【查看网络连接信息】</p>
-<p>jar xf [jar包]  【解压jar包文件】</p>
-<p>mstsc         【远程桌面】<br>msinfo32     【系统信息-电脑配置】<br>mspaint     【画图板】</p>
-<p>ncpa.cpl                         【网络连接】<br>notepad                         【记事本】<br>net user                        【显示计算机用户】<br>net U XXX                        【修改系统U用户的密码为xxx】<br>net user zhangbq 123456 /add    【强制修改zhangbq用户密码为 123456】</p>
-<p>osk     【屏幕键盘】</p>
-<p>path    【查看本地环境变量】</p>
-<p>regedit 【注册表】</p>
-<p>stikyNot             【便笺(jian)】<br>shutdown -s -t 3-     【自动关机-30秒后】<br>shutdown -a          【取消计划关机】<br>sc delete 服务名称    【卸载windows服务】</p>
-<p>tree/F     【显示当前目录所有文件】</p>
-<p>winver     【windows版本】</p>
+<p><br><br></p>
+<h1 id="2-DOS常用命令"><a href="#2-DOS常用命令" class="headerlink" title="2. DOS常用命令"></a>2. DOS常用命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">appwiz.cpl 【程序和功能(控制面板-卸载)】</div><div class="line"></div><div class="line">calc 		【计算器】</div><div class="line">cd XXX           【进入目录】</div><div class="line">cd.. 	            【后退】</div><div class="line">cls 		【清空屏幕】</div><div class="line">color 		【界面调色】</div><div class="line">control 	【控制面本】</div><div class="line"></div><div class="line">dir 	             【查看目录文件】</div><div class="line">dxdiag              【DirectX诊断工具】</div><div class="line">dfrgui              【磁盘碎片整理】</div><div class="line">devmgmt        【设备管理器】</div><div class="line"></div><div class="line">explorer	【资源管理器(我的电脑)】</div><div class="line"></div><div class="line">getmac 	【查看网卡信息(物理IP)】</div><div class="line"></div><div class="line">ipconfig/flushdns 【情况本地DNS缓存】</div><div class="line">ipconfig/all 	         【查看网络连接信息】</div><div class="line"></div><div class="line">jar xf [jar包]  【解压jar包文件】</div><div class="line"></div><div class="line">mstsc 		【远程桌面】</div><div class="line">msinfo32 	【系统信息-电脑配置】</div><div class="line">mspaint 	【画图板】</div><div class="line"></div><div class="line">ncpa.cpl 		【网络连接】</div><div class="line">notepad 		【记事本】</div><div class="line">net user		【显示计算机用户】</div><div class="line">net U xxx	            【修改系统U用户的密码为xxx】</div><div class="line">net user zhangbq 123456 /add    【强制修改zhangbq用户密码为 123456】</div><div class="line"></div><div class="line">osk 	【屏幕键盘】</div><div class="line"></div><div class="line">path    【查看本地环境变量】</div><div class="line">psr      【windows自带的步骤记录器】</div><div class="line"></div><div class="line">regedit     【注册表】</div><div class="line"></div><div class="line">stikyNot 	            【便笺(jian)】</div><div class="line">shutdown -s -t 30 	【自动关机-30秒后】</div><div class="line">shutdown -a  		【取消计划关机】</div><div class="line">sc delete 服务名称    【卸载windows服务】</div><div class="line"></div><div class="line"></div><div class="line">tree/F 	【显示当前目录所有文件】</div><div class="line"></div><div class="line">winver 	【windows版本】</div></pre></td></tr></table></figure>
 <hr>
-<p><br><br><br></p>
-<h1 id="三-全局快捷键"><a href="#三-全局快捷键" class="headerlink" title="三.全局快捷键"></a>三.全局快捷键</h1><p>win + L 【快速锁屏】<br>win + D 【返回桌面】<br>win + R 【运行】<br>win + E 【我的电脑】<br>win + (+/-) 【放大镜】</p>
-<p>alt + Space 【程序快捷窗口】<br>alt + 双击左键【打开指定文件/目录的属性】</p>
+<p><br><br></p>
+<h2 id="3-windows全局快捷键"><a href="#3-windows全局快捷键" class="headerlink" title="3. windows全局快捷键"></a>3. windows全局快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">win + B 【定位到任务栏】</div><div class="line">win + D 【返回桌面】</div><div class="line">win + E 【我的电脑 or 我的电脑】</div><div class="line">win + F【windows搜索】</div><div class="line">win + L 【快速锁屏】</div><div class="line">win + P 【投影仪扩展】</div><div class="line">win + Q 【小娜】</div><div class="line">win + R 【运行】</div><div class="line">win + W【Windows link工作区】</div><div class="line">win + Tab【切换程序】</div><div class="line">win + (+/-) 【放大镜】</div><div class="line">win + 上下左右【上下左右放大缩小软件窗体】</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">win + ctrl + D【新建虚拟桌面】</div><div class="line">win + ctrl + F4【关闭虚拟做梦】</div><div class="line"></div><div class="line"></div><div class="line">点击(光标)　+　shift +　点击【劝你选中】</div><div class="line"></div><div class="line">ctrl + W 【关闭标签】</div><div class="line">ctrl + c 【(+ insert)复制】</div><div class="line">ctrl + v【粘贴(shift + insert)】</div><div class="line"></div><div class="line"></div><div class="line">alt + R 【快速运行窗体】</div><div class="line">alt + F4【快速关闭】</div><div class="line">alt + Space 【程序快捷窗口】</div><div class="line">alt + 双击左键【打开指定文件/目录的属性】</div><div class="line"></div><div class="line">Ctrl + shift + N 【新建文件夹】</div></pre></td></tr></table></figure>
 <hr>
-<p><br><br><br></p>
-<h1 id="四-系统”运行”，快速启动程序-文件-or-目录"><a href="#四-系统”运行”，快速启动程序-文件-or-目录" class="headerlink" title="四.系统”运行”，快速启动程序(文件 or 目录)"></a>四.系统”运行”，快速启动程序(文件 or 目录)</h1><ol>
-<li>创建路径</li>
-<li>配置环境变量【系统】<br>3，将环境变量添加到Path【例如：%环境变量名%;】</li>
-</ol>
+<p><br><br></p>
+<h2 id="4-系统”运行”，快速启动程序-文件-or-目录"><a href="#4-系统”运行”，快速启动程序-文件-or-目录" class="headerlink" title="4. 系统”运行”，快速启动程序(文件 or 目录)"></a>4. 系统”运行”，快速启动程序(文件 or 目录)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 创建路径</div><div class="line">2. 配置环境变量【系统】</div><div class="line">3，将环境变量添加到Path【例如：%环境变量名%;】</div></pre></td></tr></table></figure>
 <hr>
-<p><br><br><br></p>
+<p><br><br></p>
+<h2 id="5-window常用软件汇总"><a href="#5-window常用软件汇总" class="headerlink" title="5. window常用软件汇总"></a>5. window常用软件汇总</h2><p>生活软件</p>
+<ul>
+<li>Listary【文件搜索】</li>
+<li>SAOUtils【目录文件快速启动(刀剑神域里的SAO系统风格)】</li>
+<li>Foxmail【管理邮箱】</li>
+<li>Shadowsocks【翻墙软件】</li>
+<li>TranslucentTB【win10菜单栏透明软件】</li>
+<li>MacType【将window字体调整为苹果字体】</li>
+<li>Sublime Text【查看文档】</li>
+<li>Potplayer【视频播放器】</li>
+<li>Foxit Reader【(福晰)PDF阅读器】</li>
+<li>TeamViewerQS【远程控制电脑】</li>
+<li>2013 Office【办公软件】</li>
+<li>cmder【命令行工具】</li>
+<li>VMware Workstation【虚拟机】</li>
+<li>hMailServer【邮件服务器】</li>
+<li>Github + Git +Node.js + Hexo【搭建个人博客】</li>
+<li>番茄土豆【番茄时间管理法】</li>
+<li>软媒魔方【电脑安全,优化,清理】</li>
+<li>网易云音乐</li>
+<li>迅雷</li>
+<li>金山打字通</li>
+<li>2345好压【压缩,解压软件】<br><br></li>
+</ul>
+<p>Chrome插件</p>
+<ul>
+<li>vimium【模拟vim,快速操作浏览器，脱离鼠标】<br><br></li>
+</ul>
+<p>编程开发</p>
+<ul>
+<li>Intellij IDEA【加入Jrebel,ideavim,EmacsIDEAs插件】</li>
+<li>Eclipse</li>
+<li>NetBeans</li>
+<li>SVN or Git or Github【版本控制】</li>
+<li>Maven</li>
+<li>PowerDesigner【用例图】</li>
+<li>Tomcat【应用服务器】<br>&lt;br》</li>
+</ul>
+<hr>
+<p><br><br></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;一-系统工具&quot;&gt;&lt;a href=&quot;#一-系统工具&quot; class=&quot;headerlink&quot; title=&quot;一.系统工具&quot;&gt;&lt;/a&gt;一.系统工具&lt;/h1&gt;&lt;p&gt;资料&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://msdn.itellyou.cn/?jdfw
+      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;系统工具&lt;/li&gt;
+&lt;li&gt;DOS常用命令&lt;/li&gt;
+&lt;li&gt;windows全局快捷键&lt;/li&gt;
+&lt;li&gt;系统”
     
     </summary>
     
@@ -3952,56 +4049,6 @@ E:\Java\NetBeans\PM\WebApplication1\nbproject\build-impl.xml:1045: 尚未部署�
     
     
       <category term="MyProject" scheme="http://suvan-l.github.io/tags/MyProject/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java_框架框架学习</title>
-    <link href="http://suvan-l.github.io/2017/01/02/Java_%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://suvan-l.github.io/2017/01/02/Java_框架学习/</id>
-    <published>2017-01-02T02:05:25.000Z</published>
-    <updated>2017-08-23T11:41:07.941Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;SSM框架【Spring + SpringMVC + Mybatis】</p>
-<p>资料：</p>
-<ul>
-<li><a href="http://www.cnblogs.com/sunniest/p/4555801.html" target="_blank" rel="external">SpringMVC学习笔记</a></li>
-<li><a href="http://blog.csdn.net/qq598535550/article/details/51703190" target="_blank" rel="external">手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis </a></li>
-</ul>
-<p><br></p>
-<p>目录：<br>一.SpringMVC<br>二.MyBatis<br>三.Spring</p>
-<hr>
-<p><br><br><br></p>
-<h1 id="一-SpringMVC"><a href="#一-SpringMVC" class="headerlink" title="一.SpringMVC"></a>一.SpringMVC</h1><p>次目录<br>1.配置文件<br>2.注解<br><br></p>
-<h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h2><ol>
-<li>web.xml[web项目配置文件]</li>
-<li>spring-mvc.xml[SpringMVC项目MVC配置文件]</li>
-<li>pom.xml[Maven项目依赖包配置文件]</li>
-</ol>
-<hr>
-<p><br><br></p>
-<h2 id="2-注解"><a href="#2-注解" class="headerlink" title="2.注解"></a>2.注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">Controller</div><div class="line">	@Controller			[控制器]</div><div class="line"></div><div class="line">	@RequestMapping(	[请求映射]</div><div class="line">				value,		(路径【配置spring-mvc.xml配置的视图解析器的前后缀】)</div><div class="line">				method,		(请求方式)</div><div class="line">				consumes,   (仅处理哪些Content-Type的提交)</div><div class="line">				produces,	(指明返回的内容类型【类型必须在request中Accept头中包含】【使用@ResponseBody返回String时乱码，可以添加该属性produces=&quot;text/html;charset=UTF-8】)</div><div class="line">				params,		(指明request中必须包含某些参数值【还可加上值的value】)</div><div class="line">				headers,	(指定request中必须包含某些指定的hearder值)</div><div class="line">				Path</div><div class="line">				)</div><div class="line"></div><div class="line">	@RequestParam(	[request参数赋值【赋给方法形参】]</div><div class="line">			value,			(参数名)</div><div class="line">			defaultValue	(默认值)</div><div class="line">		)</div><div class="line"></div><div class="line">	@PathVariable(	[获取URL中的变量【用于RESTFul风格】【在@RequestMapping中的模版变量&#123;..&#125;绑定到同名参数】</div><div class="line">			value    		(参数名)</div><div class="line">			)</div><div class="line">	@RequestHeader	[获取HTTP头的信息]</div><div class="line">	@CookieValue	[获取请求的Cookie数据]</div><div class="line"></div><div class="line">	@SessionAttributes [将Model中的属性存放到HttpSession中【声明类】]</div><div class="line">	@ModelAttribute</div><div class="line">		 &lt;1&gt;ModelAttribute(value=&quot;&quot;)注释返回具体类</div><div class="line">		 &lt;2&gt;@ModelAttribute注释void返回值的方法</div><div class="line">		 &lt;3&gt;@ModelAttribute注释自定义类返回值的方法</div><div class="line"></div><div class="line"></div><div class="line">	@RequestBody 	 </div><div class="line">	@ResponseBody	 [返回对象]</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
-<h1 id="二-MyBatis"><a href="#二-MyBatis" class="headerlink" title="二.MyBatis"></a>二.MyBatis</h1><p>次目录：<br>1.映射语句<br><br></p>
-<h2 id="1-映射语句"><a href="#1-映射语句" class="headerlink" title="1.映射语句"></a>1.映射语句</h2><p>用于映射文件里[.xml]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">标签</div><div class="line">	insert</div><div class="line">	delete</div><div class="line">	select</div><div class="line">	update</div><div class="line"></div><div class="line">	sql			[可被其他语句引用的可重用语句块]</div><div class="line">	cache		[给定命名控件的缓存空间]</div><div class="line">	cache-ref	[其他命名控件缓存配置的引用]</div><div class="line">	resultMap	[描述如何从数据库结果集加载对象]</div><div class="line"></div><div class="line">动态SQL</div><div class="line">	if 			[加入判断语句]</div><div class="line">		&lt;if test=&quot;条件&quot;&gt;...&lt;/if&gt;</div><div class="line">	choose		[选择语句(选其一)]</div><div class="line">		&lt;choose&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">		&lt;/choose&gt;</div><div class="line">	where</div><div class="line">	set 		[用于update更新操作]</div><div class="line">		&lt;set&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">		&lt;/set&gt;</div><div class="line">	foreach</div><div class="line">	bind</div></pre></td></tr></table></figure></p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
-<h1 id="三-Spring"><a href="#三-Spring" class="headerlink" title="三.Spring"></a>三.Spring</h1><hr>
-<p><br><br><br><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&amp;emsp;SSM框架【Spring + SpringMVC + Mybatis】&lt;/p&gt;
-&lt;p&gt;资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a h
-    
-    </summary>
-    
-      <category term="Java" scheme="http://suvan-l.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://suvan-l.github.io/tags/Java/"/>
     
   </entry>
   
