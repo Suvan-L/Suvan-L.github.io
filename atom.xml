@@ -43,7 +43,7 @@
     <link href="http://suvan-l.github.io/2017/09/07/liushuwei/"/>
     <id>http://suvan-l.github.io/2017/09/07/liushuwei/</id>
     <published>2017-09-07T05:32:28.000Z</published>
-    <updated>2017-09-07T06:05:01.604Z</updated>
+    <updated>2017-10-09T04:31:35.436Z</updated>
     
     <content type="html"><![CDATA[<h2 id="个人基本信息"><a href="#个人基本信息" class="headerlink" title="个人基本信息"></a>个人基本信息</h2><ul>
 <li>姓名：刘淑玮</li>
@@ -270,6 +270,43 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
+    <title>OCR技术_tesseract图片文字识别</title>
+    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
+    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
+    <published>2017-07-11T10:04:59.000Z</published>
+    <updated>2017-07-11T10:04:51.212Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
+<ul>
+<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
+<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Redis_入门</title>
     <link href="http://suvan-l.github.io/2017/07/11/Redis_%E5%85%A5%E9%97%A8/"/>
     <id>http://suvan-l.github.io/2017/07/11/Redis_入门/</id>
@@ -404,48 +441,11 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
-    <title>OCR技术_tesseract图片文字识别</title>
-    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
-    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
-    <published>2017-07-11T10:04:59.000Z</published>
-    <updated>2017-07-11T10:04:51.212Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
-<hr>
-<p><br><br><br></p>
-<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
-<ul>
-<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
-<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
-<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java_知识体系</title>
     <link href="http://suvan-l.github.io/2017/07/01/Java_%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/"/>
     <id>http://suvan-l.github.io/2017/07/01/Java_知识体系/</id>
     <published>2017-07-01T09:43:18.000Z</published>
-    <updated>2017-09-23T13:35:20.590Z</updated>
+    <updated>2017-10-11T02:01:49.497Z</updated>
     
     <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录:"></a>目录:</h1><p>一.语法整理<br>1.概述(基本语法与规范)<br>2.变量<br>3.运算符<br>4.循环和判断<br>5.数组<br>6.函数(方法)<br>7.异常处理<br>8.面向对象【继承,多态,封装,抽象和接口】<br>9.Java的数据结构【集合框架】<br>10.泛型与对象序列化<br>11.静态关键字static<br>12.内部类<br>13.多线程基础<br>14.Java网络编程(Socket编程)<br>15.IO体系构图<br>16.解析Java注解<br>17.JVM虚拟机【管理内存分区】<br>18.了解Java中的内存泄漏的<br>19.专业术语<br>20.程序设计<br>21.项目管理<br>22.数据结构基础<br><br></p>
 <p>二.操作整理<br>1.操作日期和时间<br>2.自定义异常<br>3.反射操作<br>4.正则表达式<br>5.操作I/O输入输出流和文件<br>6.编写定时任务<br>7.获取控制台键盘输入<br>8.文档注释【JavaDoc】<br>9.编码问题<br>10.Applet的简单介绍<br>11.发送邮件【JavaMail】<br>12.GUI开发<br>13.自动化操作【模拟键盘和鼠标】<br>14.JDBC连接数据库<br>15.遍历与控制台打印输出<br>16.XML文件读取与生成<br>17_1.Java加密与解密机制介绍<br>17_2.运用Base64算法<br>17_3.运用消息摘要算法<br>17_4.运用对称加密算法<br>17_5.运用非对称加密算法<br>17_6.运用数字签名算法<br>18_1.JSP开发<br>18_2.Servlet基础<br>18_3.过滤器<br>18_4.监听器<br>18_5.JSTL标签<br>18_6.JSP自定义标签<br>19.JSON数据处理<br>20.DWR实现服务器向客户端推送<br><br></p>
@@ -1015,9 +1015,12 @@ Category generator plugin for Hexo.
 </ul>
 <p>类的默认执行顺序 [Father.java 和 Child.java(extends Father)]</p>
 <ol>
-<li>父类静态变量<br>2 父类的静态代码块【static{ … }】<br>3.子类静态变量</li>
+<li>父类静态变量</li>
+<li>父类的静态代码块【static{ … }】</li>
+<li>子类静态变量</li>
 <li>子类静态代码块</li>
-<li>父类构造(非静态)代码块【{ … }】<br>6 父类构造函数</li>
+<li>父类构造(非静态)代码块【{ … }】</li>
+<li>父类构造函数</li>
 <li>子类构造代码块</li>
 <li>子类构造函数<br><br></li>
 </ol>
@@ -3442,7 +3445,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/04/27/intellijIDEA_%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/04/27/intellijIDEA_错误记录/</id>
     <published>2017-04-27T00:50:41.000Z</published>
-    <updated>2017-09-26T10:18:40.722Z</updated>
+    <updated>2017-10-24T04:20:45.842Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>参考资料：</p>
 <ul>
@@ -3507,6 +3510,12 @@ fn:trim()                  //首尾去空格
 <ul>
 <li><a href="https://plugins.jetbrains.com/plugin/164-ideavim" target="_blank" rel="external">IdeaVim:JetBrains Plugin Respository</a></li>
 <li><a href="https://www.zhihu.com/question/20783392" target="_blank" rel="external">如何成为 IntelliJ IDEA 键盘流 – 知乎</a><br><br></li>
+</ul>
+<p>使用插件</p>
+<ul>
+<li>翻译插件<a href="https://github.com/YiiGuxing/TranslationPlugin" target="_blank" rel="external">Translation Plugs</a></li>
+<li>背景图片插件(BackgroundImage)[<a href="https://plugins.jetbrains.com/plugin/72-backgroundimage" target="_blank" rel="external">https://plugins.jetbrains.com/plugin/72-backgroundimage</a>]</li>
+<li>代码特效插件<a href="https://github.com/ViceFantasyPlace/activate-power-mode" target="_blank" rel="external">activate-power-mode for IDEA</a><br><br></li>
 </ul>
 <p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.Ctrl + Alt + s 打开Seetings</div><div class="line">b.Plugins</div><div class="line">c.Install plugin from dis....</div><div class="line">d.选择下载好的压缩包IdeaVim-0.48.zip</div><div class="line">e.确认,插件前方打勾,Applet或者ok</div><div class="line">f.重启IntelliJ IDEA</div></pre></td></tr></table></figure></p>
 <p><br></p>
