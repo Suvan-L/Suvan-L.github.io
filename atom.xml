@@ -39,79 +39,6 @@
   </entry>
   
   <entry>
-    <title>个人简历</title>
-    <link href="http://suvan-l.github.io/2017/09/07/liushuwei/"/>
-    <id>http://suvan-l.github.io/2017/09/07/liushuwei/</id>
-    <published>2017-09-07T05:32:28.000Z</published>
-    <updated>2017-10-09T04:31:35.436Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="个人基本信息"><a href="#个人基本信息" class="headerlink" title="个人基本信息"></a>个人基本信息</h2><ul>
-<li>姓名：刘淑玮</li>
-<li>性别： 男</li>
-<li>学历：本科(2018应届毕业生)</li>
-<li>专业：软件工程</li>
-<li>院校：广东东软学院</li>
-<li>电话:   13682308665</li>
-<li>邮箱:   liushuwei0925@gmail.com</li>
-<li>Github: <a href="https://github.com/Suvan-L" target="_blank" rel="external">https://github.com/Suvan-L</a></li>
-<li>个人博客:<a href="http://www.suvan.net.cn/" target="_blank" rel="external">http://www.suvan.net.cn/</a></li>
-</ul>
-<hr>
-<p><br><br></p>
-<h2 id="相关能力"><a href="#相关能力" class="headerlink" title="相关能力"></a>相关能力</h2><ol>
-<li>掌握Java语言,熟悉集合框架,网络socket,多线程编程</li>
-<li>熟悉基本数据结构与算法设计</li>
-<li>熟练使用servlet/jsp/Spring/Mybatis</li>
-<li>熟悉MySQL数据库,Linux基本操作</li>
-<li>了解Web前端知识html/css/js/ajax,jQuery,BootStrap</li>
-</ol>
-<hr>
-<p><br><br></p>
-<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><ul>
-<li>广州博纳信息技术有限公司<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">软件工程师</div><div class="line">    2016.06-2016.08(公司)</div><div class="line">    2016.09- 2017.03(在校远程)</div><div class="line"></div><div class="line">    参与燕云DaaS项目,负责完成对指定地区数据目标的信息爬取;</div><div class="line">    参与数据接口模版的设计与优化;</div><div class="line">    根据业务需求，对数据进行筛选,持久化处理,并编写相应接口文档，线上测试,定期维护;,</div><div class="line">    负责3人技术团队每日数据审查,项目进度汇总</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p><br><br></p>
-<h2 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h2><ul>
-<li>多媒体博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(2016.09大二小学期)</div><div class="line"></div><div class="line">负责博客的后台开发与数据库设计，</div><div class="line">基于Servlet+jsp+ajax+MySQL,无框架开发,</div><div class="line">实现博文增删查改，收藏,点赞,刷新,好友通讯,管理员模块可视化界面管理用户,</div><div class="line">用户相册, 用户注册邮箱验证,音乐与视频的上传与实时播放</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><br></p>
-<ul>
-<li>个人博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(2017.05-至今)</div><div class="line"></div><div class="line">参考最初使用Github+Hexo搭建博客的理念,尝试自主建设个人博客，从前端界面设计,至后台功能完善,期望将至今所学以及新的技术引入其中,并不断重构与优化！</div><div class="line">        前端Bootstrap+Layui+jquery,</div><div class="line">        后台:Spring+SpringMVC+MyBatis,</div><div class="line">        项目管理Maven+Github.</div><div class="line">        数据库MySQL,</div><div class="line">        服务器Tomcat-8.0.41</div><div class="line">        云服务器    Centos 6 x86  与 Windows Server 2012 R2 数据中心版 64位中文版</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p><br><br></p>
-<h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><ul>
-<li>爱好足球,跑步,阅读,热爱编程</li>
-<li>对技术有热情,有良好的编程思维与编程习惯</li>
-<li>抗压能力强，不畏挑战,</li>
-<li>拥有良好的团队协作能力与快速学习能力</li>
-<li>个人理念”高调做事,低调做人”<br><br></li>
-</ul>
-<hr>
-<p><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;个人基本信息&quot;&gt;&lt;a href=&quot;#个人基本信息&quot; class=&quot;headerlink&quot; title=&quot;个人基本信息&quot;&gt;&lt;/a&gt;个人基本信息&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;姓名：刘淑玮&lt;/li&gt;
-&lt;li&gt;性别： 男&lt;/li&gt;
-&lt;li&gt;学历：本科(2018应届毕业生)&lt;
-    
-    </summary>
-    
-      <category term="Life" scheme="http://suvan-l.github.io/categories/Life/"/>
-    
-    
-      <category term="Life" scheme="http://suvan-l.github.io/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Life_电影记录</title>
     <link href="http://suvan-l.github.io/2017/09/03/Life_%E7%94%B5%E5%BD%B1%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/09/03/Life_电影记录/</id>
@@ -270,6 +197,43 @@ Category generator plugin for Hexo.
   </entry>
   
   <entry>
+    <title>OCR技术_tesseract图片文字识别</title>
+    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
+    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
+    <published>2017-07-11T10:04:59.000Z</published>
+    <updated>2017-07-11T10:04:51.212Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
+<hr>
+<p><br><br><br></p>
+<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
+<ul>
+<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
+<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
+<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    
+      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Redis_入门</title>
     <link href="http://suvan-l.github.io/2017/07/11/Redis_%E5%85%A5%E9%97%A8/"/>
     <id>http://suvan-l.github.io/2017/07/11/Redis_入门/</id>
@@ -393,43 +357,6 @@ Category generator plugin for Hexo.
     <summary type="html">
     
       &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.NoSQL介绍&lt;br&gt;2.Redis概述&lt;br&gt;3.Redis操作命令&lt;br&gt;4.Jedis连接&lt;br&gt;5.
-    
-    </summary>
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-    
-      <category term="路由器" scheme="http://suvan-l.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OCR技术_tesseract图片文字识别</title>
-    <link href="http://suvan-l.github.io/2017/07/11/OCR%E6%8A%80%E6%9C%AF_Tesseract%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%94%A8/"/>
-    <id>http://suvan-l.github.io/2017/07/11/OCR技术_Tesseract的基本运用/</id>
-    <published>2017-07-11T10:04:59.000Z</published>
-    <updated>2017-07-11T10:04:51.212Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>目录<br>1.安装与下载<br>2.解析图片<br><br></p>
-<hr>
-<p><br><br><br></p>
-<h1 id="二-内容"><a href="#二-内容" class="headerlink" title="二.内容"></a>二.内容</h1><h2 id="1-下载与安装"><a href="#1-下载与安装" class="headerlink" title="1.下载与安装"></a>1.下载与安装</h2><p>参考资料</p>
-<ul>
-<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank" rel="external">tesseract的Github项目地址</a></li>
-<li><a href="https://github.com/tesseract-ocr/tesseract/wiki/4.0-with-LSTM#400-alpha-for-windows" target="_blank" rel="external">4.0版本下载地址</a><br><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;下载安装包</div><div class="line">找到页面的`Windows Installer made with MinGW-w64 `,</div><div class="line">	点击下载tesseract-ocr-setup-4.00.00dev.exe</div><div class="line"></div><div class="line">&lt;2&gt;运行安装包,依次执行</div><div class="line">		1.Next</div><div class="line">		2.(打勾I accpet the....),Next</div><div class="line">		3.根据英文语义,随意选择,Next</div><div class="line">			 a.Install for anyone using this computer</div><div class="line">			 b.Install just for me</div><div class="line">		4.这里有4个默认打勾项,</div><div class="line">			Adiitonal language data(download)是添加新的语言包</div><div class="line">				里面打勾Chinese(Simplified)选项,这事简体中文</div><div class="line"></div><div class="line">&lt;3&gt;配置环境变量</div><div class="line">	TESSERACT</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR</div><div class="line">	TESSDATA_PREFIX</div><div class="line">		E:\Java\tesseract【OCR图片识别】\Tesseract-OCR\tessdata</div><div class="line"></div><div class="line">	加入path里</div><div class="line">		;%TESSERACT%;%TESSDATA_PREFIX%</div><div class="line"></div><div class="line">&lt;4&gt;可在图片所在位置,开启cmd【shhift+右键-在此处打开命令行窗口】,执行tesseract命令</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br></p>
-<h2 id="2-解析图片"><a href="#2-解析图片" class="headerlink" title="2.解析图片"></a>2.解析图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令行</div><div class="line">	tesseract XXX.png k   【解析XXX.png图片,将结果储存至当前目录的k.txt(新创建)】</div><div class="line"></div><div class="line"></div><div class="line">	tesseract --list-langs	【查看有哪些可用语言】【可通过训练得到语言】</div><div class="line">		eng[英文]</div><div class="line">		chi_sim[简体中文]</div><div class="line"></div><div class="line"></div><div class="line">	tesseract XXX.png k -l chi_sim 【解析图片....指定chi_sim语言】</div></pre></td></tr></table></figure>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一-目录&quot;&gt;&lt;a href=&quot;#一-目录&quot; class=&quot;headerlink&quot; title=&quot;一.目录&quot;&gt;&lt;/a&gt;一.目录&lt;/h1&gt;&lt;p&gt;目录&lt;br&gt;1.安装与下载&lt;br&gt;2.解析图片&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;
     
     </summary>
     
@@ -3445,7 +3372,7 @@ fn:trim()                  //首尾去空格
     <link href="http://suvan-l.github.io/2017/04/27/intellijIDEA_%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/"/>
     <id>http://suvan-l.github.io/2017/04/27/intellijIDEA_错误记录/</id>
     <published>2017-04-27T00:50:41.000Z</published>
-    <updated>2017-10-24T04:20:45.842Z</updated>
+    <updated>2017-10-24T06:05:10.271Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>参考资料：</p>
 <ul>
@@ -3515,7 +3442,9 @@ fn:trim()                  //首尾去空格
 <ul>
 <li>翻译插件<a href="https://github.com/YiiGuxing/TranslationPlugin" target="_blank" rel="external">Translation Plugs</a></li>
 <li>背景图片插件(BackgroundImage)[<a href="https://plugins.jetbrains.com/plugin/72-backgroundimage" target="_blank" rel="external">https://plugins.jetbrains.com/plugin/72-backgroundimage</a>]</li>
-<li>代码特效插件<a href="https://github.com/ViceFantasyPlace/activate-power-mode" target="_blank" rel="external">activate-power-mode for IDEA</a><br><br></li>
+<li>代码特效插件<a href="https://github.com/ViceFantasyPlace/activate-power-mode" target="_blank" rel="external">activate-power-mode for IDEA</a></li>
+<li>代码检查<a href="https://plugins.jetbrains.com/plugin/4509-statistic" target="_blank" rel="external">Statistic</a></li>
+<li>左侧小地图<a href="https://plugins.jetbrains.com/plugin/7275-codeglance" target="_blank" rel="external">CodeGlance</a><br><br></li>
 </ul>
 <p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.Ctrl + Alt + s 打开Seetings</div><div class="line">b.Plugins</div><div class="line">c.Install plugin from dis....</div><div class="line">d.选择下载好的压缩包IdeaVim-0.48.zip</div><div class="line">e.确认,插件前方打勾,Applet或者ok</div><div class="line">f.重启IntelliJ IDEA</div></pre></td></tr></table></figure></p>
 <p><br></p>
@@ -4050,6 +3979,56 @@ E:\Java\NetBeans\PM\WebApplication1\nbproject\build-impl.xml:1045: 尚未部署�
     
     
       <category term="MyProject" scheme="http://suvan-l.github.io/tags/MyProject/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java_框架框架学习</title>
+    <link href="http://suvan-l.github.io/2017/01/02/Java_%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://suvan-l.github.io/2017/01/02/Java_框架学习/</id>
+    <published>2017-01-02T02:05:25.000Z</published>
+    <updated>2017-08-23T11:41:07.941Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;SSM框架【Spring + SpringMVC + Mybatis】</p>
+<p>资料：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/sunniest/p/4555801.html" target="_blank" rel="external">SpringMVC学习笔记</a></li>
+<li><a href="http://blog.csdn.net/qq598535550/article/details/51703190" target="_blank" rel="external">手把手教你整合最优雅SSM框架：SpringMVC + Spring + MyBatis </a></li>
+</ul>
+<p><br></p>
+<p>目录：<br>一.SpringMVC<br>二.MyBatis<br>三.Spring</p>
+<hr>
+<p><br><br><br></p>
+<h1 id="一-SpringMVC"><a href="#一-SpringMVC" class="headerlink" title="一.SpringMVC"></a>一.SpringMVC</h1><p>次目录<br>1.配置文件<br>2.注解<br><br></p>
+<h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h2><ol>
+<li>web.xml[web项目配置文件]</li>
+<li>spring-mvc.xml[SpringMVC项目MVC配置文件]</li>
+<li>pom.xml[Maven项目依赖包配置文件]</li>
+</ol>
+<hr>
+<p><br><br></p>
+<h2 id="2-注解"><a href="#2-注解" class="headerlink" title="2.注解"></a>2.注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">Controller</div><div class="line">	@Controller			[控制器]</div><div class="line"></div><div class="line">	@RequestMapping(	[请求映射]</div><div class="line">				value,		(路径【配置spring-mvc.xml配置的视图解析器的前后缀】)</div><div class="line">				method,		(请求方式)</div><div class="line">				consumes,   (仅处理哪些Content-Type的提交)</div><div class="line">				produces,	(指明返回的内容类型【类型必须在request中Accept头中包含】【使用@ResponseBody返回String时乱码，可以添加该属性produces=&quot;text/html;charset=UTF-8】)</div><div class="line">				params,		(指明request中必须包含某些参数值【还可加上值的value】)</div><div class="line">				headers,	(指定request中必须包含某些指定的hearder值)</div><div class="line">				Path</div><div class="line">				)</div><div class="line"></div><div class="line">	@RequestParam(	[request参数赋值【赋给方法形参】]</div><div class="line">			value,			(参数名)</div><div class="line">			defaultValue	(默认值)</div><div class="line">		)</div><div class="line"></div><div class="line">	@PathVariable(	[获取URL中的变量【用于RESTFul风格】【在@RequestMapping中的模版变量&#123;..&#125;绑定到同名参数】</div><div class="line">			value    		(参数名)</div><div class="line">			)</div><div class="line">	@RequestHeader	[获取HTTP头的信息]</div><div class="line">	@CookieValue	[获取请求的Cookie数据]</div><div class="line"></div><div class="line">	@SessionAttributes [将Model中的属性存放到HttpSession中【声明类】]</div><div class="line">	@ModelAttribute</div><div class="line">		 &lt;1&gt;ModelAttribute(value=&quot;&quot;)注释返回具体类</div><div class="line">		 &lt;2&gt;@ModelAttribute注释void返回值的方法</div><div class="line">		 &lt;3&gt;@ModelAttribute注释自定义类返回值的方法</div><div class="line"></div><div class="line"></div><div class="line">	@RequestBody 	 </div><div class="line">	@ResponseBody	 [返回对象]</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
+<h1 id="二-MyBatis"><a href="#二-MyBatis" class="headerlink" title="二.MyBatis"></a>二.MyBatis</h1><p>次目录：<br>1.映射语句<br><br></p>
+<h2 id="1-映射语句"><a href="#1-映射语句" class="headerlink" title="1.映射语句"></a>1.映射语句</h2><p>用于映射文件里[.xml]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">标签</div><div class="line">	insert</div><div class="line">	delete</div><div class="line">	select</div><div class="line">	update</div><div class="line"></div><div class="line">	sql			[可被其他语句引用的可重用语句块]</div><div class="line">	cache		[给定命名控件的缓存空间]</div><div class="line">	cache-ref	[其他命名控件缓存配置的引用]</div><div class="line">	resultMap	[描述如何从数据库结果集加载对象]</div><div class="line"></div><div class="line">动态SQL</div><div class="line">	if 			[加入判断语句]</div><div class="line">		&lt;if test=&quot;条件&quot;&gt;...&lt;/if&gt;</div><div class="line">	choose		[选择语句(选其一)]</div><div class="line">		&lt;choose&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">			&lt;when test=&quot;条件&quot;&gt;&lt;/when&gt;</div><div class="line">		&lt;/choose&gt;</div><div class="line">	where</div><div class="line">	set 		[用于update更新操作]</div><div class="line">		&lt;set&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">			&lt;if test=&quot;条件&quot;&gt;&lt;&lt;/if&gt;</div><div class="line">		&lt;/set&gt;</div><div class="line">	foreach</div><div class="line">	bind</div></pre></td></tr></table></figure></p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><br></h2><p><br><br><br><br><br></p>
+<h1 id="三-Spring"><a href="#三-Spring" class="headerlink" title="三.Spring"></a>三.Spring</h1><hr>
+<p><br><br><br><br><br></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&amp;emsp;SSM框架【Spring + SpringMVC + Mybatis】&lt;/p&gt;
+&lt;p&gt;资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a h
+    
+    </summary>
+    
+      <category term="Java" scheme="http://suvan-l.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://suvan-l.github.io/tags/Java/"/>
     
   </entry>
   
