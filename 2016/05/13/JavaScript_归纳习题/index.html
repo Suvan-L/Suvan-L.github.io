@@ -38,21 +38,16 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
     
   
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
   
 
   
@@ -62,9 +57,9 @@
   
 
   
-    
-    
-    <link href="//fonts.css.network/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+  
+
   
 
 
@@ -72,7 +67,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
@@ -95,18 +92,18 @@
 
 
 
-<meta name="description" content="1.制作一个表格，显示班级的学生信息123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687要求：1. 鼠标移到不同行上时背景">
+<meta name="description" content="目录 制作一个表格，显示班级的学生信息 实现选项卡切换的效果  1. 制作一个表格，显示班级的学生信息12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript_归纳习题">
 <meta property="og:url" content="http://suvan-l.github.io/2016/05/13/JavaScript_归纳习题/index.html">
 <meta property="og:site_name" content="Suvan">
-<meta property="og:description" content="1.制作一个表格，显示班级的学生信息123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687要求：1. 鼠标移到不同行上时背景">
+<meta property="og:description" content="目录 制作一个表格，显示班级的学生信息 实现选项卡切换的效果  1. 制作一个表格，显示班级的学生信息12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-05-14T02:01:51.311Z">
+<meta property="og:updated_time" content="2018-01-17T03:37:35.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript_归纳习题">
-<meta name="twitter:description" content="1.制作一个表格，显示班级的学生信息123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687要求：1. 鼠标移到不同行上时背景">
+<meta name="twitter:description" content="目录 制作一个表格，显示班级的学生信息 实现选项卡切换的效果  1. 制作一个表格，显示班级的学生信息12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879">
 
 
 
@@ -115,7 +112,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -165,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -181,7 +178,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Bolgs</p>
+        <h1 class="site-subtitle" itemprop="description">blog</h1>
       
   </div>
 
@@ -252,9 +249,9 @@
     <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/05/13/JavaScript_归纳习题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liushuwei">
+      <meta itemprop="name" content="刘淑玮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/suvan.png">
+      <meta itemprop="image" content="/uploads/suvan-min.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -266,7 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript_归纳习题</h1>
+          <h2 class="post-title" itemprop="name headline">JavaScript_归纳习题</h2>
         
 
         <div class="post-meta">
@@ -320,6 +317,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -332,7 +334,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,238
+                  1,267
                 </span>
               
 
@@ -366,9 +368,13 @@
       
 
       
-        <h2 id="1-制作一个表格，显示班级的学生信息"><a href="#1-制作一个表格，显示班级的学生信息" class="headerlink" title="1.制作一个表格，显示班级的学生信息"></a>1.制作一个表格，显示班级的学生信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">要求：</div><div class="line"></div><div class="line">1. 鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</div><div class="line"></div><div class="line">2. 点击添加按钮，能动态在最后添加一行</div><div class="line"></div><div class="line">3. 点击删除按钮，则删除当前行</div><div class="line"></div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">     &lt;head&gt;</div><div class="line">      &lt;title&gt; new document &lt;/title&gt;  </div><div class="line">      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gbk&quot;/&gt;   </div><div class="line">      &lt;script type=&quot;text/javascript&quot;&gt;    </div><div class="line">          window.onload = function()&#123;</div><div class="line">              var tr=document.getElementsByTagName(&quot;tr&quot;);</div><div class="line">              for(var i= 0;i&lt;tr.length;i++)</div><div class="line">              &#123;</div><div class="line">                  bgcChange(tr[i]);</div><div class="line">              &#125;</div><div class="line">         // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。</div><div class="line">          &#125;         </div><div class="line">         function bgcChange(obj)</div><div class="line">         &#123;</div><div class="line">            obj.onmouseover=function()&#123;  鼠标移开事件</div><div class="line">                obj.style.backgroundColor=&quot;#f2f2f2&quot;;</div><div class="line">            &#125;</div><div class="line">            obj.onmouseout=function()&#123;    //鼠标经过事件</div><div class="line">                obj.style.backgroundColor=&quot;#fff&quot;;</div><div class="line">            &#125;</div><div class="line">         &#125;</div><div class="line">       </div><div class="line">         // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；</div><div class="line">         var num=2;</div><div class="line">         function add()&#123;</div><div class="line">            num++;</div><div class="line">            var tr=document.createElement(&quot;tr&quot;);</div><div class="line">            var xh=document.createElement(&quot;td&quot;);</div><div class="line">            var xm=document.createElement(&quot;td&quot;);</div><div class="line">            xh.innerHTML=&quot;xh00&quot;+num;</div><div class="line">            xm.innerHTML=&quot;第&quot;+num+&quot;学生&quot;;</div><div class="line">            var del=document.createElement(&quot;td&quot;); //创建删除操作</div><div class="line">            del.innerHTML=&quot;&lt;a href=&apos;javascript:;&apos; onclick=&apos;del(this)&apos; &gt;删除&lt;/a&gt;&quot;;</div><div class="line">            var tab=document.getElementById(&quot;table&quot;);</div><div class="line">            tab.appendChild(tr);</div><div class="line">            tr.appendChild(xh);</div><div class="line">            tr.appendChild(xm);</div><div class="line">            tr.appendChild(del);</div><div class="line">            var tr = document.getElementsByTagName(&quot;tr&quot;);</div><div class="line">              for(var i= 0;i&lt;tr.length;i++)</div><div class="line">              &#123;</div><div class="line">                  bgcChange(tr[i]);</div><div class="line">              &#125;</div><div class="line">         &#125;</div><div class="line">                </div><div class="line">         // 创建删除函数</div><div class="line">         function del(obj)  //传入当前参数</div><div class="line">         &#123;</div><div class="line">             var tr=obj.parentNode.parentNode;</div><div class="line">             tr.parentNode.removeChild(tr);</div><div class="line">         &#125;</div><div class="line">         </div><div class="line">        </div><div class="line">      &lt;/script&gt; </div><div class="line">     &lt;/head&gt; </div><div class="line">     &lt;body&gt; </div><div class="line">           &lt;table border=&quot;1&quot; width=&quot;50%&quot; id=&quot;table&quot;&gt;</div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;th&gt;学号&lt;/th&gt;</div><div class="line">            &lt;th&gt;姓名&lt;/th&gt;</div><div class="line">            &lt;th&gt;操作&lt;/th&gt;</div><div class="line">           &lt;/tr&gt;  </div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;td&gt;xh001&lt;/td&gt;</div><div class="line">            &lt;td&gt;王小明&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this);&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;</div><div class="line">           &lt;/tr&gt;</div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;td&gt;xh002&lt;/td&gt;</div><div class="line">            &lt;td&gt;刘小芳&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this);&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;</div><div class="line">           &lt;/tr&gt;  </div><div class="line">           &lt;/table&gt;</div><div class="line">           &lt;input type=&quot;button&quot; value=&quot;添加一行&quot; onclick=&quot;add()&quot; /&gt;   &lt;!--在添加按钮上添加点击事件  --&gt;</div><div class="line">     &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>制作一个表格，显示班级的学生信息</li>
+<li>实现选项卡切换的效果</li>
+</ol>
+<h2 id="1-制作一个表格，显示班级的学生信息"><a href="#1-制作一个表格，显示班级的学生信息" class="headerlink" title="1. 制作一个表格，显示班级的学生信息"></a>1. 制作一个表格，显示班级的学生信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">要求：</div><div class="line"></div><div class="line">1. 鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</div><div class="line"></div><div class="line">2. 点击添加按钮，能动态在最后添加一行</div><div class="line"></div><div class="line">3. 点击删除按钮，则删除当前行</div><div class="line"></div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">     &lt;head&gt;</div><div class="line">      &lt;title&gt; new document &lt;/title&gt;  </div><div class="line">      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gbk&quot;/&gt;   </div><div class="line">      &lt;script type=&quot;text/javascript&quot;&gt;    </div><div class="line">          window.onload = function()&#123;</div><div class="line">              var tr=document.getElementsByTagName(&quot;tr&quot;);</div><div class="line">              for(var i= 0;i&lt;tr.length;i++)</div><div class="line">              &#123;</div><div class="line">                  bgcChange(tr[i]);</div><div class="line">              &#125;</div><div class="line">         // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。</div><div class="line">          &#125;         </div><div class="line">         function bgcChange(obj)</div><div class="line">         &#123;</div><div class="line">            obj.onmouseover=function()&#123;  鼠标移开事件</div><div class="line">                obj.style.backgroundColor=&quot;#f2f2f2&quot;;</div><div class="line">            &#125;</div><div class="line">            obj.onmouseout=function()&#123;    //鼠标经过事件</div><div class="line">                obj.style.backgroundColor=&quot;#fff&quot;;</div><div class="line">            &#125;</div><div class="line">         &#125;</div><div class="line">       </div><div class="line">         // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；</div><div class="line">         var num=2;</div><div class="line">         function add()&#123;</div><div class="line">            num++;</div><div class="line">            var tr=document.createElement(&quot;tr&quot;);</div><div class="line">            var xh=document.createElement(&quot;td&quot;);</div><div class="line">            var xm=document.createElement(&quot;td&quot;);</div><div class="line">            xh.innerHTML=&quot;xh00&quot;+num;</div><div class="line">            xm.innerHTML=&quot;第&quot;+num+&quot;学生&quot;;</div><div class="line">            var del=document.createElement(&quot;td&quot;); //创建删除操作</div><div class="line">            del.innerHTML=&quot;&lt;a href=&apos;javascript:;&apos; onclick=&apos;del(this)&apos; &gt;删除&lt;/a&gt;&quot;;</div><div class="line">            var tab=document.getElementById(&quot;table&quot;);</div><div class="line">            tab.appendChild(tr);</div><div class="line">            tr.appendChild(xh);</div><div class="line">            tr.appendChild(xm);</div><div class="line">            tr.appendChild(del);</div><div class="line">            var tr = document.getElementsByTagName(&quot;tr&quot;);</div><div class="line">              for(var i= 0;i&lt;tr.length;i++)</div><div class="line">              &#123;</div><div class="line">                  bgcChange(tr[i]);</div><div class="line">              &#125;</div><div class="line">         &#125;</div><div class="line">                </div><div class="line">         // 创建删除函数</div><div class="line">         function del(obj)  //传入当前参数</div><div class="line">         &#123;</div><div class="line">             var tr=obj.parentNode.parentNode;</div><div class="line">             tr.parentNode.removeChild(tr);</div><div class="line">         &#125;</div><div class="line">         </div><div class="line">        </div><div class="line">      &lt;/script&gt; </div><div class="line">     &lt;/head&gt; </div><div class="line">     &lt;body&gt; </div><div class="line">           &lt;table border=&quot;1&quot; width=&quot;50%&quot; id=&quot;table&quot;&gt;</div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;th&gt;学号&lt;/th&gt;</div><div class="line">            &lt;th&gt;姓名&lt;/th&gt;</div><div class="line">            &lt;th&gt;操作&lt;/th&gt;</div><div class="line">           &lt;/tr&gt;  </div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;td&gt;xh001&lt;/td&gt;</div><div class="line">            &lt;td&gt;王小明&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this);&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;</div><div class="line">           &lt;/tr&gt;</div><div class="line">           &lt;tr&gt;</div><div class="line">            &lt;td&gt;xh002&lt;/td&gt;</div><div class="line">            &lt;td&gt;刘小芳&lt;/td&gt;</div><div class="line">            &lt;td&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;del(this);&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;   &lt;!--在删除按钮上添加点击事件  --&gt;</div><div class="line">           &lt;/tr&gt;  </div><div class="line">           &lt;/table&gt;</div><div class="line">           &lt;input type=&quot;button&quot; value=&quot;添加一行&quot; onclick=&quot;add()&quot; /&gt;   &lt;!--在添加按钮上添加点击事件  --&gt;</div><div class="line">     &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="2-实现选项卡切换的效果"><a href="#2-实现选项卡切换的效果" class="headerlink" title="2.实现选项卡切换的效果"></a>2.实现选项卡切换的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">实现思路</div><div class="line"></div><div class="line">一、HTML页面布局</div><div class="line"></div><div class="line">提示:</div><div class="line">选项卡标题使用ul..li</div><div class="line">选项卡内容使用div</div><div class="line"></div><div class="line">二、CSS样式制作</div><div class="line"></div><div class="line">提示:</div><div class="line">整个选项卡的样式设置</div><div class="line">选项卡标题的样式设置</div><div class="line">选项卡内容的样式设置</div><div class="line">一开始只显示一个选项卡内容，其它选项卡内容隐藏。</div><div class="line"></div><div class="line">三、JS实现选项卡切换</div><div class="line"></div><div class="line">提示:</div><div class="line">获取选项卡标题和选项卡内容</div><div class="line">选项卡内容多个，需要循环遍历来操作，得知哪个选项卡和哪个选项内容匹配</div><div class="line">通过改变DOM的css类名称,当前点击的选项卡显示，其它隐藏。</div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head lang=&quot;en&quot;&gt;</div><div class="line">      &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">      &lt;title&gt;实践题 - 选项卡&lt;/title&gt;</div><div class="line">      &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">       /* CSS样式制作 */  </div><div class="line">       *&#123;margin:0;padding:0;font:normal 12px &quot;微软雅黑&quot;;color:#000000;&#125;  /*通用选择器*/</div><div class="line">       </div><div class="line">       ul&#123;list-style-type: none;&#125;/*标签选择器*/</div><div class="line">       a&#123;text-decoration: none;&#125;</div><div class="line"></div><div class="line">       #tab-list&#123;width: 275px;height:190px;margin: 20px auto;&#125;/*ID选择器*/</div><div class="line">       #tab-list div&#123;border: 1px solid #7396B8;border-top: none;&#125;  /*后代选择器*/</div><div class="line">       #tab-list div li&#123;height: 30px;line-height: 30px;text-indent: 8px;&#125;</div><div class="line"></div><div class="line">       #ul1&#123;border-bottom: 2px solid #8B4513;height: 32px;&#125;</div><div class="line">       #ul1 li&#123;display: inline-block;width: 60px;line-height: 30px;text-align: center;border: 1px solid #999;border-bottom: none;margin-left: 5px;&#125;</div><div class="line">       #ul1 li:hover&#123;cursor: pointer;&#125; /*鼠标转到链接*/</div><div class="line">       #ul1 li.active&#123;border-top:2px solid #8B4513;border-bottom:2px solid #FFFFFF;&#125;</div><div class="line">                    /*按下链接的格式*/</div><div class="line">       </div><div class="line">       </div><div class="line">       .show&#123;display: block;&#125;  /*将元素设置为块级元素*/</div><div class="line">       .hide&#123;display: none;&#125;/*类选择器,此元素不会被显示。*/ </div><div class="line">       </div><div class="line">      &lt;/style&gt;</div><div class="line">      &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">           </div><div class="line">          window.onload = function() &#123;</div><div class="line">              var oUl1 = document.getElementById(&quot;ul1&quot;);</div><div class="line">              var aLi = oUl1.getElementsByTagName(&quot;li&quot;);</div><div class="line">              var oDiv = document.getElementById(&quot;tab-list&quot;);</div><div class="line">              var aDiv = oDiv.getElementsByTagName(&quot;div&quot;);</div><div class="line">              </div><div class="line">              for(var i = 0; i &lt; aLi.length; i++) &#123;  //aLi.length=3</div><div class="line">                  aLi[i].index = i;   //指定索引位置</div><div class="line">                  aLi[i].onmouseover = function() &#123;   //鼠标移开事件</div><div class="line">                      for(var i = 0; i &lt; aLi.length; i++) &#123;</div><div class="line">                          aLi[i].className = &quot;&quot;;  //清空CSS样式</div><div class="line">                      &#125;</div><div class="line">                      </div><div class="line">                      this.className = &quot;active&quot;; //改变当前调用函数对象的CSS样式</div><div class="line">                      for(var j = 0; j &lt; aDiv.length; j++) &#123; //aDiv.length=3</div><div class="line">                          aDiv[j].className = &quot;hide&quot;; //隐藏文字</div><div class="line">                      &#125;</div><div class="line">                      aDiv[this.index].className = &quot;show&quot;; //用于显示文字</div><div class="line">                  &#125;        </div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &lt;/script&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;!-- HTML页面布局 --&gt;</div><div class="line">    &lt;div id=&quot;tab-list&quot;&gt;</div><div class="line">        &lt;ul id=&quot;ul1&quot;&gt;</div><div class="line">            &lt;li class=&quot;active&quot;&gt;房产&lt;/li&gt;&lt;li&gt;家居&lt;/li&gt;&lt;li&gt;二手房&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;275万购昌平邻铁三居 总价20万买一居&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;200万内购五环三居 140万安家东三环&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;北京首现零首付楼盘 53万购东5环50平&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;京楼盘直降5000 中信府 公园楼王现房&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;    </div><div class="line">        &lt;div class=&quot;hide&quot;&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;40平出租屋大改造 美少女的混搭小窝&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;经典清新简欧爱家 90平老房焕发新生&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;新中式的酷色温情 66平撞色活泼家居&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;瓷砖就像选好老婆 卫生间烟道的设计&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;    </div><div class="line">        &lt;div class=&quot;hide&quot;&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;通州豪华3居260万 二环稀缺2居250w甩&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;西3环通透2居290万 130万2居限量抢购&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;黄城根小学学区仅260万 121平70万抛!&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;独家别墅280万 苏州桥2居优惠价248万&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="2-实现选项卡切换的效果"><a href="#2-实现选项卡切换的效果" class="headerlink" title="2. 实现选项卡切换的效果"></a>2. 实现选项卡切换的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">实现思路</div><div class="line"></div><div class="line">一、HTML页面布局</div><div class="line"></div><div class="line">提示:</div><div class="line">选项卡标题使用ul..li</div><div class="line">选项卡内容使用div</div><div class="line"></div><div class="line">二、CSS样式制作</div><div class="line"></div><div class="line">提示:</div><div class="line">整个选项卡的样式设置</div><div class="line">选项卡标题的样式设置</div><div class="line">选项卡内容的样式设置</div><div class="line">一开始只显示一个选项卡内容，其它选项卡内容隐藏。</div><div class="line"></div><div class="line">三、JS实现选项卡切换</div><div class="line"></div><div class="line">提示:</div><div class="line">获取选项卡标题和选项卡内容</div><div class="line">选项卡内容多个，需要循环遍历来操作，得知哪个选项卡和哪个选项内容匹配</div><div class="line">通过改变DOM的css类名称,当前点击的选项卡显示，其它隐藏。</div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head lang=&quot;en&quot;&gt;</div><div class="line">      &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">      &lt;title&gt;实践题 - 选项卡&lt;/title&gt;</div><div class="line">      &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">       /* CSS样式制作 */  </div><div class="line">       *&#123;margin:0;padding:0;font:normal 12px &quot;微软雅黑&quot;;color:#000000;&#125;  /*通用选择器*/</div><div class="line">       </div><div class="line">       ul&#123;list-style-type: none;&#125;/*标签选择器*/</div><div class="line">       a&#123;text-decoration: none;&#125;</div><div class="line"></div><div class="line">       #tab-list&#123;width: 275px;height:190px;margin: 20px auto;&#125;/*ID选择器*/</div><div class="line">       #tab-list div&#123;border: 1px solid #7396B8;border-top: none;&#125;  /*后代选择器*/</div><div class="line">       #tab-list div li&#123;height: 30px;line-height: 30px;text-indent: 8px;&#125;</div><div class="line"></div><div class="line">       #ul1&#123;border-bottom: 2px solid #8B4513;height: 32px;&#125;</div><div class="line">       #ul1 li&#123;display: inline-block;width: 60px;line-height: 30px;text-align: center;border: 1px solid #999;border-bottom: none;margin-left: 5px;&#125;</div><div class="line">       #ul1 li:hover&#123;cursor: pointer;&#125; /*鼠标转到链接*/</div><div class="line">       #ul1 li.active&#123;border-top:2px solid #8B4513;border-bottom:2px solid #FFFFFF;&#125;</div><div class="line">                    /*按下链接的格式*/</div><div class="line">       </div><div class="line">       </div><div class="line">       .show&#123;display: block;&#125;  /*将元素设置为块级元素*/</div><div class="line">       .hide&#123;display: none;&#125;/*类选择器,此元素不会被显示。*/ </div><div class="line">       </div><div class="line">      &lt;/style&gt;</div><div class="line">      &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">           </div><div class="line">          window.onload = function() &#123;</div><div class="line">              var oUl1 = document.getElementById(&quot;ul1&quot;);</div><div class="line">              var aLi = oUl1.getElementsByTagName(&quot;li&quot;);</div><div class="line">              var oDiv = document.getElementById(&quot;tab-list&quot;);</div><div class="line">              var aDiv = oDiv.getElementsByTagName(&quot;div&quot;);</div><div class="line">              </div><div class="line">              for(var i = 0; i &lt; aLi.length; i++) &#123;  //aLi.length=3</div><div class="line">                  aLi[i].index = i;   //指定索引位置</div><div class="line">                  aLi[i].onmouseover = function() &#123;   //鼠标移开事件</div><div class="line">                      for(var i = 0; i &lt; aLi.length; i++) &#123;</div><div class="line">                          aLi[i].className = &quot;&quot;;  //清空CSS样式</div><div class="line">                      &#125;</div><div class="line">                      </div><div class="line">                      this.className = &quot;active&quot;; //改变当前调用函数对象的CSS样式</div><div class="line">                      for(var j = 0; j &lt; aDiv.length; j++) &#123; //aDiv.length=3</div><div class="line">                          aDiv[j].className = &quot;hide&quot;; //隐藏文字</div><div class="line">                      &#125;</div><div class="line">                      aDiv[this.index].className = &quot;show&quot;; //用于显示文字</div><div class="line">                  &#125;        </div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &lt;/script&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;!-- HTML页面布局 --&gt;</div><div class="line">    &lt;div id=&quot;tab-list&quot;&gt;</div><div class="line">        &lt;ul id=&quot;ul1&quot;&gt;</div><div class="line">            &lt;li class=&quot;active&quot;&gt;房产&lt;/li&gt;&lt;li&gt;家居&lt;/li&gt;&lt;li&gt;二手房&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;275万购昌平邻铁三居 总价20万买一居&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;200万内购五环三居 140万安家东三环&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;北京首现零首付楼盘 53万购东5环50平&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;京楼盘直降5000 中信府 公园楼王现房&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;    </div><div class="line">        &lt;div class=&quot;hide&quot;&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;40平出租屋大改造 美少女的混搭小窝&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;经典清新简欧爱家 90平老房焕发新生&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;新中式的酷色温情 66平撞色活泼家居&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;瓷砖就像选好老婆 卫生间烟道的设计&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;    </div><div class="line">        &lt;div class=&quot;hide&quot;&gt;</div><div class="line">            &lt;ul&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;通州豪华3居260万 二环稀缺2居250w甩&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;西3环通透2居290万 130万2居限量抢购&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;黄城根小学学区仅260万 121平70万抛!&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;独家别墅280万 苏州桥2居优惠价248万&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -410,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/PLSQL_错误记录/" rel="next" title="PL/SQL_错误记录">
-                <i class="fa fa-chevron-left"></i> PL/SQL_错误记录
+              <a href="/2016/05/12/Oracle_PLSQL 错误记录/" rel="next" title="Oracle_PLSQL 错误记录">
+                <i class="fa fa-chevron-left"></i> Oracle_PLSQL 错误记录
               </a>
             
           </div>
@@ -505,18 +511,18 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/uploads/suvan.png"
-               alt="liushuwei" />
-          <p class="site-author-name" itemprop="name">liushuwei</p>
+               src="/uploads/suvan-min.jpg"
+               alt="刘淑玮" />
+          <p class="site-author-name" itemprop="name">刘淑玮</p>
            
-              <p class="site-description motion-element" itemprop="description">Suvan的博客</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -527,7 +533,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -538,14 +544,14 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
           
 
         </nav>
-
+   
         
           <div class="feed-link motion-element">
             <a href="/atom.xml" rel="alternate">
@@ -555,11 +561,12 @@
           </div>
         
 
+
         <div class="links-of-author motion-element">
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub"">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -568,20 +575,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="liushuwei0925@gmail.com" target="_blank" title="Gmail">
+                <a href="mailto:liushuwei0925@gmail.com" target="_blank" title="Gmail"">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-envelope"></i>
                   
                   Gmail
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="526097449" target="_blank" title="QQ">
-                  
-                    <i class="fa fa-fw fa-qq"></i>
-                  
-                  QQ
                 </a>
               </span>
             
@@ -609,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-制作一个表格，显示班级的学生信息"><span class="nav-number">1.</span> <span class="nav-text">1.制作一个表格，显示班级的学生信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现选项卡切换的效果"><span class="nav-number">2.</span> <span class="nav-text">2.实现选项卡切换的效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-制作一个表格，显示班级的学生信息"><span class="nav-number">1.1.</span> <span class="nav-text">1. 制作一个表格，显示班级的学生信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现选项卡切换的效果"><span class="nav-number">1.2.</span> <span class="nav-text">2. 实现选项卡切换的效果</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -633,11 +631,11 @@
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">liushuwei</span>
+  <span class="author" itemprop="copyrightHolder">Suvan</span>
 </div>
 
 
@@ -649,7 +647,7 @@
 </div>
 
 <div class="theme-info">
-	高调做事,低调做人
+	能力决定走的多快，心态决定走的多远
 
   <!-- 主题
     主题 -
@@ -661,6 +659,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -694,8 +712,6 @@
   
 
 
-  
-
 
 
 
@@ -707,25 +723,22 @@
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
@@ -801,6 +814,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
 
   
 

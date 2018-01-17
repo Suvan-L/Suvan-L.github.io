@@ -1,0 +1,859 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="WebServer," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="目录 动态域名服务DDNS 端口映射 访问本地服务器 腾讯云域名解析 frp实现内网穿透  1. 动态域名服务DDNS 动态域名服务 DDNS（Dynamic Domain Name Server）是一种将动态 IP 地址映射到一个固定的域名解析服务上的系统。当启用 DDNS 后，路由器会把它的动态 WAN IP 与一个固定域名进行绑定。这样，通过因特网，您可以随时随地使用固定的域名访问路由器的服">
+<meta name="keywords" content="WebServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由器构建本地 Web">
+<meta property="og:url" content="http://suvan-l.github.io/2017/06/26/WebServer_路由器构建本地 Web/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="目录 动态域名服务DDNS 端口映射 访问本地服务器 腾讯云域名解析 frp实现内网穿透  1. 动态域名服务DDNS 动态域名服务 DDNS（Dynamic Domain Name Server）是一种将动态 IP 地址映射到一个固定的域名解析服务上的系统。当启用 DDNS 后，路由器会把它的动态 WAN IP 与一个固定域名进行绑定。这样，通过因特网，您可以随时随地使用固定的域名访问路由器的服">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-17T03:15:20.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="路由器构建本地 Web">
+<meta name="twitter:description" content="目录 动态域名服务DDNS 端口映射 访问本地服务器 腾讯云域名解析 frp实现内网穿透  1. 动态域名服务DDNS 动态域名服务 DDNS（Dynamic Domain Name Server）是一种将动态 IP 地址映射到一个固定的域名解析服务上的系统。当启用 DDNS 后，路由器会把它的动态 WAN IP 与一个固定域名进行绑定。这样，通过因特网，您可以随时随地使用固定的域名访问路由器的服">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2017/06/26/WebServer_路由器构建本地 Web/"/>
+
+
+
+
+
+  <title>路由器构建本地 Web | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2017/06/26/WebServer_路由器构建本地 Web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘淑玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan-min.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">路由器构建本地 Web</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T00:59:59+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WebServer/" itemprop="url" rel="index">
+                    <span itemprop="name">WebServer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,055
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>动态域名服务DDNS</li>
+<li>端口映射</li>
+<li>访问本地服务器</li>
+<li>腾讯云域名解析</li>
+<li>frp实现内网穿透</li>
+</ol>
+<h2 id="1-动态域名服务DDNS"><a href="#1-动态域名服务DDNS" class="headerlink" title="1. 动态域名服务DDNS"></a>1. 动态域名服务DDNS</h2><ul>
+<li>动态域名服务 DDNS（Dynamic Domain Name Server）是一种将动态 IP 地址映射到一个固定的域名解析服务上的系统。当启用 DDNS 后，路由器会把它的动态 WAN IP 与一个固定域名进行绑定。这样，通过因特网，您可以随时随地使用固定的域名访问路由器的服务资源，而不用亲自追踪路由器的 WAN IP<br>​</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a.判断是否是公网ip,如果是公网ip可直接做端口映射</div><div class="line">b.选择DDNS服务器(例如:花生壳www.oray.com)注册,获取域名 + 用户名 + 密码</div><div class="line">c. 填入,保存[在DDNS服务器上注册过的数据]</div></pre></td></tr></table></figure>
+<h2 id="2-端口映射"><a href="#2-端口映射" class="headerlink" title="2. 端口映射"></a>2. 端口映射</h2><ul>
+<li>【NAT服务】通过设置路由器的转发规则，因特网上的用户可以方便地访问您通过个人计算机提供的服务器资源（如个人网站、FTP 服务器等）</li>
+<li>【端口映射】将华为路由 WS318 增强版广域网 IP 地址的一个端口映射到局域网中的一台计算机上。当因特网用户访问该 IP 的该端口时，华为路由 WS318 增强版将会自动将该请求映射到已指定的计算机上，并通过该计算机对外提供服务<br>​</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a.更多功能 -&gt; 安全设置 -&gt; NAT服务 -&gt; 端口映射</div><div class="line">b.</div><div class="line">	服务名</div><div class="line">	服务类型</div><div class="line">	设备</div><div class="line">	主机IP</div><div class="line">	协议类型</div><div class="line">	内部端口 [设置对外提供服务的计算机的服务端口号]</div><div class="line">	外部端口 [设置路由器供因特网用户访问的服务端口号]</div></pre></td></tr></table></figure>
+<h2 id="3-访问本地服务器"><a href="#3-访问本地服务器" class="headerlink" title="3. 访问本地服务器"></a>3. 访问本地服务器</h2><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">	8080端口</div><div class="line">		f174a65989.51mypc.cn:8080/blog     [访问本机的8080端口【Tomcat(Apache服务器)】的blog项目]</div><div class="line">	80端口</div><div class="line">		http://f174a65989.51mypc.cn/blog/</div></pre></td></tr></table></figure>
+<h2 id="4-腾讯云域名解析"><a href="#4-腾讯云域名解析" class="headerlink" title="4. 腾讯云域名解析"></a>4. 腾讯云域名解析</h2><p>修改记录：</p>
+<ul>
+<li>记录类型         [A:将域名指向一个IPv4地址（例如：8.8.8.8）]<ul>
+<li>主机记录     [www:解析后的域名为www.qcloud.com。]<ul>
+<li>线路类型 [默认]</li>
+</ul>
+</li>
+<li>关联云资源 [否]<ul>
+<li>记录值[填写服务器IP或者DDNS的指向域名]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TTL  [各地DNS服务器缓存解析记录时长，缓存失效后才会重新获取记录值。<br>建议正常情况下设定10分钟即可。]</li>
+</ul>
+<h2 id="5-frp实现内网穿透"><a href="#5-frp实现内网穿透" class="headerlink" title="5. frp实现内网穿透"></a>5. frp实现内网穿透</h2><hr>
+<p>参考资料</p>
+<ul>
+<li><a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="external">frp中文文档【Github】</a></li>
+<li><a href="https://github.com/fatedier/frp/releases" target="_blank" rel="external">frp下载页面</a></li>
+<li><a href="https://github.com/fatedier/frp/issues/176" target="_blank" rel="external">frp怎样开机启动和后台运行</a><br>​</li>
+</ul>
+<p>内网机器搭建web服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">环境需求</div><div class="line">	一台公网IP的机器, 一台内网环境的机器</div><div class="line"></div><div class="line"></div><div class="line">Linux环境搭建</div><div class="line">	&lt;1&gt;进入目录 cd /usr/local </div><div class="line"></div><div class="line">	&lt;2&gt;下载【注意：要看清Linux的版本是什么,我的是	Centos 6 x86   】</div><div class="line">		  wget https://github.com/fatedier/frp/releases/download/v0.12.0/frp_0.12.0_linux_386.tar.gz</div><div class="line">		 解压</div><div class="line">		 	tar -zxvf frp_0.12.0_linux_386.tar.gz</div><div class="line"></div><div class="line">	&lt;3&gt;进入cd frp_0.12.0_linux_386</div><div class="line">	   配置 vi frps.ini</div><div class="line">	&lt;4&gt;启动 ./frps -c ./frps.ini</div><div class="line"></div><div class="line">	&lt;5&gt;设置开机启动</div><div class="line">		vi /etc/rc.local</div><div class="line">		在最下面加2行</div><div class="line">			#开启自动启动frps内网穿透</div><div class="line">			sleep 10   [需先休眠10秒再启动]</div><div class="line">			/usr/local/myfrp/frps -c /usr/local/myfrp/frps.ini</div><div class="line">			【其/usr/local/myfrp/是程序放置的目录，重启ok】</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">搭建web服务使用流程</div><div class="line">1.下载frp_0.12.0_windows_amd64.zip,解压</div><div class="line">	frps和frps.ini  	-&gt;  	公网 IP 的机器上【服务端】</div><div class="line">	frpc和frpc.ini 		-&gt; 	    内网环境的机器上。【客户端】</div><div class="line"></div><div class="line">2.配置服务端frps.ini</div><div class="line">		[common]</div><div class="line">		bind_port = 7000 		 [默认,frp的执行端口]</div><div class="line">		vhost_http_port = 80     [服务器开放http访问端口(80端口的URL可以设置URL访问无需端口号)]</div><div class="line">		max_pool_count = 5       [每个代理的连接池上限]</div><div class="line"></div><div class="line">3.客户端</div><div class="line">	   [common]</div><div class="line">		server_addr = x.x.x.x    [服务器ip]</div><div class="line">		server_port = 7000		 [默认,frp的执行端口]</div><div class="line">		pool_count = 1           [预创建连接的数量]</div><div class="line"></div><div class="line">		[web]</div><div class="line">		type = http              [http协议]</div><div class="line">		local_port = 8080          [内网机器的web服务端口(Tomcat的端口)]</div><div class="line">		custom_domains = www.liushuwei.cn [自定义域名]</div><div class="line"></div><div class="line"></div><div class="line">4.启动【下面是Linux命令行版本,windons可以直接点击exe程序启动】</div><div class="line">	服务端./frps -c ./frps.ini</div><div class="line">   	客户端./frpc -c ./frpc.ini</div><div class="line"></div><div class="line">   	在linux任何位置</div><div class="line">		/usr/local/myfrp/frps -c /usr/local/myfrp/frps.ini</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">5.外网可访问</div><div class="line">	www.liushuwei.cn/blog</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WebServer/" rel="tag"># WebServer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/30/Email_邮件服务器/" rel="next" title="邮件服务器">
+                <i class="fa fa-chevron-left"></i> 邮件服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/11/Redis_基础使用/" rel="prev" title="Redis_基础使用">
+                Redis_基础使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan-min.jpg"
+               alt="刘淑玮" />
+          <p class="site-author-name" itemprop="name">刘淑玮</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+   
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub"">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:liushuwei0925@gmail.com" target="_blank" title="Gmail"">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-动态域名服务DDNS"><span class="nav-number">1.1.</span> <span class="nav-text">1. 动态域名服务DDNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-端口映射"><span class="nav-number">1.2.</span> <span class="nav-text">2. 端口映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-访问本地服务器"><span class="nav-number">1.3.</span> <span class="nav-text">3. 访问本地服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-腾讯云域名解析"><span class="nav-number">1.4.</span> <span class="nav-text">4. 腾讯云域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-frp实现内网穿透"><span class="nav-number">1.5.</span> <span class="nav-text">5. frp实现内网穿透</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suvan</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	能力决定走的多快，心态决定走的多远
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

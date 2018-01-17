@@ -1,0 +1,902 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MyProject," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言【最近更新:2016.11.29】【1.0版本】&amp;emsp;学习使用java爬虫,耗时2天，写个小Demo，爬取影视大全(http://www.yingshidaquan.cc/)各个分类的电影,只爬取到1508部的下载链接 【2.0-Jsoup版】&amp;emsp;使用Jsoup重新写一遍，优化代码， 目录  javaReptile【1.0版本】 javaReptile【2.0-Jsoup版】">
+<meta name="keywords" content="MyProject">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaReptile">
+<meta property="og:url" content="http://suvan-l.github.io/2016/11/24/MyProject_javaReptile/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="前言【最近更新:2016.11.29】【1.0版本】&amp;emsp;学习使用java爬虫,耗时2天，写个小Demo，爬取影视大全(http://www.yingshidaquan.cc/)各个分类的电影,只爬取到1508部的下载链接 【2.0-Jsoup版】&amp;emsp;使用Jsoup重新写一遍，优化代码， 目录  javaReptile【1.0版本】 javaReptile【2.0-Jsoup版】">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-17T01:21:39.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javaReptile">
+<meta name="twitter:description" content="前言【最近更新:2016.11.29】【1.0版本】&amp;emsp;学习使用java爬虫,耗时2天，写个小Demo，爬取影视大全(http://www.yingshidaquan.cc/)各个分类的电影,只爬取到1508部的下载链接 【2.0-Jsoup版】&amp;emsp;使用Jsoup重新写一遍，优化代码， 目录  javaReptile【1.0版本】 javaReptile【2.0-Jsoup版】">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2016/11/24/MyProject_javaReptile/"/>
+
+
+
+
+
+  <title>javaReptile | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2016/11/24/MyProject_javaReptile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘淑玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan-min.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">javaReptile</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-24T22:55:43+08:00">
+                2016-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MyProject/" itemprop="url" rel="index">
+                    <span itemprop="name">MyProject</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,777
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  19
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言【最近更新-2016-11-29】"><a href="#前言【最近更新-2016-11-29】" class="headerlink" title="前言【最近更新:2016.11.29】"></a>前言【最近更新:2016.11.29】</h1><p>【1.0版本】<br>&emsp;学习使用java爬虫,耗时2天，写个小Demo，爬取影视大全(<a href="http://www.yingshidaquan.cc/)各个分类的电影,只爬取到1508部的下载链接" target="_blank" rel="external">http://www.yingshidaquan.cc/)各个分类的电影,只爬取到1508部的下载链接</a><br><br></p>
+<p>【2.0-Jsoup版】<br>&emsp;使用Jsoup重新写一遍，优化代码，</p>
+<p>目录</p>
+<ul>
+<li>javaReptile【1.0版本】</li>
+<li>javaReptile【2.0-Jsoup版】</li>
+</ul>
+<hr>
+<p><br></p>
+<h1 id="javaReptile【1-0版本】"><a href="#javaReptile【1-0版本】" class="headerlink" title="javaReptile【1.0版本】"></a>javaReptile【1.0版本】</h1><h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>IDE工具:eclipse<br>java环境: Sun JDK 1.6.0.013【X84 64位】<br>第三方扩展jar包: </p>
+<ul>
+<li>dom4j-1.6.1.jar</li>
+<li>jdom-2.0.6.jar</li>
+<li>nekohtml-1.9.21.jar</li>
+<li>xercesImpl.jar</li>
+</ul>
+<p>主要用到HttpURLConnection和HTMLParam【DOMParaser】解析器</p>
+<hr>
+<h4 id="分析网站"><a href="#分析网站" class="headerlink" title="分析网站"></a>分析网站</h4><p><a href="http://www.yingshidaquan.cc/是官网，" target="_blank" rel="external">http://www.yingshidaquan.cc/是官网，</a><br>电影主要分类：</p>
+<ul>
+<li>动作片：<a href="http://www.yingshidaquan.cc/vod-show-id-8-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-8-p-1.html</a></li>
+<li>喜剧片：<a href="http://www.yingshidaquan.cc/vod-show-id-9-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-9-p-1.html</a></li>
+<li>爱情片：<a href="http://www.yingshidaquan.cc/vod-show-id-10-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-10-p-1.html</a></li>
+<li>科幻片：<a href="http://www.yingshidaquan.cc/vod-show-id-11-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-11-p-1.html</a></li>
+<li>恐怖片：<a href="http://www.yingshidaquan.cc/vod-show-id-12-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-12-p-1.html</a></li>
+<li>战争片：<a href="http://www.yingshidaquan.cc/vod-show-id-13-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-13-p-1.html</a></li>
+<li>剧情片：<a href="http://www.yingshidaquan.cc/vod-show-id-14-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-14-p-1.html</a></li>
+<li>其他片：<a href="http://www.yingshidaquan.cc/vod-show-id-24-p-1.html" target="_blank" rel="external">http://www.yingshidaquan.cc/vod-show-id-24-p-1.html</a></li>
+</ul>
+<p><br><br><br>电影下载页面<br>举例URL：<a href="http://www.yingshidaquan.cc/html/DQ2744.html" target="_blank" rel="external">http://www.yingshidaquan.cc/html/DQ2744.html</a></p>
+<p><br><br><br>目标<br>主要抓取下载页面的电影名称和迅雷磁力链接,在某目录生成8个分类的txt文档</p>
+<p><br><br><br>运行思路</p>
+<ol>
+<li>先访问类型页面，获取当前页所有电影下载页面的URL</li>
+<li>依次跳转到每一个电影下载页面，进入其中，爬取电影名称和迅雷磁力链接</li>
+<li>跳到下一个电影下载页面，一下页，下一个类型</li>
+</ol>
+<hr>
+<h4 id="遇到错误"><a href="#遇到错误" class="headerlink" title="遇到错误"></a>遇到错误</h4><ol>
+<li>爱情类电影跳到第16页会报错而终止程序,网站服务器问题，无法解决<br> 【报错信息:java.net.SocketException:Unexpected end of file from server】</li>
+<li>小部分迅雷磁力链接比较特别，需要修改AnalyzeDocument.java的YSDCgetDownlink()方法内的判断语句</li>
+<li>电影下载页面的内容布局不同，有些有磁力链接，有些无，有些有多个</li>
+</ol>
+<hr>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>在<code>C:\\Users\\Liu-shuwei\\Desktop\\电影资源\\</code>目录下</p>
+<ul>
+<li>动作电影.txt</li>
+<li>喜剧电影.txt</li>
+<li>爱情电影.txt</li>
+<li>科幻电影.txt</li>
+<li>恐怖电影.txt</li>
+<li>战争电影.txt</li>
+<li>剧情电影.txt</li>
+<li>其他电影.txt</li>
+</ul>
+<p>每个txt文档里包含<br>编号+电影名+下载链接<br>例如<code>566.爱情麻辣烫之情定终身:ed2k://|file|爱情麻辣烫之情定终身.HD1280超清国语中字.mp4|1534467094|912CB9454B20344822DB4B6676B89F8D|h=A7WH66AT7WEVVVKWV57C6M33PG4VOSG6|/</code></p>
+<hr>
+<p>######　代码【1.0版本,使用java最基础的HttpURLConection网页爬取功能】</p>
+<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><ul>
+<li>callURL.java          访问网页</li>
+<li>StringXmlHtml.java    解析字符串成Document</li>
+<li>AnalyzeDocument.java  传入Document，提取想要的信息</li>
+<li>GoTask.java           任务流程，跳类型，跳页，跳页面</li>
+<li>test.java             主方法，跑程序</li>
+</ul>
+<hr>
+<h2 id="1-用到封装工具类"><a href="#1-用到封装工具类" class="headerlink" title="1.用到封装工具类"></a>1.用到封装工具类</h2><p>Utils包下的，IOFIle.java</p>
+<hr>
+<h2 id="2-callURL-java"><a href="#2-callURL-java" class="headerlink" title="2.callURL.java"></a>2.callURL.java</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line">package main;</div><div class="line"></div><div class="line">import java.io.BufferedReader;</div><div class="line">import java.io.IOException;</div><div class="line">import java.io.InputStream;</div><div class="line">import java.io.InputStreamReader;</div><div class="line">import java.io.ObjectOutputStream;</div><div class="line">import java.io.OutputStream;</div><div class="line">import java.net.HttpURLConnection;</div><div class="line">import java.net.URL;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line"> *  2016.11.23</div><div class="line"> * 学习使用HttpURLConnection 来访问网页，获取相应内容信息</div><div class="line"> * </div><div class="line"> *</div><div class="line"> */</div><div class="line"></div><div class="line">public class callURL&#123;</div><div class="line">    </div><div class="line">    //方法1： 访问网址,返回网页内容</div><div class="line">    public String taskURL(String strURL) throws Exception &#123;</div><div class="line">        </div><div class="line">            //第一步</div><div class="line">            URL url = new URL(strURL);      //解析字符串构建URL</div><div class="line"></div><div class="line">            //第二步.使用HttpURLConnection连接网站，打开URL连接</div><div class="line">            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();  //返回一个 URLConnection 对象，它表示到 URL 所引用的远程对象的连接。</div><div class="line">            deployHttp(httpConn);//设置http,//输出网站信息头</div><div class="line">           </div><div class="line">            //第三步.建立HttpURLConnection连接（2-1的配置必须在connect()前完成）</div><div class="line">            httpConn.connect();</div><div class="line">            </div><div class="line">            //第四步. </div><div class="line">            //A.构建输出流向客户端发送信息(当需要发送post请求时候考虑)</div><div class="line">//          OutputStream os = httpConn.getOutputStream();   //etOutputStream()和getInputStream()会隐含的进行connect(即：如同调用上面的connect()方法，所以在开发中不调用上述的connect()也可以</div><div class="line">//          webPostRequest(os);//设置post请求参数</div><div class="line">            </div><div class="line">            </div><div class="line">            //B.获取输入流，将准备好的http请求正式发送到服务器</div><div class="line">            InputStream is = httpConn.getInputStream(); </div><div class="line"></div><div class="line">            //第五步.读取网页内容(字符串流)</div><div class="line">            String content = webContent(is);</div><div class="line">//          System.out.println(&quot;内容：\n&quot;+content+&quot;\n***********************************************************************&quot;);</div><div class="line">            </div><div class="line">            //第六步.关闭底层连接的socket</div><div class="line">            httpConn.disconnect();</div><div class="line">            </div><div class="line">            return content;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    //方法2：配置HttpURLConnection对象，并将部分信息头输出</div><div class="line">        public void deployHttp( HttpURLConnection httpConn) throws Exception&#123;</div><div class="line">                //2-1连接设置</div><div class="line">                httpConn.setRequestMethod(&quot;GET&quot;);//设置URL的请求，默认是GET</div><div class="line">                </div><div class="line">                httpConn.setDefaultAllowUserInteraction(true);//默认值</div><div class="line">                httpConn.setDefaultUseCaches(false);//默认值</div><div class="line">                httpConn.setUseCaches(true);//设置用户缓存 ,Post 请求不能使用缓存(要设置为false)</div><div class="line">                httpConn.setAllowUserInteraction(true);//如果为 true，则在允许用户交互（例如弹出一个验证对话框）的上下文中对此 URL 进行检查。</div><div class="line">                </div><div class="line">                httpConn.setDoInput(true);//可以使用httpConn.getInputStream().read(); ,默认是true</div><div class="line">                httpConn.setDoOutput(false);//可以使用httpConn.getOutputStream().read(); ,默认是false</div><div class="line">                </div><div class="line">                httpConn.setConnectTimeout(3000000);//设置连接主机超时（单位：毫秒）  </div><div class="line">                httpConn.setReadTimeout(300000);//设置从主机读取数据超时（单位：毫秒）</div><div class="line">                </div><div class="line">                /*设定传送的内容类型是可序列化的java对象</div><div class="line">                 * (如果不设此项,在传送序列化对象时,当WEB服务默认的不是这种类型时可能抛java.io.EOFException)   </div><div class="line">                 *          setRequestProperty()会覆盖已经存在的key的所有values</div><div class="line">                 *          addRequestProperty()在原来key的基础上继续添加其他value</div><div class="line">                 */</div><div class="line">    //          httpConn.setRequestProperty(&quot;Content-type&quot;, &quot;application/x-java-serialized-object&quot;);//</div><div class="line">    //          httpConn.addRequestProperty(&quot;page&quot;, &quot;1&quot;);</div><div class="line">                </div><div class="line">                </div><div class="line">                //2-2.输出相应信息</div><div class="line">                int responseCode = httpConn.getResponseCode();   //判断相应状态,返回响应码</div><div class="line">//              System.out.println(&quot;响应码：&quot;+responseCode);</div><div class="line">                if (HttpURLConnection.HTTP_OK == responseCode) &#123;// 判断响应状态，响应码为200，表示连接成功</div><div class="line">               </div><div class="line">                    </div><div class="line">                    //3-2获取相应信息头参数</div><div class="line">                    String contentEncoding=httpConn.getContentEncoding();</div><div class="line">                    int contentLength=httpConn.getContentLength();</div><div class="line">                    String contentType = httpConn.getContentType();</div><div class="line">                    long date =httpConn.getDate();</div><div class="line">                    long expiration =httpConn.getExpiration();</div><div class="line">                    long lastModified=httpConn.getLastModified();</div><div class="line">                    </div><div class="line">//                  System.out.println(&quot;网页所有信息头：&quot;+httpConn.getHeaderFields());//获取网页所有信息头参数</div><div class="line">//                  System.out.println(&quot;内容编码：&quot;+contentEncoding</div><div class="line">//                                               +&quot;\n内容长度: &quot;+contentLength</div><div class="line">//                                               +&quot;\n内容类型：&quot;+contentType</div><div class="line">//                                               +&quot;\n日期: &quot;+ date</div><div class="line">//                                               +&quot;\n有效期:&quot;+expiration</div><div class="line">//                                               +&quot;\n最后更新: &quot;+lastModified</div><div class="line">//                                              );</div><div class="line">//                 System.out.println(&quot;*******************************************************************&quot;);</div><div class="line">                </div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">        //方法3：发送请求内容【接收OuputStream,并进行设置】</div><div class="line">        public void webPostRequest(OutputStream os) throws IOException&#123;</div><div class="line">              //3-11.设置POST参数</div><div class="line">            String param = new String();</div><div class="line">            String id =&quot;&quot;;</div><div class="line">            String page=&quot;&quot;;</div><div class="line">            param=&quot;ID=&quot;+id +</div><div class="line">                         &quot;&amp;page=&quot;+page;</div><div class="line">            os.write(param.getBytes());</div><div class="line">            </div><div class="line">            </div><div class="line">            // 3-2现在通过输出流对象构建对象输出流对象，以实现输出可序列化的对象</div><div class="line">            ObjectOutputStream objOS= new ObjectOutputStream(os);</div><div class="line">            objOS.writeObject(new String(&quot;我是测试数据&quot;));  </div><div class="line">            </div><div class="line">            //3-3</div><div class="line">            objOS.flush();//刷新对象输出流</div><div class="line">            objOS.close();//关闭流对象.此时不能再向对象输出流写入任何数据，先前写入的数据存于内存缓冲区</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">    //访法4：读取网址内容【获取InputStream】</div><div class="line">    public String webContent(InputStream is) throws IOException&#123;</div><div class="line">            StringBuilder content = new StringBuilder();</div><div class="line">            </div><div class="line">             InputStreamReader isr = new InputStreamReader(is, &quot;utf-8&quot;);</div><div class="line">             BufferedReader br = new BufferedReader(isr);</div><div class="line">             String readLine= null;</div><div class="line">            while((readLine=br.readLine())!=null)&#123;</div><div class="line">                content.append(readLine+&quot;\n&quot;);</div><div class="line">            &#125;</div><div class="line">                 </div><div class="line">            </div><div class="line">            br.close();</div><div class="line">            isr.close();</div><div class="line">            is.close();</div><div class="line">            </div><div class="line">            return content.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-StringXmlHtml-java和AnalyzeDecument-java"><a href="#2-StringXmlHtml-java和AnalyzeDecument-java" class="headerlink" title="2.StringXmlHtml.java和AnalyzeDecument.java"></a>2.StringXmlHtml.java和AnalyzeDecument.java</h2><p>StringXmlHtml.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line">package main;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line">import java.io.StringReader;</div><div class="line"></div><div class="line">import javax.xml.parsers.DocumentBuilder;</div><div class="line">import javax.xml.parsers.DocumentBuilderFactory;</div><div class="line"></div><div class="line">import org.cyberneko.html.parsers.DOMParser;</div><div class="line">import org.w3c.dom.Document;</div><div class="line">import org.w3c.dom.Element;</div><div class="line">import org.w3c.dom.NodeList;</div><div class="line">import org.xml.sax.InputSource;</div><div class="line">import org.xml.sax.SAXException;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line"> * 2016.11.23</div><div class="line"> *          xml解析用到标准jdk api,dom4j,JDOM【dom4j-1.6.1.jar和jdom-2.0.6.jar】</div><div class="line"> *          html解析用到HTMLParams【nekohtml.jar和xercesImpl.jar】</div><div class="line"> * </div><div class="line"> * </div><div class="line"> *      方法1:    XML(字符串)    ------&gt;  Document</div><div class="line"> *      方法2:    Document        ------&gt; XML(字符串)</div><div class="line"> *      方法3:    HTML(字符串)   ------&gt;  Document</div><div class="line"> *</div><div class="line"> */</div><div class="line"></div><div class="line">public class StringXmlHtml&#123;</div><div class="line">    </div><div class="line">    //方法1：字符串转xml</div><div class="line">    protected Document getDocument(String content) throws Exception&#123;</div><div class="line">        </div><div class="line">        </div><div class="line">        //方式1：使用最原始的javax.xml.parsers  和 org.w3c.dom.Document，标准的jdk api</div><div class="line">        StringReader sr = new StringReader(content);</div><div class="line">        InputSource is = new InputSource(sr);</div><div class="line">        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();</div><div class="line">        DocumentBuilder builder=factory.newDocumentBuilder();</div><div class="line">        Document doc = builder.parse(is);</div><div class="line">        </div><div class="line">    </div><div class="line">        //方式2: dom4j</div><div class="line">//      Document doc = DocumentHelper.parseText(content);</div><div class="line">        </div><div class="line">        </div><div class="line">        //方式3：JDOM</div><div class="line">//      StringReader sr = new StringReader(content);</div><div class="line">//      InputSource is = new InputSource(sr);</div><div class="line">//      Document doc = (new SAXBuilder()).build(is);</div><div class="line">    </div><div class="line">        return doc;  </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">    //方法2：xml转字符串</div><div class="line">    protected String getString(Document doc) throws Exception&#123;</div><div class="line">        </div><div class="line">        //方式1：使用最原始的javax.xml.parsers  和 org.w3c.dom.Document，标准的jdk api</div><div class="line">//      TransformerFactory   tf   =   TransformerFactory.newInstance();</div><div class="line">//      Transformer t = tf.newTransformer();</div><div class="line">//      t.setOutputProperty(&quot;encoding&quot;,&quot;GB2312&quot;);//解决中文问题，试过用GBK不行</div><div class="line">//      ByteArrayOutputStream   bos   =   new   ByteArrayOutputStream();</div><div class="line">//      t.transform(new DOMSource(doc), new StreamResult(bos));</div><div class="line">//      String xmlStr = bos.toString();</div><div class="line">        </div><div class="line">        </div><div class="line">        </div><div class="line">        //方式2：dom4j</div><div class="line">//      String text = doc.asXML();</div><div class="line">        </div><div class="line">        //方式3：</div><div class="line">//      Format format = Format.getPrettyFormat();</div><div class="line">//      format.setEncoding(&quot;gb2312&quot;);//设置xml文件的字符为gb2312，解决中文问题</div><div class="line">//      XMLOutputter xmlout = new XMLOutputter(format);</div><div class="line">//      ByteArrayOutputStream bo = new ByteArrayOutputStream();</div><div class="line">//      xmlout.output(doc,bo);</div><div class="line">//      String content = bo.toString();</div><div class="line">        </div><div class="line">        return &quot;&quot;;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    //方法3：使用html解析器，将html解析成Document</div><div class="line">    protected Document htmlGetDocument(String content) throws SAXException,IOException&#123;</div><div class="line">        content = content.trim();</div><div class="line">        InputSource source = new InputSource(new StringReader(content.replaceFirst(&quot;xmlns=\&quot;[^\&quot;]*\&quot;&quot;, &quot;&quot;)));</div><div class="line">        DOMParser parser = new DOMParser();</div><div class="line">        parser.parse(source);</div><div class="line">        Document doc = parser.getDocument();</div><div class="line">        </div><div class="line">        return doc;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>AnalyzeDocument.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div></pre></td><td class="code"><pre><div class="line">package main;</div><div class="line"></div><div class="line">import java.util.ArrayList;</div><div class="line"></div><div class="line">import org.w3c.dom.Document;</div><div class="line">import org.w3c.dom.Element;</div><div class="line">import org.w3c.dom.NodeList;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 2016.11.24 </div><div class="line"> *          获取Doucment，进行解析提取出需要的信息</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class AnalyzeDocument &#123;</div><div class="line"></div><div class="line"></div><div class="line">    /*</div><div class="line">     * 影视大全:http://www.yingshidaquan.cc/</div><div class="line">     *          电影-动作片-电影下载页面(http://www.yingshidaquan.cc/html/DQ20893.html)</div><div class="line">     *                  1.电影名</div><div class="line">     *                  2.下载链接</div><div class="line">     */</div><div class="line">    </div><div class="line">    //影视大全：获取总页数</div><div class="line">    protected int YSDCgetTotalPage(Document doc)&#123;</div><div class="line">        int page =1;</div><div class="line">        </div><div class="line">        Element div_ele=(Element)doc.getElementById(&quot;pages&quot;);</div><div class="line">        String content=div_ele.getTextContent();</div><div class="line">        if(content!=null)&#123;</div><div class="line">            content=content.substring(content.indexOf(&quot;/&quot;)+1,content.indexOf(&quot;页&quot;));</div><div class="line">            page=Integer.parseInt(content);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return page;</div><div class="line">    &#125;</div><div class="line">    //影视大全: 获取1.电影名，2.下载链接</div><div class="line">    protected String [] YSDCgetDownlink(Document doc)&#123; //接收Document对象，返回String信息</div><div class="line">        </div><div class="line">        String [] content_arrays =new String[2];</div><div class="line">        String title =&quot;&quot;;</div><div class="line">        String downlink=&quot;&quot;;</div><div class="line">        </div><div class="line">        //1.获取标题</div><div class="line">        NodeList h1_list = doc.getElementsByTagName(&quot;h1&quot;);</div><div class="line">        Element h1_ele = (Element)h1_list.item(0);</div><div class="line">        title = h1_ele.getTextContent();</div><div class="line">        </div><div class="line">        NodeList input_list = doc.getElementsByTagName(&quot;input&quot;);</div><div class="line">        </div><div class="line">        //2.获取下载链接</div><div class="line">        NodeList div_list=doc.getElementsByTagName(&quot;div&quot;);</div><div class="line">        for(int i=0;i&lt;div_list.getLength();i++)&#123;</div><div class="line">            Element  div_ele=(Element)div_list.item(i);</div><div class="line">            //方式1:</div><div class="line">            if(&quot;ed2klist&quot;.equals(div_ele.getAttribute(&quot;class&quot;)))&#123;</div><div class="line">                downlink = div_ele.getTextContent();</div><div class="line">                if(downlink.indexOf(&quot;|/&quot;) !=-1)&#123;</div><div class="line">                    downlink=downlink.substring(downlink.indexOf(&quot;$&quot;)+1,downlink.indexOf(&quot;|/&quot;)+2);</div><div class="line">                &#125;else if(downlink.indexOf(&quot;###&quot;) !=-1)&#123;</div><div class="line">                    downlink=downlink.substring(downlink.indexOf(&quot;$&quot;)+1,downlink.indexOf(&quot;###&quot;));</div><div class="line">                &#125;else if(downlink.indexOf(&quot;$mag&quot;) !=-1)&#123;</div><div class="line">                    downlink=downlink.substring(downlink.indexOf(&quot;$&quot;)+1,downlink.lastIndexOf(&quot;)&quot;)-1);</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                </div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if(downlink.length()&lt;5)&#123;</div><div class="line">            downlink=&quot;无&quot;;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">        content_arrays[0]=title;</div><div class="line">        content_arrays[1]=downlink;</div><div class="line">        return content_arrays;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //影视大全：获取跳入电影页面的链接</div><div class="line">    protected ArrayList&lt;String&gt; YSDCgetSkipLink(Document doc)&#123; //接收Document对象，返回String信息</div><div class="line">        </div><div class="line">        </div><div class="line">        ArrayList&lt;String&gt; alist =new ArrayList&lt;String&gt;();//储存所有跳转链接</div><div class="line">        String skipLink =&quot;&quot;;//单个跳转到电影页面的链接</div><div class="line">        NodeList div_list=doc.getElementsByTagName(&quot;div&quot;);</div><div class="line">        </div><div class="line">        for(int i=0;i&lt;div_list.getLength();i++)&#123;//&lt;a&gt;循环</div><div class="line">                Element div_ele=(Element)div_list.item(i);</div><div class="line">            </div><div class="line">                if(&quot;info&quot;.equals(div_ele.getAttribute(&quot;class&quot;)))&#123;</div><div class="line">                        </div><div class="line">                            Element a_ele=(Element)div_ele.getElementsByTagName(&quot;a&quot;).item(0);</div><div class="line">                            skipLink=&quot;http://www.yingshidaquan.cc&quot;+a_ele.getAttribute(&quot;href&quot;);</div><div class="line">                            alist.add(skipLink);</div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        </div><div class="line">        return alist;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">//  案例：</div><div class="line">//  protected AnalyzeContent(String content)&#123;</div><div class="line">//</div><div class="line">//</div><div class="line">//              Document xmlDoc=Utils.getDocByContent(originTxtRspContent);</div><div class="line">//              System.out.println(originTxtRspContent);</div><div class="line">//              </div><div class="line">//              NodeList table_list=xmlDoc.getElementsByTagName(&quot;table&quot;);</div><div class="line">//              int count=0;</div><div class="line">//              for (int i = 0; i &lt; table_list.getLength(); i++) &#123;</div><div class="line">//                  Element table_ele=(Element)table_list.item(i);</div><div class="line">//                  </div><div class="line">//                  if(&quot;98%&quot;.equals(table_ele.getAttribute(&quot;width&quot;)))&#123;</div><div class="line">//                      count++;</div><div class="line">//                      if(count!=3)&#123;</div><div class="line">//                          continue;</div><div class="line">//                      &#125;</div><div class="line">//                      NodeList a_list=table_ele.getElementsByTagName(&quot;a&quot;);</div><div class="line">//                      if(a_list!=null)&#123;</div><div class="line">//                          for(int j=0;j&lt;a_list.getLength();j++)&#123;</div><div class="line">//                              Element a_ele=(Element)table_ele.getElementsByTagName(&quot;a&quot;).item(j);</div><div class="line">//                              String title=a_ele.getTextContent().trim();</div><div class="line">//  </div><div class="line">//                              String href=a_ele.getAttribute(&quot;href&quot;);</div><div class="line">//                              String iw_ir_2=href.substring(href.indexOf(&quot;/&quot;)+1,href.lastIndexOf(&quot;.&quot;)).trim();</div><div class="line">//                              </div><div class="line">//                              </div><div class="line">//                              String a_title=a_ele.getAttribute(&quot;title&quot;).trim();</div><div class="line">//                              String date=a_title.substring(a_title.lastIndexOf(&quot;更新时间：&quot;)+5,a_title.length()-8).trim();</div><div class="line">//                              Date now = (Date) new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).parse(date); </div><div class="line">//                               date = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(now);</div><div class="line">//                              </div><div class="line">//                              </div><div class="line">//                                  String url = getNewPathPrefix() + &quot;/?&quot;</div><div class="line">//                                          + getAdditionalLinkParamStr()</div><div class="line">//                                          + &quot;&amp;iw-cmd=02307HNDetail&amp;iw_ir_2=&quot;+iw_ir_2;</div><div class="line">//                                      </div><div class="line">//                                  BranchNew branchNew=new BranchNew();</div><div class="line">//                                  </div><div class="line">//                                  branchNew.title=title.substring(0);</div><div class="line">//                                  branchNew.id=iw_ir_2;</div><div class="line">//                                  branchNew.date=date;</div><div class="line">//                                  branchNew.url=url;</div><div class="line">//          </div><div class="line">//                                  response.list.add(branchNew);</div><div class="line">////                                    System.out.println(branchNew.toString());</div><div class="line">//                                  &#125;</div><div class="line">//                          &#125;</div><div class="line">//                      &#125;</div><div class="line">//              &#125;</div><div class="line">//              </div><div class="line">//              String pageCount=null;</div><div class="line">//              NodeList b_list=xmlDoc.getElementsByTagName(&quot;b&quot;);</div><div class="line">//              if(b_list!=null)&#123;</div><div class="line">//                  Element b_ele=(Element)b_list.item(0);</div><div class="line">//                  pageCount=b_ele.getTextContent().trim();</div><div class="line">//                  int one=Integer.parseInt(pageCount);</div><div class="line">//                  if(one%20==0)&#123;</div><div class="line">//                      one =one/20;</div><div class="line">//                  &#125;else&#123;</div><div class="line">//                      one=one/20+1;</div><div class="line">//                  &#125;</div><div class="line">//              &#125;</div><div class="line">//  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="3-GoTask-java和test-java"><a href="#3-GoTask-java和test-java" class="headerlink" title="3.GoTask.java和test.java"></a>3.GoTask.java和test.java</h2><p>GoTask.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">package main;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line">import java.util.ArrayList;</div><div class="line"></div><div class="line">import org.w3c.dom.Document;</div><div class="line"></div><div class="line">import Utils.IOFile;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line"> * 2016.11.24</div><div class="line"> *      爬虫任务流程</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class GoTask &#123;</div><div class="line">    </div><div class="line">    int runningID = 7;//现在要跑哪一个类型编号</div><div class="line">    </div><div class="line">    String [] filmType=&#123;&quot;1-动作&quot;,&quot;2-喜剧&quot;,&quot;3-爱情&quot;,&quot;4-科幻&quot;,&quot;5-恐怖&quot;,&quot;6-战争&quot;,&quot;7-剧情&quot;,&quot;8-其他&quot;&#125;;</div><div class="line">    </div><div class="line">    </div><div class="line">    //影视大全:http://www.yingshidaquan.cc/</div><div class="line">    protected void go()&#123;</div><div class="line">        </div><div class="line">        IOFile iof = new IOFile();</div><div class="line">        </div><div class="line">        callURL cURL = new callURL();</div><div class="line">        StringXmlHtml sxh = new StringXmlHtml();</div><div class="line">        AnalyzeDocument ad = new AnalyzeDocument();</div><div class="line">        </div><div class="line">        String content=&quot;&quot;;                      //页面所有内容</div><div class="line">        Document contentDoc =null;      //页面内容转换为Document</div><div class="line">        int pageCount =1;                                   //总页数</div><div class="line">        ArrayList&lt;String&gt; alist = null;    //当前页所有链接</div><div class="line">        int filmCount =0;                            //计算电影数</div><div class="line">        int [] filmTypeId=&#123;8,9,10,11,12,13,14,24&#125;;  //电影类型id</div><div class="line">        </div><div class="line">        try&#123;</div><div class="line">            //1.在第一页获取总页数</div><div class="line">//          content =cURL.taskURL(&quot;http://www.yingshidaquan.cc/vod-show-id-&quot;+filmTypeId[runningID-1]+&quot;-p-1.html&quot;);</div><div class="line">//          contentDoc = sxh.htmlGetDocument(content);</div><div class="line">//          pageCount =ad.YSDCgetTotalPage(contentDoc);</div><div class="line">            </div><div class="line">            for(int z=1;z&lt;=filmType.length;z++)&#123;</div><div class="line">                    System.out.println(&quot;**************************爬取&quot;+filmType[z-1].substring(2)+&quot;类电影************************************&quot;);</div><div class="line">                    for(int i=1;i&lt;=30;i++)&#123;  //每种类型只跑前30页 </div><div class="line">                        System.out.println(&quot;**************************目前为第&quot;+i+&quot;页************************************&quot;);</div><div class="line">        </div><div class="line">                        content =cURL.taskURL(&quot;http://www.yingshidaquan.cc/vod-show-id-&quot;+filmTypeId[z-1]+&quot;-p-&quot;+i+&quot;.html&quot;);</div><div class="line">        </div><div class="line">        </div><div class="line">                        contentDoc = sxh.htmlGetDocument(content);//解析当前页内容</div><div class="line">                        alist = ad.YSDCgetSkipLink(contentDoc);//获取当前页所有链接</div><div class="line">            </div><div class="line">                            for(int k=0;k&lt;alist.size();k++)&#123;</div><div class="line">                                </div><div class="line">                                //A.跳到每个电影下载页面</div><div class="line">                                String downContent =cURL.taskURL(alist.get(k));//跳转下载页面</div><div class="line">                                Document downContentDoc= sxh.htmlGetDocument(downContent);//解析下载页</div><div class="line">                                String [] downLink =ad.YSDCgetDownlink(downContentDoc);</div><div class="line">                                </div><div class="line">                                //B.将内容储存到文件            </div><div class="line">                                if(downLink[1].length()&gt;5)&#123;</div><div class="line">                                    filmCount++;//统计电影数量</div><div class="line">                                    //传入路径，文件名，储存内容</div><div class="line">                                    iof.addContentFile(&quot;C:\\Users\\Liu-shuwei\\Desktop\\电影资源\\&quot;,filmType[z-1].substring(2)+&quot;电影.txt&quot;,&quot;\r\n&quot;+filmCount+&quot;.&quot;+downLink[0]+&quot;:&quot;+downLink[1]+&quot;\r\n&quot;);</div><div class="line">                                &#125;</div><div class="line">                                </div><div class="line">                                </div><div class="line">                                System.out.println(&quot;标题：&quot;+downLink[0]+&quot;\n链接：&quot;+downLink[1]);</div><div class="line">                                System.out.println(&quot;**************************************************************&quot;);</div><div class="line">                            &#125;</div><div class="line">                        System.out.println(&quot;**************************第&quot;+i+&quot;页结束************************************&quot;);</div><div class="line">                    &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;catch(Exception e)&#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>test.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">package main;</div><div class="line"></div><div class="line">import org.w3c.dom.Document;</div><div class="line"></div><div class="line">import Utils.IOFile;</div><div class="line"></div><div class="line">public class test &#123;</div><div class="line">    </div><div class="line">    </div><div class="line">    //测试类主方法</div><div class="line">    public static void main(String [] args)&#123;</div><div class="line">        long begin = System.currentTimeMillis();</div><div class="line">    </div><div class="line">        GoTask gt = new GoTask();</div><div class="line">        gt.go();</div><div class="line"></div><div class="line">            </div><div class="line">        </div><div class="line">        long spendTime =System.currentTimeMillis()-begin;</div><div class="line">         System.out.println(&quot;*******************************************************************&quot;);</div><div class="line">        System.out.println(&quot;共花费&quot;+spendTime+&quot;毫秒&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<h1 id="javaReptile【2-0-Jsoup版】"><a href="#javaReptile【2-0-Jsoup版】" class="headerlink" title="javaReptile【2.0-Jsoup版】"></a>javaReptile【2.0-Jsoup版】</h1><p>&emsp;使用Jsoup重构代码，只有一个JsoupGo_2.java,代码尽量简洁,内涵注释</p>
+<p><br><br></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>1.测试主方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">package 影视大全;</div><div class="line"></div><div class="line">import org.w3c.dom.Document;</div><div class="line"></div><div class="line">import Utils.IOFile;</div><div class="line"></div><div class="line">public class test &#123;</div><div class="line">    </div><div class="line">    </div><div class="line">    //测试类主方法</div><div class="line">    public static void main(String [] args)&#123;</div><div class="line">        long begin = System.currentTimeMillis();</div><div class="line"></div><div class="line">        try&#123;</div><div class="line">            JsoupGo_2 jg = new JsoupGo_2();</div><div class="line">            jg.goTask();</div><div class="line">        &#125;catch(Exception e)&#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">            </div><div class="line">        </div><div class="line">        long spendTime =System.currentTimeMillis()-begin;</div><div class="line">         System.out.println(&quot;*******************************************************************&quot;);</div><div class="line">        System.out.println(&quot;共花费&quot;+spendTime+&quot;毫秒&quot;);</div><div class="line"></div><div class="line">        ---</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>JsoupGo_2.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line">package 影视大全;</div><div class="line"></div><div class="line">import java.io.IOException;</div><div class="line">import java.util.ArrayList;</div><div class="line"></div><div class="line">import org.jsoup.Jsoup;</div><div class="line">import org.jsoup.nodes.Document;</div><div class="line">import org.jsoup.select.Elements;</div><div class="line"></div><div class="line">import Utils.IOFile;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 更新时间： 2016年11月29日   </div><div class="line"> *</div><div class="line"> *      使用Jousp抓取电影资源</div><div class="line"> *</div><div class="line"> *  @author Suvan</div><div class="line"> */</div><div class="line">public class JsoupGo_2 &#123;</div><div class="line"></div><div class="line">    protected void goTask() throws IOException&#123;</div><div class="line"></div><div class="line">        //电影分类</div><div class="line">        String [] filmType=&#123;&quot;1-动作&quot;,&quot;2-喜剧&quot;,&quot;3-爱情&quot;,&quot;4-科幻&quot;,&quot;5-恐怖&quot;,&quot;6-战争&quot;,&quot;7-剧情&quot;,&quot;8-其他&quot;&#125;;</div><div class="line">        //电影ID</div><div class="line">        int [] filmTypeId=&#123;8,9,10,11,12,13,14,24&#125;;</div><div class="line">        //电影数量</div><div class="line">        int filmCount=60;</div><div class="line">        </div><div class="line">        //A.循环类型</div><div class="line">        for(int type=1;type&lt;=filmType.length;type++)&#123;</div><div class="line">            System.out.println(&quot;**************************现在爬取&quot;+filmType[type-1].substring(2)+&quot;类电影************************************&quot;);</div><div class="line">            //第一步：获取当前类型总页数</div><div class="line">            Document docA = Jsoup.</div><div class="line">                    connect(&quot;http://www.yingshidaquan.cc/vod-show-id-&quot;+filmTypeId[type-1]+&quot;-p-1.html&quot;).</div><div class="line">                    timeout(5*1000).get();</div><div class="line">            String maxPage=docA.getElementById(&quot;pages&quot;).text();</div><div class="line">            maxPage = maxPage.substring(maxPage.indexOf(&quot;/&quot;)+1,maxPage.indexOf(&quot;页&quot;));</div><div class="line">            </div><div class="line">            </div><div class="line">            //B.循环页数</div><div class="line">            for(int page=6;page&lt;=Integer.parseInt(maxPage);page++)&#123;</div><div class="line">                System.out.println(&quot;**************************目前为第&quot;+page+&quot;页************************************&quot;);</div><div class="line">                Document docB =Jsoup.</div><div class="line">                        connect(&quot;http://www.yingshidaquan.cc/vod-show-id-&quot;+filmTypeId[type-1]+&quot;-p-&quot;+page+&quot;.html&quot;).</div><div class="line">                        timeout(5*1000).get();</div><div class="line">                //第二步:获取当前页面所有电影页面URL</div><div class="line">                Elements a_eles = docB.select(&quot;a[class=p]&quot;);</div><div class="line">                ArrayList&lt;String&gt; URLlist = new ArrayList&lt;String&gt;();//储存所有URL</div><div class="line">                for(int i=0;i&lt;a_eles.size();i++)&#123;</div><div class="line">                    String url = &quot;http://www.yingshidaquan.cc&quot;+a_eles.get(i).attr(&quot;href&quot;);</div><div class="line">                    URLlist.add(url);</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                //C.循环电影</div><div class="line">                for(int k=0;k&lt;URLlist.size();k++)&#123;</div><div class="line">                    //第三步:获取电影页面的title(电影名)和link(迅雷下载链接)</div><div class="line">                    Document docC =Jsoup.</div><div class="line">                            connect(URLlist.get(k)).</div><div class="line">                            timeout(5*1000).get();//设置5s延迟时间，防止Read timed out</div><div class="line">                        //1.获取标题</div><div class="line">                        String title=docC.title();</div><div class="line">                        title=title.substring(0,title.indexOf(&quot;高清电影&quot;));</div><div class="line">                        </div><div class="line">                        //2.获取迅雷链接</div><div class="line">                        String link=&quot;&quot;;</div><div class="line">                            //2-1.先查看有无磁力链接【ed2klist】</div><div class="line">                            Elements div_ele1=docC.select(&quot;div[class=ed2klist]&gt;script&quot;);</div><div class="line">                            if(div_ele1.size()&gt;0)&#123;</div><div class="line">                                String content =div_ele1.get(0).html();</div><div class="line">                                if(content.indexOf(&quot;|/&quot;) !=-1)</div><div class="line">                                    link=content.substring(content.indexOf(&quot;$&quot;)+1,content.indexOf(&quot;|/&quot;)+2);</div><div class="line">                                else if(content.indexOf(&quot;###&quot;) !=-1)</div><div class="line">                                    link=content.substring(content.indexOf(&quot;$&quot;)+1,content.indexOf(&quot;###&quot;));</div><div class="line">                                else if(content.indexOf(&quot;$mag&quot;) !=-1)</div><div class="line">                                    link=content.substring(content.indexOf(&quot;$&quot;)+1,content.lastIndexOf(&quot;)&quot;)-1);  </div><div class="line">                            &#125;else&#123;</div><div class="line">                                //2-2.查看迅雷备用下载链接【downlist】</div><div class="line">                                Elements div_ele2=docC.select(&quot;div[class=downlist]&gt;script&quot;);</div><div class="line">                                if(div_ele2.size()&gt;0)&#123;</div><div class="line">                                    String content=div_ele2.get(0).html();</div><div class="line">                                    if(content.indexOf(&quot;$&quot;) != -1)&#123;</div><div class="line">                                        if(content.indexOf(&quot;###&quot;) !=-1)</div><div class="line">                                            link=content.substring(content.indexOf(&quot;$&quot;)+1,content.indexOf(&quot;###&quot;));</div><div class="line">                                        else</div><div class="line">                                            link=content.substring(content.indexOf(&quot;$&quot;)+1,content.lastIndexOf(&quot;\&quot;)&quot;));</div><div class="line">                                    &#125;</div><div class="line">                                        </div><div class="line">                                &#125;else</div><div class="line">                                    if(link.length()&lt;2)&#123;</div><div class="line">                                        link=&quot;无&quot;;</div><div class="line">                                        continue;//下一次循环</div><div class="line">                                    &#125;</div><div class="line">                            &#125;</div><div class="line">                            filmCount++;</div><div class="line">                    //第四步：获得内容储存进文件</div><div class="line">                    IOFile iof  = new IOFile();</div><div class="line">                    iof.addContentFile(&quot;C:\\Users\\Liu-shuwei\\Desktop\\电影资源\\&quot;,</div><div class="line">                                                filmType[type-1].substring(2)+&quot;电影.txt&quot;,</div><div class="line">                                                &quot;\r\n&quot;+filmCount+&quot;.&quot;+title+&quot;:&quot;+link+&quot;\r\n&quot;);</div><div class="line">                    </div><div class="line">                    System.out.println(filmCount+&quot;-&quot;+title+&quot;:\t&quot;+link);</div><div class="line">                    System.out.println(&quot;********************************************************************************************&quot;);</div><div class="line">                    &#125;//-C</div><div class="line">                System.out.println(&quot;**************************&quot;+page+&quot;页结束************************************&quot;);</div><div class="line">                &#125;//-B</div><div class="line">            System.out.println(&quot;**************************&quot;+filmType[type-1].substring(2)+&quot;类电影爬取结束************************************&quot;);</div><div class="line">            &#125;//-A</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">            </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MyProject/" rel="tag"># MyProject</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/22/SVN_腾讯云服务器搭建 SVN/" rel="next" title="腾讯云服务器搭建 SVN">
+                <i class="fa fa-chevron-left"></i> 腾讯云服务器搭建 SVN
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/25/Spider_Java 爬虫的开源框架与资源/" rel="prev" title="Java 爬虫的开源框架与资源">
+                Java 爬虫的开源框架与资源 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan-min.jpg"
+               alt="刘淑玮" />
+          <p class="site-author-name" itemprop="name">刘淑玮</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+   
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub"">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:liushuwei0925@gmail.com" target="_blank" title="Gmail"">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言【最近更新-2016-11-29】"><span class="nav-number">1.</span> <span class="nav-text">前言【最近更新:2016.11.29】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javaReptile【1-0版本】"><span class="nav-number">2.</span> <span class="nav-text">javaReptile【1.0版本】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境准备"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析网站"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">分析网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到错误"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">遇到错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序"><span class="nav-number">2.1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-用到封装工具类"><span class="nav-number">2.2.</span> <span class="nav-text">1.用到封装工具类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-callURL-java"><span class="nav-number">2.3.</span> <span class="nav-text">2.callURL.java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-StringXmlHtml-java和AnalyzeDecument-java"><span class="nav-number">2.4.</span> <span class="nav-text">2.StringXmlHtml.java和AnalyzeDecument.java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-GoTask-java和test-java"><span class="nav-number">2.5.</span> <span class="nav-text">3.GoTask.java和test.java</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javaReptile【2-0-Jsoup版】"><span class="nav-number">3.</span> <span class="nav-text">javaReptile【2.0-Jsoup版】</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.1.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suvan</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	能力决定走的多快，心态决定走的多远
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

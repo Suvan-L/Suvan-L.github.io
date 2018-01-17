@@ -1,0 +1,919 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Redis," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Suvan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="一.目录1.NoSQL介绍2.Redis概述3.Redis操作命令4.Jedis连接5.Redis的数据结构 1. NoSQL介绍NoSQL(Not Only SQL)  非关系型数据库 高并发读写(High performance) 海量数据的高效率存储和访问(Huge Storage) 高可扩展性和可用性(High Scalability &amp;amp;&amp;amp; High Availabilit">
+<meta name="keywords" content="Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis_基础使用">
+<meta property="og:url" content="http://suvan-l.github.io/2017/07/11/Redis_基础使用/index.html">
+<meta property="og:site_name" content="Suvan">
+<meta property="og:description" content="一.目录1.NoSQL介绍2.Redis概述3.Redis操作命令4.Jedis连接5.Redis的数据结构 1. NoSQL介绍NoSQL(Not Only SQL)  非关系型数据库 高并发读写(High performance) 海量数据的高效率存储和访问(Huge Storage) 高可扩展性和可用性(High Scalability &amp;amp;&amp;amp; High Availabilit">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-17T03:37:35.409Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis_基础使用">
+<meta name="twitter:description" content="一.目录1.NoSQL介绍2.Redis概述3.Redis操作命令4.Jedis连接5.Redis的数据结构 1. NoSQL介绍NoSQL(Not Only SQL)  非关系型数据库 高并发读写(High performance) 海量数据的高效率存储和访问(Huge Storage) 高可扩展性和可用性(High Scalability &amp;amp;&amp;amp; High Availabilit">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://suvan-l.github.io/2017/07/11/Redis_基础使用/"/>
+
+
+
+
+
+  <title>Redis_基础使用 | Suvan</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Suvan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2017/07/11/Redis_基础使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘淑玮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/suvan-min.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Suvan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Redis_基础使用</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T18:04:59+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,438
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-目录"><a href="#一-目录" class="headerlink" title="一.目录"></a>一.目录</h1><p>1.NoSQL介绍<br>2.Redis概述<br>3.Redis操作命令<br>4.Jedis连接<br>5.Redis的数据结构</p>
+<h2 id="1-NoSQL介绍"><a href="#1-NoSQL介绍" class="headerlink" title="1. NoSQL介绍"></a>1. NoSQL介绍</h2><p>NoSQL(Not Only SQL)</p>
+<ul>
+<li>非关系型数据库</li>
+<li>高并发读写(High performance)</li>
+<li>海量数据的高效率存储和访问(Huge Storage)</li>
+<li>高可扩展性和可用性(High Scalability &amp;&amp; High Availability)</li>
+<li>特点【易扩展,大数据,高性能,灵活的数据模型,高可用】</li>
+</ul>
+<p>NoSQL数据库的四大分类</p>
+<ul>
+<li>键值(Key-Value)存储</li>
+<li>列存储</li>
+<li>文档数据库</li>
+<li>图形化数据库</li>
+</ul>
+<hr>
+<p><br><br></p>
+<h2 id="2-Redis概述"><a href="#2-Redis概述" class="headerlink" title="2. Redis概述"></a>2. Redis概述</h2><p>&emsp;高性能键值队数据库</p>
+<p>参考资料</p>
+<ul>
+<li><a href="https://redis.io/" target="_blank" rel="external">Redis官网</a><br><br></li>
+</ul>
+<p>支持数据类型</p>
+<ul>
+<li>字符串类型</li>
+<li>散列类型</li>
+<li>列表类型</li>
+<li>集合类型</li>
+<li>有序集合类型<br><br></li>
+</ul>
+<p>应用场景</p>
+<ul>
+<li>缓存【数据查询,常驻内存 】</li>
+<li>任务队列</li>
+<li>网站访问统计【精确到毫秒】</li>
+<li>应用排行榜</li>
+<li>数据过期处理</li>
+<li>分布式集群架构中的session分离<br><br></li>
+</ul>
+<p>安装环境【CentOS】</p>
+<ul>
+<li>redis是C语言开发,安装redis需要先将官网下载源码进行编译,编译依赖gcc环境(如果没有该环境,需安装gcc)<br><br></li>
+</ul>
+<p>特性</p>
+<ul>
+<li>多数据库</li>
+<li>事务</li>
+<li>三种同步策略(不同步,每秒同步,每修改同步)</li>
+<li>两种持久化操作(RDB【指定时间间隔将数据从内存中写入硬盘】和AOF方式【以日志形式记录数据库每一次操作,数据库启动时会读取日志文件,重新构建数据库,保证启动后数据库是完整的】)</li>
+<li>也可无持久化(用作缓存机制)和同时使用RDB和AOF<br><br></li>
+</ul>
+<p>RDB方式</p>
+<ul>
+<li>【优势】只有一个文件，时间间隔的数据，可以归档为一个文件，方便压缩转移（就一个文件）</li>
+<li>如果数据集很大,RDB启动效率会高些</li>
+<li>【劣势】不好保证数据高可用性(最大限度避免数据丢失),数据集太大,可能服务器停止一定时间进行恢复<br><br></li>
+</ul>
+<p>AOF方式</p>
+<ul>
+<li>【优势】保证更高的数据安全性</li>
+<li>对于日志写入操作采取添加模式,即使出现宕机现象,也不会破坏日志已经写入的内容</li>
+<li>如果日志过大,Redis可以自动启动重写机制,不断将修改的数据写入老的磁盘文件当中,同时也会创建新的文件,记录此期间产生了哪些修改命令被执行</li>
+<li>包含一个格式清晰,易于理解的日志文件操作</li>
+<li>【劣势】同步策略不同,效率会低于RDB<br><br></li>
+</ul>
+<h2 id="3-Redis操作命令"><a href="#3-Redis操作命令" class="headerlink" title="3.Redis操作命令"></a>3.Redis操作命令</h2><p>windows版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;解压Redis-x64-3.2.100</div><div class="line"></div><div class="line">&lt;2&gt;前台启动</div><div class="line">		cmd</div><div class="line">		cd E:\Java\Redis\3.2.100</div><div class="line">		e:</div><div class="line">		redis-server.exe redis.windows.conf  </div><div class="line">		【再次输入ctrl + c 或者 关闭黑窗体,可以停止Redis】</div><div class="line"></div><div class="line">&lt;3&gt;后端启动【服务启动】</div><div class="line">		a.安装服务redis-server --service-install redis.windows.conf</div><div class="line">		b.启动服务redis-server --service-start </div><div class="line">		c.停止服务redis-server --service-stop</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;客户端启动</div><div class="line">		redis-cli</div><div class="line"></div><div class="line">&lt;5&gt;测试连接</div><div class="line">		输入ping【若回复PONG,表示连接成功】</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p>字符串操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;1&gt;存入和获取</div><div class="line">		a.【设置键值对】set name suvan</div><div class="line">		b.【根据key获取值】get name</div><div class="line">		c.【获取所有key】keys *</div><div class="line">		d.【获取所有key】del name</div><div class="line">		e.【先获取name的值,再设置】getset name xiaoming</div><div class="line"></div><div class="line">&lt;2&gt;删除</div><div class="line">	del name</div><div class="line"></div><div class="line">&lt;3&gt;指定value值递增递减</div><div class="line">	incr num     ~    1【如果num不存在,则默认设为0,然后自增1;如果值是Hello,转类型失败,返回错误信息】</div><div class="line">	incr num     ~    2</div><div class="line">	incrby num 5 ~	  7  【如果不存在,则默认设为0,自加5】</div><div class="line"></div><div class="line">	decr num  ~     -1【如果num不存在,默认设为0,自减少为-1】</div><div class="line">	decrby num 2 ~  -3</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;拼接字符串</div><div class="line">	append num 123 【不存在则创建,存在则追加在后尾】</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<p>Hash操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;1&gt;存储与获取</div><div class="line">	a.【存取单个键值队】hsert myhash name suvan</div><div class="line">	b.【存取多个键值队】hset myhash2 name suvan age 18</div><div class="line">	c.【获取单个】hget myhash name</div><div class="line">	d.【获取多个】hmget myhash2 name age</div><div class="line">	c.【获取指定hash的全部】hgetall myhash</div><div class="line"></div><div class="line"></div><div class="line">&lt;2&gt;删除</div><div class="line">	a.【删除1个】hdel myhash2 name</div><div class="line">	b.【删除多个】hdel myhash2 name age</div><div class="line">	c.【删除整个Hash】del myhash2</div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;增加数字</div><div class="line">	a.【自增3】hincrby myhash age 5</div><div class="line"></div><div class="line">&lt;4&gt;判断是否存在</div><div class="line">	hexists myhash name</div><div class="line"></div><div class="line">&lt;5&gt;获取长度</div><div class="line">	hlen myshah</div><div class="line"></div><div class="line">&lt;6&gt;所有key 和所有value</div><div class="line">	hkesy myhash</div><div class="line">	hvals myhash</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<h2 id="4-Jedis连接"><a href="#4-Jedis连接" class="headerlink" title="4. Jedis连接"></a>4. Jedis连接</h2><hr>
+<p>&emsp;Jedis是Redis官方首选的Java客户端开发包,用于java连接Redis</p>
+<p>参考资料</p>
+<ul>
+<li><a href="https://github.com/xetorthio/jedis" target="_blank" rel="external">jedis的Github</a></li>
+<li><a href="http://mvnrepository.com/artifact/redis.clients/jedis" target="_blank" rel="external">jedis的jar下载</a></li>
+<li><a href="http://mvnrepository.com/artifact/org.apache.commons/commons-pool2" target="_blank" rel="external">org.apache.commons的jar包下载</a><br><br></li>
+</ul>
+<p>Jedis连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;1&gt;Build两个jar包</div><div class="line">		jedis-2.9.0.jar</div><div class="line">		commons-pool2-2.4.2.jar</div><div class="line"></div><div class="line">&lt;2&gt;程序代码【注意:虚拟机记得打开防火墙端口】</div><div class="line">	public void connect&#123;</div><div class="line">		//1.设置IP地址和端口</div><div class="line">		Jedis jedis = new Jedis(&quot;127.0.0.1&quot;,6379);</div><div class="line"></div><div class="line">		//2.保存数据</div><div class="line">		jedis.set(&quot;name&quot;,&quot;suvan&quot;);</div><div class="line"></div><div class="line">		//3.获取数据</div><div class="line">		String value = jedis.get(&quot;name&quot;);</div><div class="line"></div><div class="line">		//4.释放资源</div><div class="line">		jedis.close();</div><div class="line"></div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;3&gt;连接池</div><div class="line">	public void connectPool&#123;</div><div class="line">		//1.获取连接池的配置对象</div><div class="line">		JedisPoolconfig config = new JedisPoolConfig();</div><div class="line"></div><div class="line">		//2.设置最大连接数</div><div class="line">		config.setMaxTotal(30);</div><div class="line"></div><div class="line">		//3.设置最大空闲连接数</div><div class="line">		config.setMaxIdle(10);</div><div class="line"></div><div class="line">		//4.获取连接池</div><div class="line">		JedisPool jedisPool = new JedisPool(config,&quot;127.0.0.1&quot;，6379);</div><div class="line"></div><div class="line">		//5.获取核心对象</div><div class="line">		Jedis jedis = null;</div><div class="line"></div><div class="line">		try&#123;</div><div class="line">			//通过连接池连接</div><div class="line">			jedis = jedisPool.getResource();</div><div class="line"></div><div class="line">			jedis.set(&quot;name&quot;,&quot;张三&quot;);</div><div class="line">			String value = jedis.get(&quot;name&quot;);</div><div class="line">			System.out.println(value);</div><div class="line">		&#125;catch(Exception e)&#123;&#125;</div><div class="line">		 finally&#123;</div><div class="line">		 	//释放资源</div><div class="line">		 	if(jedis != null)&#123;</div><div class="line">		 		jedis.close();</div><div class="line">		 	&#125;</div><div class="line">		 	if(jedisPool != null)&#123;</div><div class="line">		 		jedisPool.close();</div><div class="line">		 	&#125;</div><div class="line">		 &#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&lt;4&gt;注意</div><div class="line">	a.连接linux虚拟机的redis</div><div class="line">		关闭防火墙命令sudo service iptables stop</div><div class="line">		需要注释掉bind127.0.0.1 ，设置protected-mode为NO。如果解决了问题请点个赞</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<h2 id="5-Redis的数据结构"><a href="#5-Redis的数据结构" class="headerlink" title="5. Redis的数据结构"></a>5. Redis的数据结构</h2><p>五种数据类型</p>
+<ul>
+<li>字符串(String)</li>
+<li>哈希(hash)</li>
+<li>字符串列表(list)</li>
+<li>字符串集合(set)</li>
+<li>有序字符串集合(sorted set)<br><br></li>
+</ul>
+<p>Key定义注意点</p>
+<ul>
+<li>不要过长</li>
+<li>不要过短</li>
+<li>统一的命名规范<br><br></li>
+</ul>
+<p>Hash结构</p>
+<ul>
+<li>String Key和String Value的map容器</li>
+<li>每一个Hash可以存储4294967295个键值对<br><br></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/26/WebServer_路由器构建本地 Web/" rel="next" title="路由器构建本地 Web">
+                <i class="fa fa-chevron-left"></i> 路由器构建本地 Web
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/02/Java_知识体系/" rel="prev" title="Java_知识体系">
+                Java_知识体系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/suvan-min.jpg"
+               alt="刘淑玮" />
+          <p class="site-author-name" itemprop="name">刘淑玮</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+   
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Suvan-L" target="_blank" title="GitHub"">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:liushuwei0925@gmail.com" target="_blank" title="Gmail"">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-目录"><span class="nav-number">1.</span> <span class="nav-text">一.目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-NoSQL介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1. NoSQL介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Redis概述"><span class="nav-number">1.2.</span> <span class="nav-text">2. Redis概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Redis操作命令"><span class="nav-number">1.3.</span> <span class="nav-text">3.Redis操作命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Jedis连接"><span class="nav-number">1.4.</span> <span class="nav-text">4. Jedis连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Redis的数据结构"><span class="nav-number">1.5.</span> <span class="nav-text">5. Redis的数据结构</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> <!--博客量统计-->
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suvan</span>
+</div>
+
+
+<div class="powered-by">
+   
+  <!--
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+    -->
+</div>
+
+<div class="theme-info">
+	能力决定走的多快，心态决定走的多远
+
+  <!-- 主题
+    主题 -
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  -->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>
