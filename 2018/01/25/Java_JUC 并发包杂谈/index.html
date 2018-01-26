@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥性（">
+<meta name="description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于使用 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java_JUC 并发包学习笔记">
-<meta property="og:url" content="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包学习笔记/index.html">
+<meta property="og:title" content="JUC 并发包杂谈">
+<meta property="og:url" content="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包杂谈/index.html">
 <meta property="og:site_name" content="Suvan">
-<meta property="og:description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥性（">
+<meta property="og:description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于使用 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-25T17:03:45.878Z">
+<meta property="og:updated_time" content="2018-01-26T04:40:47.141Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java_JUC 并发包学习笔记">
-<meta name="twitter:description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥性（">
+<meta name="twitter:title" content="JUC 并发包杂谈">
+<meta name="twitter:description" content="目录 volatile 关键字 原子变量 锁分段机制 闭锁 使用 Callable 接口 Lock 同步锁 等待唤醒机制 一道“线程按序交替执行”的编程题 读写锁 线程八锁的关键 线程池 Fork/Join 框架   1. volatile 关键字 相较于使用 synchronized ，是一种更为轻量级的同步策略 保证可见性，不具备互斥性，不保证原子性 可见性（某个线程修改，所有线程可见） 互斥">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包学习笔记/"/>
+  <link rel="canonical" href="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包杂谈/"/>
 
 
 
 
 
-  <title>Java_JUC 并发包学习笔记 | Suvan</title>
+  <title>JUC 并发包杂谈 | Suvan</title>
   
 
 
@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://suvan-l.github.io/2018/01/25/Java_JUC 并发包杂谈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘淑玮">
@@ -270,7 +270,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java_JUC 并发包学习笔记</h2>
+          <h2 class="post-title" itemprop="name headline">JUC 并发包杂谈</h2>
         
 
         <div class="post-meta">
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  3,437
+                  3,511
                 </span>
               
 
@@ -386,7 +386,7 @@
 </ol>
 <hr>
 <h1 id="1-volatile-关键字"><a href="#1-volatile-关键字" class="headerlink" title="1. volatile 关键字"></a>1. volatile 关键字</h1><ol>
-<li>相较于 synchronized ，是一种更为轻量级的同步策略</li>
+<li>相较于使用 synchronized ，是一种更为轻量级的同步策略</li>
 <li>保证可见性，不具备互斥性，不保证原子性<ul>
 <li>可见性（某个线程修改，所有线程可见）</li>
 <li>互斥性（同一时刻，仅有一个线程可以访问）</li>
@@ -395,12 +395,12 @@
 </li>
 <li>【可见性问题示例】共享数据默认存在主存中，多线程操作需对共享数据进行改变时<ul>
 <li>先将共享数据读到分线程的自身的缓存中</li>
-<li>再修改，</li>
+<li>再修改</li>
 <li>然后再写回主存中</li>
 </ul>
 </li>
 <li>使用 volatile 声明的类变量，多线程操作时，都在主存中进行<ul>
-<li>性能会降低（相较于什么都不加），因为 JVM 的优化会进行重排序，但用 volatile 修饰后，不能进行重排序 </li>
+<li>性能会降低（相较于什么都不加），因为 JVM 的优化会进行重排序，但用 volatile 修饰的变量，不能进行重排序 </li>
 <li>但仍然比用锁的效率要高</li>
 </ul>
 </li>
@@ -414,15 +414,15 @@
 </li>
 <li><p>CAS 算法</p>
 <ul>
-<li>起初该算法是硬件对于并发操作共享数据的支持，而 JVM 也提供支持</li>
-<li>在原子变量类核心的方法 compareAndSet(int expect, int update)</li>
+<li>起初该算法是硬件对于并发操作共享数据的支持，在 Java 中用于保证共享数据的原子性</li>
+<li>在原子变量类核心的方法 ‘compareAndSet(int expect, int update)’</li>
 <li>包含三个操作数：V-内存值，预估值-A，更新值-B<ul>
-<li>仅当 V == A 时，才会进行 V = B，否则什么都不做</li>
-<li>每次调用函数时（函数需用 synchronized 修饰，保证独占），先传递进预估值（即为此时此刻的内存值），函数内需再次获取当前的内存值（判断是否出现变化），若无变化，保证前后一致，即更新</li>
+<li>【核心思想】仅当 V == A 时，才会进行 V = B，否则什么都不做</li>
+<li>每次调用函数时（函数需用 synchronized 修饰，保证线程独占），先传递进预估值（即为此时此刻的内存值），函数内需再次获取当前的内存值（判断是否出现变化），若无变化（确保前后一致），即进行能更新操作</li>
 </ul>
 </li>
-<li>【示例】当多个线程同时对主存数据数据进行修改时，仅有一个线程会成功，其他线程都失败<ul>
-<li>【效率失败】CAS 算法比锁的效率高，因为当线程失败时，不会阻塞（放弃 CPU 的资源），然后立即再次尝试</li>
+<li>【应用示例】当多个线程同时对主存数据数据进行修改时，仅有一个线程会成功，其他线程都将失败<ul>
+<li>【效率失败】CAS 算法比锁的效率高，因为当线程失败时，不会阻塞（不会放弃 CPU 的资源，然后立即再次尝试）</li>
 <li>【缺点】需要同时考虑成功与失败（什么时候开始，什么时候停止）的情况</li>
 </ul>
 </li>
@@ -430,43 +430,48 @@
 </li>
 </ol>
 <h1 id="3-锁分段机制"><a href="#3-锁分段机制" class="headerlink" title="3.  锁分段机制"></a>3.  锁分段机制</h1><ol>
-<li>JDK 5.0 再 java.util.concurrent 包中提供了多种并发容器类来改进同步容器的性能<ul>
+<li><p>JDK 5.0 再 java.util.concurrent 包中提供了多种并发容器类来改进同步容器的性能</p>
+<ul>
 <li>原本可使用例如 ：’Collections.sychronizedList()’ 的方法，将集合类修改问线程安全的</li>
 </ul>
 </li>
-</ol>
-<p>2.. HashMap 和 HashTable 的区别</p>
+<li><p>HashMap 和 HashTable 的区别</p>
 <ul>
 <li>HashTable 效率低，它是 线程安全的，但锁是锁整个表，当多个线程并发访问时，并行 -&gt; 串行（一个线程访问完，另一个线程才可访问）</li>
-<li>HashTable 存在复合操作的安全问题</li>
-<li>【例】操作同一个 HashTable，进行 ”若存在则添加“，”若存在则删除“ 的符合操作时，可能出现中途被剥夺 CPU 使用权的情况</li>
+<li>HashTable 存在复合操作的安全问题<ul>
+<li>【例】操作同一个 HashTable，进行 ”若存在则添加“，”若存在则删除“ 的复合操作时，可能出现中途被剥夺 CPU 使用权的情况</li>
 </ul>
-<ol>
-<li><p>ConcurrentHashMap 同步容器时新增的线程安全的哈希表，内部采用”锁分段“机制代替原有 Hashtable 的独占锁，进而提高性能</p>
+</li>
+</ul>
+</li>
+<li><p>ConcurrentHashMap 同步容器是新增的线程安全的哈希表，内部采用”锁分段“机制代替原有 Hashtable 的独占锁，进而提高性能</p>
 <ul>
 <li>并发级别（concurrentLevel) ，默认级别为 16 （16  个段-Segment）</li>
 <li>每个段默认包含一个独立表元素（哈希表默认长度 16）</li>
-<li>每个表的每个长度位置包含 1 个链表</li>
+<li>每个表的每个长度位置包含 1 个链表<ul>
 <li>【并行】由于每个段都是独立的锁，多线程并发访问时，可分别访问，支持最高 16 个线程同时并行（不仅线程安全，同时效率高，也提供一些复合操作的函数）</li>
 <li>【jdk 1.8 变化】底层实现取消了分段锁机制，改为使用 CAS 算法重新实现（因为 CAS 不会阻塞，不需考虑上下文阻塞的问题，效率高）</li>
 </ul>
 </li>
-<li><p>d. 并发包下的同步容器类，同时被多线程迭代时，不会抛出 ‘ConcurrentModifyException’ 异常</p>
-<ul>
-<li>多线程同时访问正在迭代的 java.uitl 容器类下会（就算被例如 ‘Collections.sychronizedList()’ 包装），会抛出 ‘CconcurrentModifyException’ 异常，因为迭代的是同一个集合类</li>
-<li>并发包内同步容器类，在迭代时，会对原先的集合类进行一个复制，所以迭代的副本连变更</li>
-<li>【示例】’ CopyOnWriteArrayList’- 写入并复制（每次添加时，都会进行复制成一个全新的容器类），不适合添加操作多，适合迭代多的场景</li>
 </ul>
 </li>
+<li><p>并发包下的同步容器类，同时被多线程迭代时，不会抛出 ‘ConcurrentModifyException’ 异常</p>
+<ul>
+<li>多线程同时访问正在迭代的 java.uitl 容器类下会（即使被 ‘Collections.sychronizedList()’ 包装），依旧会抛出 ‘CconcurrentModifyException’ 异常，因为迭代的是同一个集合类</li>
+<li>并发包内同步容器类，在迭代时，会对原先的集合类进行一个复制，所以迭代的副本连变更</li>
+<li>​</li>
+</ul>
+</li>
+<li>‘ CopyOnWriteArrayList’- 写入并复制（每次添加时，都会进行复制成一个全新的容器类），适合迭代多，添加修改操作少的场景</li>
 </ol>
 <h1 id="4-闭锁"><a href="#4-闭锁" class="headerlink" title="4.  闭锁"></a>4.  闭锁</h1><ol>
-<li><p>CountDownLath 是一个同步辅助类，使线程等待其余线程全部都完成运算后，再继续执行（先完成任务的线程阻塞等待）</p>
+<li><p>CountDownLath 是一个同步辅助类，使线程等待其余线程全部都完成运算后，再继续执行（先完成任务的线程会阻塞）</p>
 <ul>
-<li>初始化时，声明线程数量，同时线程的 Thread.run() 中加入try-finally 块（需用 sychronized 代码块加锁），并执行完任务后再 finally 加入 CountDownLath.countDown() 计数 -1 代码</li>
-<li>主函数代码中，使用 CountDownLatch..await() 执行等待，等所有线程完成后（计数 == 0），再继续执行</li>
+<li>初始化时，声明线程数量，同时线程的 ‘Thread.run()’ 中加入’try-finally’ 块（需用 sychronized 代码块加锁），并执行完任务后再 finally 加入 ‘CountDownLath.countDown()’ （表示计数 -1）</li>
+<li>主函数代码中，使用 ‘CountDownLatch..await()’ 执行等待，等所有线程完成后（最终计数 == 0），主线程再继续执行</li>
 </ul>
 </li>
-<li><p>使用场景</p>
+<li><p>适用场景</p>
 <ul>
 <li>并行计算，统计最终计算总结果</li>
 <li>并行程序，性能测试时间</li>
@@ -482,7 +487,7 @@
 <li>是 Future 接口的实现类</li>
 <li>接收时需要声明泛型</li>
 <li>FutureTask 可用于闭锁</li>
-<li>【代码示例】<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//1. 声明线程任务（实现了 Callable 接口）</div><div class="line">ThreadDemo td = new ThreadDemo();</div><div class="line"></div><div class="line">//2. 声明接收结果</div><div class="line">FutureTask&lt;Integer&gt; result = new FutureTask&lt;&gt;(td);</div><div class="line"></div><div class="line">//3. 启动线程，开始执行任务</div><div class="line">new Thread(result).start()</div><div class="line"></div><div class="line">//4. 获取结果（当线程完成后，get() 才会执行，类似于闭锁）</div><div class="line">try &#123;</div><div class="line">    Integer sum = result.get();</div><div class="line">&#125; catch(InterruptedException ie | ExecutionException e) &#123;&#125;</div></pre></td></tr></table></figure>
+<li>【代码示例】<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//1. 声明线程任务（实现了 Callable 接口）</div><div class="line">ThreadDemo td = new ThreadDemo();</div><div class="line"></div><div class="line">//2. 声明接收结果</div><div class="line">FutureTask&lt;Integer&gt; result = new FutureTask&lt;&gt;(td);</div><div class="line"></div><div class="line">//3. 启动线程，开始执行任务</div><div class="line">new Thread(result).start()</div><div class="line"></div><div class="line">//4. 获取结果（当分线程完成后，主线程的 get() 才会继续往下执行，类似于闭锁）</div><div class="line">try &#123;</div><div class="line">    Integer sum = result.get();</div><div class="line">&#125; catch(InterruptedException ie | ExecutionException e) &#123; &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -491,7 +496,7 @@
 </ol>
 <h1 id="6-Lock-同步锁"><a href="#6-Lock-同步锁" class="headerlink" title="6.  Lock 同步锁"></a>6.  Lock 同步锁</h1><ol>
 <li>解决多线程安全问题的方式<ul>
-<li>同步代码块 synchronized( ) { } </li>
+<li>同步代码块 synchronized(锁对象) { } </li>
 <li>同步方法 synchronized</li>
 <li>同步锁 Lock（JDK1.5 后出现）</li>
 <li>显式锁，需通过 lock() 方法上锁，必须通过 unlock() 方法释放锁（最好在 finally 中，保证必须执行，否则将可能会出现线程安全问题）</li>
@@ -501,57 +506,64 @@
 </li>
 </ol>
 <ol>
-<li>. Lock 使用方法<ul>
-<li>对象声明类变量<code>private Lock lock = new ReentrantLock()</code></li>
-<li>对象类实现了 Runnable 接口，在 run() 函数内通过 lock.lock() 和 lock.unlock() 进行同步处理</li>
+<li>Lock 使用方法<ul>
+<li>对象声明类变量 <code>private Lock lock = new ReentrantLock()</code> </li>
+<li>对象类实现了 Runnable 接口，在 ‘run()’ 函数内利用 ‘lock.lock()’ 和 ‘lock.unlock()’ 进行同步加锁处理</li>
 </ul>
 </li>
 </ol>
-<h2 id="7-等待唤醒机制"><a href="#7-等待唤醒机制" class="headerlink" title="7. 等待唤醒机制"></a>7. 等待唤醒机制</h2><h2 id="a-生产者和消费者案例"><a href="#a-生产者和消费者案例" class="headerlink" title="a. 生产者和消费者案例"></a>a. 生产者和消费者案例</h2><ol>
-<li>产品类（可理解为店员小 2）<ul>
+<h1 id="7-等待唤醒机制"><a href="#7-等待唤醒机制" class="headerlink" title="7. 等待唤醒机制"></a>7. 等待唤醒机制</h1><h2 id="a-生产者和消费者案例"><a href="#a-生产者和消费者案例" class="headerlink" title="a. 生产者和消费者案例"></a>a. 生产者和消费者案例</h2><ol>
+<li><p>产品类类【零售店】</p>
+<ul>
 <li>类变量 ‘product’（产品总数）</li>
-<li>purchase()，进货函数（产品数限额为 10，不足则自增，超过则提示”产品已满“）</li>
-<li>selling()，售货函数 （产品不足（&lt;= 0）时，提示”缺货“，否则自减）</li>
+<li>purchase()，进货函数（产品数限额为 10，不足则自增，超过则提示 ”产品已满“ ）</li>
+<li>selling()，售货函数 （产品不足（&gt; 0）时，货品足够则自减，不足（&lt;=0）则提示 ”缺货“ ）</li>
 </ul>
 </li>
-<li>生产者<ul>
+<li><p>生产者类【供应商】</p>
+<ul>
+<li>类变量 ”产品类对象“</li>
+<li>构造函数，获取产品类对象，注入类变量</li>
+<li>实现 Runnable 接口，’run()’  函数内，循环调用 ‘产品类对象.purchase()’，提供货物</li>
+</ul>
+</li>
+<li><p>消费者【顾客】</p>
+<ul>
 <li>类变量 ‘产品类对象’</li>
 <li>构造函数，获取产品类对象，注入类变量</li>
-<li>实现 Runnable 接口，run() 函数，循环调用 ‘产品类对象’.purchase()，提供货物</li>
+<li>实现 Runnable 接口，’run()’ 函数内，循环调用 ‘产品类对象’selling()，购买货物</li>
 </ul>
 </li>
-<li>消费者<ul>
-<li>类变量 ‘产品类对象’</li>
-<li>构造函数，获取产品类对象，注入类变量</li>
-<li>实现 Runnable 接口，run() 函数，循环调用 ‘产品类对象’selling()，购买货物</li>
-</ul>
-</li>
-<li>多线程执行<ul>
+<li><p>多线程执行</p>
+<ul>
 <li>【可能产生的问题】<ul>
 <li>生成者线程过快（不断的发送数据）而消费者已经不接收了，可能造成数据丢失的情况</li>
 <li>消费者线程过快（不断的接收数据），而生产者已经不发了，可能出现重复的数据 or 错误的数据</li>
 </ul>
 </li>
 <li>【解决上述问题方案】使用等待唤醒机制<ul>
-<li>在产品类中的 purchase() 函数<ul>
-<li>若产品已满，则使生产者线程进入”等待机制“（使用 Object.wait()）</li>
-<li>若成功生产产品，则通知消费者线程可以卖货了，进入”唤醒机制“（使用 Object.notifyAll()）</li>
+<li>在产品类中的进货函数 ‘purchase()’ <ul>
+<li>若产品已满，则使生产者线程进入”等待机制“（使用  ‘Object.wait()’ ）</li>
+<li>若成功生产产品，则通知消费者线程可以卖货了，消费者进入”唤醒机制“（使用 Object.notifyAll()）</li>
 </ul>
 </li>
 <li>产品类的 selling() 函数同理</li>
-<li>【注意问题1】Object.wait() 使线程等待后，再次唤醒，会从停止的部分，继续往下执行，不会从头开始（注意 if-else 的使用问题） </li>
-<li>【注意问题2】多生产者，多消费者时，存在“虚假唤醒情况”（多个消费者线程因“缺货”，导致进入“等待”机制，当新的货品被生产出来，则使用 Object.notifyAll() 唤醒时，多个消费者线程同时被唤醒，导致之后货品同时–， 货品总数出现误差）<ul>
-<li>【解决方案】依据 API 中的解决方案， Object.wait() 应该总是放在 while 循环中（唤醒后，再依据条件判断一次）</li>
+<li>【注意问题】<ul>
+<li>‘Object.wait()’ 使线程等待后，再次唤醒，会从停止的部分，继续往下执行，不会从头开始（注意 if-else 的使用问题） </li>
+<li>多生产者，多消费者时，存在“虚假唤醒情况”（多个消费者线程因“缺货”，导致进入“等待”机制，当新的货品被生产出来，则使用 Object.notifyAll() 唤醒时，多个消费者线程同时被唤醒，导致之后货品同时–， 货品总数出现误差）</li>
 </ul>
 </li>
+<li>【解决方案】依据 API 中提供的解决方案， Object.wait() 应该总是放在 while 循环中（唤醒后，再依据条件判断一次）</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="b-Condition-接口进行线程通信"><a href="#b-Condition-接口进行线程通信" class="headerlink" title="b.  Condition 接口进行线程通信"></a>b.  Condition 接口进行线程通信</h2><ol>
-<li>描述了可能会与锁关联的条件变量（Condition 实例实质被绑定到一个锁上，需通过 Lock 实例的 lock.newCondition() 获取）</li>
-<li>Condition 对象内的函数分别对应<ul>
+<li><p>描述了可能会与锁关联的条件变量（Condition 实例实质被绑定到一个锁上，需通过 Lock 实例的 lock.newCondition() 获取）</p>
+</li>
+<li><p>Condition 对象内的函数分别对应</p>
+<ul>
 <li>Condition.await() - Object.wait()</li>
 <li>Condition.signal() - Object.notify()</li>
 <li>Condition.signal() - Object.signalAll()</li>
@@ -570,35 +582,43 @@
 </li>
 <li><p>使用</p>
 <ul>
-<li>【变量声明】<code>ReadWriteLock lock = new ReentrantReadWriteLock()</code></li>
-<li>【加锁和解锁】’lock.readLock().lock()’ 和 ‘lock.readLock().unlock()’，’lock.writeLock().lock()’ 和 ‘lock.writeLock().unlock()’（解锁应在 finally 块中）</li>
+<li>变量声明：<code>ReadWriteLock lock = new ReentrantReadWriteLock()</code></li>
+<li>加锁和解锁</li>
+<li>读锁：’lock.readLock().lock()’ 和 ‘lock.readLock().unlock()’</li>
+<li>写锁：’lock.writeLock().lock()’ 和 ‘lock.writeLock().unlock()’</li>
+<li>【注意】解锁应在 finally 块中</li>
 </ul>
 </li>
 </ol>
 <h1 id="10-线程八锁的关键"><a href="#10-线程八锁的关键" class="headerlink" title="10. 线程八锁的关键"></a>10. 线程八锁的关键</h1><ol>
-<li>【使用 synchronzied 关键字声方法头】非静态方法的锁默认为 this，静态方法的锁默认为 Class 实例</li>
-<li>某一时刻内，只能有一个线程持有锁（锁对象，其余任何线程都不能拿到该锁）</li>
-<li>锁对象是 this，被锁定后，其余线程都不能进入当前对象的其他 synchronized 修饰的方法（若普通方法则无关）</li>
+<li><p>非静态方法的锁默认为 this，静态方法的锁默认为 Class 实例</p>
+</li>
+<li><p>某一时刻内，只能有一个线程持有锁（锁对象，其余任何线程都不能拿到该锁）</p>
+</li>
+<li><p>锁对象是 this，被锁定后，其余线程都不能进入当前对象的其他 synchronized 修饰的方法（若普通方法则无关）</p>
+</li>
 </ol>
 <h1 id="11-线程池"><a href="#11-线程池" class="headerlink" title="11. 线程池"></a>11. 线程池</h1><ol>
 <li><p>特点</p>
 <ul>
 <li>提供了一个线程队列，队列中保存着等待状态的线程</li>
 <li>避免了创建与销毁额外的开销，提高了响应的速度</li>
-<li>2 .  结构体系<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">java.util.concurrent.Executor: 负责线程的使用月调度的根接口</div><div class="line">	|-- ExecutorService 子接口：线程池的主要接口</div><div class="line">		|-- ThreadPoolExecutor 实现类</div><div class="line">		|-- ScheduledExecutorService 子接口：负责线程的调度</div><div class="line">			|-- ScheduledThreadPoolExecutor 实现类（继承了 ThreadPoolExecutor ，又实现了ScheduledExecutorService），既具备线程池功能，又能进行线程的调度</div></pre></td></tr></table></figure>
-</li>
 </ul>
+</li>
+<li><p>结构体系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">java.util.concurrent.Executor: 负责线程的使用月调度的根接口</div><div class="line">	|-- ExecutorService 子接口：线程池的主要接口</div><div class="line">		|-- ThreadPoolExecutor 实现类</div><div class="line">		|-- ScheduledExecutorService 子接口：负责线程的调度</div><div class="line">			|-- ScheduledThreadPoolExecutor 实现类（继承了 ThreadPoolExecutor ，又实现了ScheduledExecutorService），既具备线程池功能，又可用进行线程的调度</div></pre></td></tr></table></figure>
 </li>
 <li><p>使用</p>
 <ul>
-<li>【创建】利用工厂方法创建线程池 (API 文档有说明，可用 ExecutorService 接收实例)<ul>
+<li>创建线程<ul>
+<li>利用工厂方法创建线程池 (API 文档有说明，可用 ExecutorService 接收实例)</li>
 <li>无限线程池 <code>Executor.newCachedThreadPool()</code>（缓存线程池，自动更改数量）</li>
 <li>固定大小的线程池 <code>Executors.newFixedThreadPool(int)</code></li>
 <li>单独的线程池 <code>Executors.newSingleThreadExecutor()</code>（只有一个线程）</li>
 <li>固定大小线程池，但可以进行延迟 or 定时执行任务 <code>ScheduledExecutorService.newScheduledThreadPool()</code></li>
 </ul>
 </li>
-<li>【使用】<ol>
+<li>代码中使用步骤<ol>
 <li>创建线程池</li>
 <li>创建任务（自定义，例：实现 Runnable 接口）</li>
 <li>为线程分配任务 <code>pool.submit(myTask)</code></li>
@@ -608,7 +628,7 @@
 </li>
 </ol>
 </li>
-<li>【线程调度】<ul>
+<li>线程调度<ul>
 <li>使用 <code>pool.schedule(RunableTask, 3, TimeUnit.SECONDS))</code></li>
 <li>【注意】如果不关线程池，需要程序不会停（一直在等待接任务）</li>
 </ul>
@@ -617,11 +637,11 @@
 </li>
 </ol>
 <h1 id="12-Fork-Join-框架"><a href="#12-Fork-Join-框架" class="headerlink" title="12. Fork/Join 框架"></a>12. Fork/Join 框架</h1><ol>
-<li>特点<ul>
+<li><p>特点</p>
+<ul>
 <li>1.7 后提供，实现了 Future 接口（面向接口编程的特点，功能扩展，Future 是在 1.5 的）</li>
-<li>在必要情况下，将一个大任务，进行拆分（fork）成若干个小任务（拆到不能再差），再将一个个小任务并行运算的结果进行汇总（join）</li>
+<li>【核心思想】在必要情况下，将一个大任务，进行拆分（fork）成若干个小任务（拆到不能再差），再将一个个小任务并行运算的结果进行汇总（join）</li>
 <li>利用双端队列，采用“工作窃取”模式（work-stealing），处理完问题的线程，主动去寻找其他线程队列中，为执行完的任务（从后面），窃取任务开始执行</li>
-<li></li>
 </ul>
 </li>
 <li><p>模拟实现</p>
@@ -632,21 +652,19 @@
 </li>
 <li>实现其中 compute() 抽象方法</li>
 <li>思路<ol>
-<li>设置临界值<ol>
+<li>设置临界值</li>
 <li>小于临界值，直接进行计算，返回计算结果</li>
 <li>若到大于临界值，进行拆分（fork），以递归形式，左右拆分</li>
-<li>.fork() 拆分完压入线程队列</li>
-<li>.join() 运算结果合并</li>
-</ol>
-</li>
+<li>‘.fork()’ 拆分完压入线程队列</li>
+<li>‘.join()’ 运算结果合并</li>
 </ol>
 </li>
 </ul>
 </li>
 <li><p>什么情况下用这个个框架比较合适？</p>
 <ul>
-<li>串行时间太长，可用并行运算提高效率</li>
-<li>考虑实际情况，临界值，运算力（待运算的值大小）</li>
+<li>串行时间太长，需并行运算提高效率</li>
+<li>考虑实际情况，设计临界值，考虑高运算情况（例：运算的值过大时，可进行优化）</li>
 <li>好的算法会充分利用 CPU 资源</li>
 </ul>
 </li>
@@ -693,8 +711,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/29/MyProject_绘制 mind-mapping/" rel="next" title="绘制 mind-mapping">
-                <i class="fa fa-chevron-left"></i> 绘制 mind-mapping
+              <a href="/2017/10/29/MyProject_mind-mapping 学习方式/" rel="next" title="mind-mapping 学习方式">
+                <i class="fa fa-chevron-left"></i> mind-mapping 学习方式
               </a>
             
           </div>
@@ -880,7 +898,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-volatile-关键字"><span class="nav-number">2.</span> <span class="nav-text">1. volatile 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-原子变量"><span class="nav-number">3.</span> <span class="nav-text">2.  原子变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-锁分段机制"><span class="nav-number">4.</span> <span class="nav-text">3.  锁分段机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-闭锁"><span class="nav-number">5.</span> <span class="nav-text">4.  闭锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-使用-Callable-接口"><span class="nav-number">6.</span> <span class="nav-text">5. 使用 Callable 接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Lock-同步锁"><span class="nav-number">7.</span> <span class="nav-text">6.  Lock 同步锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-等待唤醒机制"><span class="nav-number">7.1.</span> <span class="nav-text">7. 等待唤醒机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-生产者和消费者案例"><span class="nav-number">7.2.</span> <span class="nav-text">a. 生产者和消费者案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-Condition-接口进行线程通信"><span class="nav-number">7.3.</span> <span class="nav-text">b.  Condition 接口进行线程通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-一道“线程按序交替执行”编程题"><span class="nav-number">8.</span> <span class="nav-text">8. 一道“线程按序交替执行”编程题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-读写锁"><span class="nav-number">9.</span> <span class="nav-text">9.读写锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-线程八锁的关键"><span class="nav-number">10.</span> <span class="nav-text">10. 线程八锁的关键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-线程池"><span class="nav-number">11.</span> <span class="nav-text">11. 线程池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Fork-Join-框架"><span class="nav-number">12.</span> <span class="nav-text">12. Fork/Join 框架</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-volatile-关键字"><span class="nav-number">2.</span> <span class="nav-text">1. volatile 关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-原子变量"><span class="nav-number">3.</span> <span class="nav-text">2.  原子变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-锁分段机制"><span class="nav-number">4.</span> <span class="nav-text">3.  锁分段机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-闭锁"><span class="nav-number">5.</span> <span class="nav-text">4.  闭锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-使用-Callable-接口"><span class="nav-number">6.</span> <span class="nav-text">5. 使用 Callable 接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Lock-同步锁"><span class="nav-number">7.</span> <span class="nav-text">6.  Lock 同步锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-等待唤醒机制"><span class="nav-number">8.</span> <span class="nav-text">7. 等待唤醒机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-生产者和消费者案例"><span class="nav-number">8.1.</span> <span class="nav-text">a. 生产者和消费者案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-Condition-接口进行线程通信"><span class="nav-number">8.2.</span> <span class="nav-text">b.  Condition 接口进行线程通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-一道“线程按序交替执行”编程题"><span class="nav-number">9.</span> <span class="nav-text">8. 一道“线程按序交替执行”编程题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-读写锁"><span class="nav-number">10.</span> <span class="nav-text">9.读写锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-线程八锁的关键"><span class="nav-number">11.</span> <span class="nav-text">10. 线程八锁的关键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-线程池"><span class="nav-number">12.</span> <span class="nav-text">11. 线程池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Fork-Join-框架"><span class="nav-number">13.</span> <span class="nav-text">12. Fork/Join 框架</span></a></li></ol></div>
             
 
           </div>
