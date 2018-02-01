@@ -66,7 +66,7 @@
   
     
     
-    <link href="//fonts.useso.com/css?family=Consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -99,21 +99,21 @@
 
 
 
-<meta name="description" content="两道算法题 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?	- 2 块钱一瓶酒    - 4 个瓶盖一瓶酒    - 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，	母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234">
+<meta name="description" content="两道算法题​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?- 2 块钱一瓶酒- 4 个瓶盖一瓶酒- 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234567891011121">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两道有趣的算法题">
 <meta property="og:url" content="http://suvan-l.github.io/2018/01/29/Java_两道有趣的算法题/index.html">
 <meta property="og:site_name" content="Suvan">
-<meta property="og:description" content="两道算法题 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?	- 2 块钱一瓶酒    - 4 个瓶盖一瓶酒    - 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，	母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234">
+<meta property="og:description" content="两道算法题​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?- 2 块钱一瓶酒- 4 个瓶盖一瓶酒- 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234567891011121">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://suvan-l.github.io/images/喝酒问题解题过程.png">
 <meta property="og:image" content="http://suvan-l.github.io/images/母牛生产解题过程.png">
 <meta property="og:image" content="http://suvan-l.github.io/images/递归一行代码解决问题.png">
-<meta property="og:updated_time" content="2018-01-29T14:08:51.281Z">
+<meta property="og:updated_time" content="2018-01-29T14:20:25.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两道有趣的算法题">
-<meta name="twitter:description" content="两道算法题 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?	- 2 块钱一瓶酒    - 4 个瓶盖一瓶酒    - 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，	母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234">
+<meta name="twitter:description" content="两道算法题​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!  喝酒问题 1234身上只有 10 块钱，一共可以喝多少瓶酒?- 2 块钱一瓶酒- 4 个瓶盖一瓶酒- 2 个空瓶换一瓶酒  母牛生产问题 1234农场一头小母牛，每年生头小母牛，母牛五岁产母牛，二十年有多少头牛？   喝酒问题计算过程 源码1234567891011121">
 <meta name="twitter:image" content="http://suvan-l.github.io/images/喝酒问题解题过程.png">
 
 
@@ -340,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  947
+                  942
                 </span>
               
 
@@ -374,13 +374,13 @@
       
 
       
-        <h1 id="两道算法题"><a href="#两道算法题" class="headerlink" title="两道算法题"></a>两道算法题</h1><p> 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉!</p>
+        <h1 id="两道算法题"><a href="#两道算法题" class="headerlink" title="两道算法题"></a>两道算法题</h1><p>​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!</p>
 <ol>
 <li><p>喝酒问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">身上只有 10 块钱，一共可以喝多少瓶酒?</div><div class="line">	- 2 块钱一瓶酒</div><div class="line">    - 4 个瓶盖一瓶酒</div><div class="line">    - 2 个空瓶换一瓶酒</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">身上只有 10 块钱，一共可以喝多少瓶酒?</div><div class="line">- 2 块钱一瓶酒</div><div class="line">- 4 个瓶盖一瓶酒</div><div class="line">- 2 个空瓶换一瓶酒</div></pre></td></tr></table></figure>
 </li>
 <li><p>母牛生产问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">农场一头小母牛，</div><div class="line">每年生头小母牛，</div><div class="line">	母牛五岁产母牛，</div><div class="line">二十年有多少头牛？</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">农场一头小母牛，</div><div class="line">每年生头小母牛，</div><div class="line">母牛五岁产母牛，</div><div class="line">二十年有多少头牛？</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="喝酒问题"><a href="#喝酒问题" class="headerlink" title="喝酒问题"></a>喝酒问题</h2><h3 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h3><p><img src="/images/喝酒问题解题过程.png" alt="喝酒问题解题过程" title="喝酒问题解题过程"></p>

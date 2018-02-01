@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://suvan-l.github.io/"/>
-  <updated>2018-01-29T14:08:51.281Z</updated>
+  <updated>2018-01-29T14:20:25.907Z</updated>
   <id>http://suvan-l.github.io/</id>
   
   <author>
@@ -20,15 +20,15 @@
     <link href="http://suvan-l.github.io/2018/01/29/Java_%E4%B8%A4%E9%81%93%E6%9C%89%E8%B6%A3%E7%9A%84%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     <id>http://suvan-l.github.io/2018/01/29/Java_两道有趣的算法题/</id>
     <published>2018-01-29T13:48:32.000Z</published>
-    <updated>2018-01-29T14:08:51.281Z</updated>
+    <updated>2018-01-29T14:20:25.907Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="两道算法题"><a href="#两道算法题" class="headerlink" title="两道算法题"></a>两道算法题</h1><p> 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉!</p>
+    <content type="html"><![CDATA[<h1 id="两道算法题"><a href="#两道算法题" class="headerlink" title="两道算法题"></a>两道算法题</h1><p>​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!</p>
 <ol>
 <li><p>喝酒问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">身上只有 10 块钱，一共可以喝多少瓶酒?</div><div class="line">	- 2 块钱一瓶酒</div><div class="line">    - 4 个瓶盖一瓶酒</div><div class="line">    - 2 个空瓶换一瓶酒</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">身上只有 10 块钱，一共可以喝多少瓶酒?</div><div class="line">- 2 块钱一瓶酒</div><div class="line">- 4 个瓶盖一瓶酒</div><div class="line">- 2 个空瓶换一瓶酒</div></pre></td></tr></table></figure>
 </li>
 <li><p>母牛生产问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">农场一头小母牛，</div><div class="line">每年生头小母牛，</div><div class="line">	母牛五岁产母牛，</div><div class="line">二十年有多少头牛？</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">农场一头小母牛，</div><div class="line">每年生头小母牛，</div><div class="line">母牛五岁产母牛，</div><div class="line">二十年有多少头牛？</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="喝酒问题"><a href="#喝酒问题" class="headerlink" title="喝酒问题"></a>喝酒问题</h2><h3 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h3><p><img src="/images/喝酒问题解题过程.png" alt="喝酒问题解题过程" title="喝酒问题解题过程"></p>
@@ -39,7 +39,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;两道算法题&quot;&gt;&lt;a href=&quot;#两道算法题&quot; class=&quot;headerlink&quot; title=&quot;两道算法题&quot;&gt;&lt;/a&gt;两道算法题&lt;/h1&gt;&lt;p&gt; 最近发现两道算法题很有灵性，源自生活（小伙伴们在群里讨论）, 现贴出求解源码以及解题思路 ^_^，分享学习, 共勉
+      &lt;h1 id=&quot;两道算法题&quot;&gt;&lt;a href=&quot;#两道算法题&quot; class=&quot;headerlink&quot; title=&quot;两道算法题&quot;&gt;&lt;/a&gt;两道算法题&lt;/h1&gt;&lt;p&gt;​    最近发现两道算法题很有灵性, 附上完整源码以及解题思路（运行贴图与代码注释） ^_^，分享学习, 共勉!&lt;
     
     </summary>
     
